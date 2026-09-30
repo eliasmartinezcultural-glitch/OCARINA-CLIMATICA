@@ -47,3 +47,19 @@ El próximo motor histórico debe consumir fuentes separadas del presente: datos
 ## Operación
 
 GitHub Actions actualiza el registro del presente cada hora y permite ejecución manual. La concurrencia está limitada para impedir dos ingestas simultáneas. Si la fuente falla, el sitio conserva el último archivo válido y la interfaz no inventa valores.
+
+
+## Red de fuentes 2026
+
+La capa de procedencia queda organizada así:
+
+- **SMN presente:** observación meteorológica actual.
+- **SMN horario:** serie meteorológica reciente para reportes y análisis.
+- **SMN estaciones:** identidad oficial de la estación; una observación no entra al observatorio local si esta verificación no es única.
+- **AIC Compensador El Chañar:** nivel y caudal hidrológico, mantenidos fuera del contrato meteorológico.
+
+La regla crítica es **no convertir cercanía geográfica en identidad de estación**. Si el catálogo SMN no devuelve una coincidencia exacta y única para San Patricio del Chañar, la interfaz debe decirlo.
+
+El dataset oficial del SMN declara temperatura, presión, viento y humedad para sus estaciones meteorológicas; el listado de estaciones declara nombre, provincia, latitud, longitud, altura, número y OACI. citeturn0search1turn0search11
+
+AIC publica una estación denominada **COMPENSADOR EL CHANAR**, con mediciones hidrológicas de altura y caudal medio diario; se incorpora como contexto territorial, no como estación meteorológica local. citeturn0search8turn0search25
