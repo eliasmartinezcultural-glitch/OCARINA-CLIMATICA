@@ -2,6 +2,33 @@
 // No es una serie exhaustiva. Es una base editorial verificable para seguir investigando.
 window.CLIMATE_CHRONOLOGY=[
   {
+    id:"1913-tratayen-crecida-historica",date:"1913",dateLabel:"Alrededor de 1913",year:1913,phenomenon:"crecida",title:"Desaparición histórica de la colonia Tratayen",summary:"La historia municipal señala que la colonia Tratayen, documentada por una mensura de Tressens hacia 1913, habría desaparecido por una gran crecida del río Neuquén. Se conserva como antecedente histórico hipotético, no como registro hidrométrico.",evidenceLevel:"testimonial",layer:"documentary",location:"Tratayen · valle del río Neuquén",impact:"poblamiento / territorio",sourceIds:["municipality-tratayen"],confidence:"hipótesis histórica documentada"
+  },
+  {
+    id:"1899-rio-neuquen-crecida-contexto",date:"1899",dateLabel:"1899",year:1899,phenomenon:"crecida",title:"Gran crecida histórica del río Neuquén",summary:"Una investigación geográfica sobre el bajo Neuquén identifica 1899 entre las grandes avenidas históricas del río. Se incorpora únicamente como contexto hidrológico regional, no como inundación local comprobada en Chañar.",evidenceLevel:"primary",layer:"contextual",location:"Cuenca del río Neuquén",impact:"contexto hidrológico",sourceIds:["boletin-geografico-crecida-2006"],confidence:"contextual"
+  },
+  {
+    id:"1915-rio-neuquen-crecida-contexto",date:"1915",dateLabel:"1915",year:1915,phenomenon:"crecida",title:"Gran crecida histórica del río Neuquén",summary:"Una investigación académica registra 1915 entre las principales avenidas históricas del río Neuquén. Se mantiene como contexto, sin atribuir automáticamente impacto a San Patricio del Chañar.",evidenceLevel:"primary",layer:"contextual",location:"Cuenca del río Neuquén",impact:"contexto hidrológico",sourceIds:["boletin-geografico-crecida-2006"],confidence:"contextual"
+  },
+  {
+    id:"1945-rio-neuquen-crecida-contexto",date:"1945",dateLabel:"1945",year:1945,phenomenon:"crecida",title:"Gran crecida histórica del río Neuquén",summary:"Una investigación académica registra 1945 entre las grandes avenidas históricas del río Neuquén. No se presenta como evento local de Chañar sin evidencia específica.",evidenceLevel:"primary",layer:"contextual",location:"Cuenca del río Neuquén",impact:"contexto hidrológico",sourceIds:["boletin-geografico-crecida-2006"],confidence:"contextual"
+  },
+  {
+    id:"1972-rio-neuquen-crecida-contexto",date:"1972",dateLabel:"1972",year:1972,phenomenon:"crecida",title:"Gran crecida histórica previa a la regulación moderna",summary:"La literatura académica identifica 1972 entre las principales crecidas históricas del río Neuquén. Se incorpora como contexto de la evolución hidrológica de la cuenca.",evidenceLevel:"primary",layer:"contextual",location:"Cuenca del río Neuquén",impact:"contexto hidrológico",sourceIds:["boletin-geografico-crecida-2006"],confidence:"contextual"
+  },
+  {
+    id:"1999-granizo-emergencia",date:"1999-03-31",dateLabel:"31 de marzo de 1999",year:1999,phenomenon:"granizo",title:"Emergencia agropecuaria por granizo",summary:"Una resolución nacional declaró emergencia y/o desastre agropecuario para San Patricio del Chañar y Añelo por afectación de cultivos bajo riego causada por granizo, con vigencia desde el 31 de marzo de 1999.",evidenceLevel:"primary",layer:"documentary",location:"San Patricio del Chañar",impact:"producción frutihortícola",sourceIds:["boletin-1999-emergencia-granizo"],confidence:"documentado"
+  },
+  {
+    id:"2002-crecida-memoria",date:"2002",dateLabel:"2002",year:2002,phenomenon:"inundacion",title:"Crecida recordada por familias de la costa",summary:"Durante la crecida de 2023, medios locales recogieron que vecinos recordaban inundaciones y mortandad de animales ocurridas en 2002. Falta localizar todavía el documento hidrométrico primario específico de ese año para Chañar.",evidenceLevel:"secondary",layer:"testimonial",location:"Costa del río Neuquén · San Patricio del Chañar",impact:"viviendas / animales",sourceIds:["lm-2023-crecida"],confidence:"memoria documentada; dato hidrométrico pendiente"
+  },
+  {
+    id:"2005-crecida-memoria",date:"2005",dateLabel:"2005",year:2005,phenomenon:"inundacion",title:"Crecida recordada por familias de la costa",summary:"Vecinos citados por la prensa en 2023 recordaron una crecida de 2005 con inundaciones y mortandad de animales de granja. El archivo primario hidrométrico de 2005 queda como objetivo de búsqueda.",evidenceLevel:"secondary",layer:"testimonial",location:"Costa del río Neuquén · San Patricio del Chañar",impact:"viviendas / animales",sourceIds:["lm-2023-crecida"],confidence:"memoria documentada; dato hidrométrico pendiente"
+  },
+  {
+    id:"1966-1998-granizo-serie",date:"1966",dateLabel:"1966–1998",year:1966,phenomenon:"granizo",title:"Serie histórica de granizo",summary:"INTA documenta una serie histórica de 37 años construida con los períodos 1966–1998 y 2011–2017. Para Chañar se contabilizan 10 eventos en el conjunto de la serie: 6 de grado 1, 3 de grado 2 y 1 de grado 3.",evidenceLevel:"primary",layer:"documentary",location:"San Patricio del Chañar",impact:"agroclima / fruticultura",sourceIds:["inta-granizo-37-anos"],confidence:"serie documental"
+  },
+  {
     id:"2006-06-crecida-rio-neuquen",
     date:"2006-06",
     dateLabel:"Junio de 2006",
@@ -139,6 +166,10 @@ window.CLIMATE_CHRONOLOGY=[
 ];
 
 window.CLIMATE_CHRONOLOGY_SOURCES=[
+  {id:"municipality-tratayen",name:"Municipalidad de San Patricio del Chañar · Historia e identidad",url:"https://www.sanpatricio.gob.ar/identidad",type:"fuente municipal"},
+  {id:"boletin-geografico-crecida-2006",name:"Boletín Geográfico · La crecida histórica de julio de 2006",url:"https://dialnet.unirioja.es/descarga/articulo/5017800.pdf",type:"fuente académica"},
+  {id:"boletin-1999-emergencia-granizo",name:"Argentina.gob.ar · Resolución Conjunta 1061/1999",url:"https://www.argentina.gob.ar/normativa/nacional/norma-59933/texto",type:"fuente oficial"},
+  {id:"inta-granizo-37-anos",name:"INTA Alto Valle · Malla para proteger los frutales del granizo",url:"https://repositorio.inta.gob.ar/bitstream/handle/20.500.12123/14080/INTA_CRPatagoniaNorte_EEAAltoValle_Villarreal_PL_Malla_para_proteger_frutales_granizo.pdf?isAllowed=y&sequence=1",type:"fuente INTA"},
   {id:"press-lm-2006-crecida",name:"LM Neuquén · Crecida del cauce",url:"https://www.lmneuquen.com/repentina-crecida-del-cauce-del-rio-neuquen-n29090",type:"prensa"},
   {id:"neuquen-informa-2014-temporal",name:"Neuquén Informa · Daños por temporal",url:"https://www.neuqueninforma.gob.ar/amp/noticias/2014/04/10/46443-relevan-danos-en-zonas-productivas-afectadas-por-el-temporal",type:"fuente institucional"},
   {id:"rio-negro-2020-nieve",name:"Río Negro · Nieve y veda climática",url:"https://www.rionegro.com.ar/corte-de-la-ruta-7-en-san-patricio-del-chanar-1414720/",type:"prensa"},
