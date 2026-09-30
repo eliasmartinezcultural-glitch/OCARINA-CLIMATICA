@@ -1,0 +1,10 @@
+{
+  "status":"pending-ingestion",
+  "source":"SMN",
+  "dataset":"Listado de Estaciones Meteorológicas del SMN",
+  "target":"San Patricio del Chañar",
+  "retrievedAt":null,
+  "station":null,
+  "matches":[],
+  "notes":"Debe ser generado por GitHub Actions mediante el catálogo oficial. Hasta entonces la identidad de estación permanece sin verificar."
+}
