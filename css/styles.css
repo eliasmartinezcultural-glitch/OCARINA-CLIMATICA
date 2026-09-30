@@ -64,3 +64,33 @@ button,a{touch-action:manipulation}button:focus-visible,a:focus-visible{outline:
 .forecast-meta a{color:var(--ink);font-weight:800}
 @media(max-width:900px){.forecast-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:520px){.forecast-grid{grid-template-columns:1fr}.forecast-card{min-height:190px}}
+
+/* HISTORIAL CLIMÁTICO */
+.historical-section{background:#e8e3d6}
+.history-status{padding:22px;border:1px solid var(--line);border-radius:22px;background:var(--cream);margin-bottom:12px}
+.history-status strong{font-family:Georgia,serif;font-size:27px}
+.history-status p{margin:6px 0 0;color:var(--muted)}
+.history-meta{font-size:12px;color:var(--muted);margin-bottom:22px}
+.history-charts{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.history-chart{background:var(--cream);border:1px solid var(--line);border-radius:24px;padding:20px;min-height:300px}
+.history-chart>div:first-child{display:flex;align-items:center;gap:10px}
+.history-chart>div:first-child span{font-size:10px;font-weight:800;color:var(--muted)}
+.history-chart h3{font-size:22px;margin:0}
+.history-chart svg{width:100%;height:auto;display:block;margin-top:16px}
+.chart-axis{stroke:var(--line);stroke-width:1}
+.history-line{fill:none;stroke:var(--ink);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.chart-label{fill:var(--muted);font-size:12px}
+.history-empty{min-height:180px;display:grid;place-items:center;text-align:center;color:var(--muted);font-size:13px;border:1px dashed var(--line);border-radius:16px;padding:20px;margin-top:18px}
+.history-definition{display:flex;gap:14px;flex-wrap:wrap;margin:14px 0 50px;padding:18px;border-radius:18px;background:#f4efe4;color:var(--muted);font-size:13px}
+.history-definition strong{color:var(--ink)}
+.history-events-wrap{border-top:1px solid var(--line);padding-top:40px}
+.history-events-wrap>div:first-child h3{font-family:Georgia,serif;font-size:34px;margin:4px 0 28px}
+.history-events{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.history-event{background:var(--cream);border:1px solid var(--line);border-radius:22px;padding:22px}
+.history-event>span{font-family:Georgia,serif;font-size:23px}
+.history-event small{display:block;color:var(--muted);font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin:10px 0}
+.history-event h3{font-size:24px;margin:0 0 8px}
+.history-event p{color:var(--muted);font-size:14px}
+.history-event a{color:var(--ink);font-size:12px;font-weight:800}
+@media(max-width:900px){.history-charts,.history-events{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.history-charts,.history-events{grid-template-columns:1fr}.history-chart{min-height:260px}.history-event h3{font-size:21px}}
