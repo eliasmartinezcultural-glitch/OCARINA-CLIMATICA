@@ -1,6 +1,6 @@
 # OCARINA CLIMÁTICA
 
-## San Patricio del Chañar · V0.2.3
+## San Patricio del Chañar · V1.1.0 · CRONOLOGÍA CLIMÁTICA
 
 **El clima de nuestro lugar.**
 
@@ -48,7 +48,7 @@ El catálogo oficial del SMN incluye, entre otros, Estado del Tiempo presente, D
 
 La identidad de una estación local no se da por supuesta. El motor puede recibir una observación con nombre de estación, pero no asigna coordenadas, número, OACI ni equivalencia con una estación cercana hasta verificarlo.
 
-### Próxima gran capa
+### Nueva capa · Cronología climática\n\nLa cronología inicial separa evidencia primaria, secundaria, testimonial y contextual. Los episodios documentados se conservan como registros editoriales y no como mediciones instrumentales. La base actual es deliberadamente no exhaustiva: funciona como punto de partida para ampliar el archivo 1900–2026.\n\n### Próxima gran capa
 
 **V0.3 — EL TIEMPO SE CONVIERTE EN HISTORIA:** identidad de estaciones + series temporales + extremos + cobertura + archivo histórico, sin mezclar períodos incompatibles.
 
