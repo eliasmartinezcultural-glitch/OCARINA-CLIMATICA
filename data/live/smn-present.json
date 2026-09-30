@@ -1,11 +1,12 @@
 {
-  "status":"unavailable",
-  "source":"SMN",
-  "dataset":"Estado del Tiempo presente",
-  "target":"San Patricio del Chañar",
-  "retrievedAt":null,
-  "station":null,
-  "observedAt":null,
-  "observations":{},
-  "notes":"Esperando la primera ejecución del ingestor. No se muestran datos inventados."
+  "status": "unavailable",
+  "source": "SMN",
+  "dataset": "Estado del Tiempo presente",
+  "target": "San Patricio del Chañar",
+  "retrievedAt": null,
+  "station": null,
+  "stationIdentity": {},
+  "observedAt": null,
+  "observations": {},
+  "notes": "Esperando la ejecución del ingestor. No se muestran datos inventados ni se sustituye una estación local por otra."
 }
