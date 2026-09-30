@@ -1,0 +1,9 @@
+{
+  "status":"unavailable",
+  "source":"SMN",
+  "dataset":"Datos meteorológicos horarios",
+  "target":"San Patricio del Chañar",
+  "retrievedAt":null,
+  "records":[],
+  "notes":"A la espera de la primera ingestión horaria local validada."
+}
