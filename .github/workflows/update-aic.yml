@@ -1,0 +1,30 @@
+name: Actualizar AIC El Chañar
+
+on:
+  schedule:
+    - cron: "12 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ocarina-climatica-aic
+  cancel-in-progress: true
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Ingestar observación AIC
+        run: python scripts/ingest_aic_el_chanar.py
+      - name: Publicar si cambió
+        run: |
+          git config user.name "ocarina-climatica-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/live/aic-el-chanar.json
+          git diff --cached --quiet && exit 0
+          git commit -m "data: actualizar AIC El Chañar"
+          git push
