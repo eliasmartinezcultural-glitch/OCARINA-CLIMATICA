@@ -1,15 +1,2 @@
-const climateDoors=[{label:"TEMPERATURA",title:"Explorar el calor y el frío",text:"Máximas, mínimas, medias, amplitud y evolución."},{label:"LLUVIA",title:"Seguir el agua",text:"Precipitación, períodos secos y registros."},{label:"VIENTO",title:"Entender nuestro viento",text:"Dirección, intensidad, ráfagas y memoria."},{label:"HELADAS",title:"Cuando llega el frío",text:"Fechas, intensidad y relación con el territorio."},{label:"EXTREMOS",title:"Los días excepcionales",text:"Eventos documentados, con fecha y fuente."},{label:"CIELO",title:"Mirar hacia arriba",text:"Nubes, luz, tormentas y fotografías."},{label:"COMPARAR",title:"Poner años frente a frente",text:"Una futura herramienta para explorar series."},{label:"CURIOSIDADES",title:"Seguir una pregunta",text:"Pequeños descubrimientos que abren historias."}];
-
-const explore=document.querySelector("#explore-grid");
-explore.innerHTML=climateDoors.map((d,i)=>`<a class="explore-card" href="#archivo" data-door="${i}"><span>${d.label}</span><h3>${d.title}</h3><p>${d.text}</p></a>`).join("");
-
-const toggle=document.querySelector(".menu-toggle");
-const nav=document.querySelector("#main-nav");
-toggle.addEventListener("click",()=>{const open=nav.classList.toggle("open");toggle.setAttribute("aria-expanded",String(open));});
-nav.addEventListener("click",e=>{if(e.target.matches("a")){nav.classList.remove("open");toggle.setAttribute("aria-expanded","false");}});
-
-document.querySelector("#memoryPrompt").addEventListener("click",()=>alert("Próximamente: formulario para guardar recuerdos climáticos de San Patricio del Chañar, con fecha, lugar, autor y consentimiento."));
-
-document.querySelectorAll("[data-door]").forEach(card=>card.addEventListener("click",()=>console.info("Puerta de exploración:",card.dataset.door)));
-
-console.info("OCARINA CLIMÁTICA V0.1.0 · motor inicial cargado");
+// Motor de experiencia V0.2.3. El contenido exploratorio vive fuera de la interfaz.
+const explore=document.querySelector("#explore-grid");const doors=window.CLIMATE_EXPLORER||[];if(explore){explore.innerHTML=doors.map((d,i)=>"<button class=\"explore-card\" type=\"button\" data-door=\""+i+"\"><span>"+d.label+"</span><h3>"+d.title+"</h3><p>"+d.text+"</p></button>").join("");explore.addEventListener("click",e=>{const card=e.target.closest("[data-door]");if(!card)return;openClimateDoor(doors[Number(card.dataset.door)]);});}function openClimateDoor(door){const panel=document.querySelector("#explore-detail");if(!panel||!door)return;panel.hidden=false;panel.innerHTML="<div><span class=\"eyebrow\">"+door.label+"</span><h3>"+door.title+"</h3><p>"+door.text+"</p><small>Motor conectado: "+door.module+". Estado: "+door.status+".</small></div>";panel.scrollIntoView({behavior:"smooth",block:"nearest"});}window.openClimateDoor=openClimateDoor;const toggle=document.querySelector(".menu-toggle"),nav=document.querySelector("#main-nav");if(toggle&&nav){toggle.addEventListener("click",()=>{const open=nav.classList.toggle("open");toggle.setAttribute("aria-expanded",String(open));});nav.addEventListener("click",e=>{if(e.target.matches("a")){nav.classList.remove("open");toggle.setAttribute("aria-expanded","false");}});}const memory=document.querySelector("#memoryPrompt");if(memory)memory.addEventListener("click",()=>alert("Próximamente: formulario para guardar recuerdos climáticos de San Patricio del Chañar, con fecha, lugar, autor y consentimiento."));console.info("OCARINA CLIMÁTICA V0.2.3 · motor cargado");
