@@ -1,0 +1,17 @@
+name: QA estático · Ocarina Climática
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Validar estructura y JavaScript
+        run: node scripts/qa-static.mjs
