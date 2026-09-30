@@ -1,65 +1,40 @@
-# OCARINA CLIMÁTICA · Arquitectura V0.2.3
+# OCARINA CLIMÁTICA · ARQUITECTURA V2
 
-## Regla central
+## Contrato
+FUENTE → INGESTA → NORMALIZACIÓN → IDENTIDAD → VALIDACIÓN → ARCHIVO → MOTOR → EXPERIENCIA
 
-**FUENTE → INGESTOR → ADAPTADOR → VALIDACIÓN → OBSERVATORIO → INTERFAZ**
+La interfaz nunca consulta proveedores externos directamente. Los proveedores alimentan archivos normalizados; los motores consumen contratos internos estables.
 
-La interfaz nunca consulta directamente al SMN. El ingestor transforma el recurso externo en un registro local estable; el adaptador transforma ese registro al contrato canónico; el validador decide si puede entrar al observatorio.
+## Experiencia pública
+Exactamente cinco herramientas: AHORA, EXPLORAR, CHAÑAR, HISTORIAS y ESCUELAS. Los módulos internos no crean nuevas herramientas principales.
 
 ## Capas
+1. Fuentes: SMN, AIC y fuentes documentales.
+2. Ingesta: GitHub Actions genera archivos bajo data/live/ y data/archive/.
+3. Normalización: cada proveedor se transforma al contrato interno.
+4. Identidad: la atribución local requiere estación oficialmente identificada.
+5. Validación: existencia, fecha, frescura, procedencia y rangos físicos.
+6. Archivo: las series se conservan por período y no se sustituyen silenciosamente por proximidad.
+7. Motores: observación, series, agua/hidrología, cronología, multimedia y educación.
+8. Experiencia: responsive, teclado, estados de carga, errores recuperables y degradación elegante.
 
-- `data/config.js`: reglas globales, lugar y tolerancias.
-- `data/schema.js`: contrato canónico de observaciones y estaciones.
-- `data/source-catalog.js`: catálogo único de fuentes oficiales y su función.
-- `data/stations.js`: identidad de estaciones, separada de los valores meteorológicos.
-- `data/live/`: último registro normalizado que puede consumir GitHub Pages.
-- `scripts/ingest_smn_present.py`: descarga y adapta el recurso horario del SMN sin depender del navegador.
-- `data/providers/`: adaptadores por proveedor.
-- `data/validator.js`: control temporal, físico y de procedencia.
-- `data/observatory.js`: estado central del observatorio.
-- `js/observatory-runtime.js`: orquestador del flujo.
-- `js/observatory-ui.js`: única capa que pinta el estado del observatorio.
-- `data/explorer-catalog.js`: mapa de módulos futuros sin acoplarlos a HTML.
-- `js/app.js`: interacción general de la experiencia.
+## Reglas contra bucles y errores
+- Inicializadores idempotentes.
+- Listeners registrados una sola vez.
+- Fetch con timeout.
+- Sin reintentos infinitos.
+- NaN, Infinity y fechas inválidas nunca llegan a la UI.
+- Sin fallback geográfico silencioso.
+- Archivo histórico con cobertura y procedencia preservadas.
+- Contenido editorial escapado antes de HTML dinámico.
+- Acciones asíncronas con carga, éxito y fallo.
+- Procesos periódicos deduplicados o cancelables.
 
-## Identidad de estación
+## Estados
+LIVE = dato local validado.
+PARTIAL = parte del sistema disponible.
+UNAVAILABLE = no existe dato local verificable.
+INVALID = dato rechazado por validación.
 
-No se considera confirmada una estación local solo porque aparezca una localidad en un documento. El registro meteorológico y el catálogo oficial de estaciones se mantienen separados hasta poder asociar nombre, número, OACI, coordenadas, altura y provincia con evidencia verificable.
-
-Esto evita atribuir a San Patricio del Chañar una estación cercana o una estación privada como si fuera una estación oficial del SMN.
-
-## Calidad de datos
-
-Cada observación debe poder responder:
-
-1. ¿Qué mide?
-2. ¿Dónde?
-3. ¿Cuándo?
-4. ¿De qué fuente?
-5. ¿Es observado, calculado, estimado o pronosticado?
-
-Si una respuesta no existe, el sistema muestra **Sin dato / identidad pendiente / registro no validado** en lugar de completar con una suposición.
-
-## Históricos
-
-El próximo motor histórico debe consumir fuentes separadas del presente: datos meteorológicos horarios, temperaturas extremas, registro de 365 días y normales climáticas. No se deben mezclar series con coberturas o estaciones distintas sin declararlo.
-
-## Operación
-
-GitHub Actions actualiza el registro del presente cada hora y permite ejecución manual. La concurrencia está limitada para impedir dos ingestas simultáneas. Si la fuente falla, el sitio conserva el último archivo válido y la interfaz no inventa valores.
-
-
-## Red de fuentes 2026
-
-La capa de procedencia queda organizada así:
-
-- **SMN presente:** observación meteorológica actual.
-- **SMN horario:** serie meteorológica reciente para reportes y análisis.
-- **SMN estaciones:** identidad oficial de la estación; una observación no entra al observatorio local si esta verificación no es única.
-- **AIC Compensador El Chañar:** nivel y caudal hidrológico, mantenidos fuera del contrato meteorológico.
-
-La regla crítica es **no convertir cercanía geográfica en identidad de estación**. Si el catálogo SMN no devuelve una coincidencia exacta y única para San Patricio del Chañar, la interfaz debe decirlo.
-
-El dataset oficial del SMN declara temperatura, presión, viento y humedad para sus estaciones meteorológicas; el listado de estaciones declara nombre, provincia, latitud, longitud, altura, número y OACI.
-
-AIC publica una estación denominada **COMPENSADOR EL CHANAR**, con mediciones hidrológicas de altura y caudal medio diario; se incorpora como contexto territorial, no como estación meteorológica local.
+## Multidispositivo
+Mobile-first. La información crítica debe sobrevivir a anchos pequeños, zoom, orientación horizontal, teclado, touch y conexión lenta. El diseño no depende exclusivamente de hover, color o gestos.
