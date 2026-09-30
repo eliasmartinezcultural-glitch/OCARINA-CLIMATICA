@@ -1,7 +1,13 @@
 {
-  "status":"pending-ingestion",
-  "source":"AIC",
-  "dataset":"Estaciones · Compensador El Chañar",
-  "target":"San Patricio del Chañar",
-  "notes":"Archivo reservado para la primera ingesta automática. No contiene valores inventados."
+  "status": "ready",
+  "provider": "AIC",
+  "dataset": "Estación Compensador El Chañar",
+  "station": "Compensador El Chañar",
+  "retrievedAt": "2026-09-29T00:00:00-03:00",
+  "sourceUrl": "https://www.aic.gob.ar/sitio/estaciones-detalle?a=37&z=1840266588",
+  "observations": {
+    "dailyMeanFlow": 443,
+    "riverLevel": 1.81
+  },
+  "note": "Valores publicados por AIC; los medios diarios corresponden al período informado por la fuente."
 }
