@@ -1,7 +1,11 @@
 window.CLIMATE_HISTORY_CATALOG=[
 {id:"smn-hourly",module:"hourly-series",granularity:"hour",variables:["temperature","pressure","humidity","windSpeed","windDirection"],status:"active"},
-{id:"smn-extremes",module:"daily-extremes",granularity:"day",variables:["temperatureMin","temperatureMax"],status:"next"},
-{id:"smn-temp365",module:"recent-temperature",granularity:"day",variables:["temperatureMin","temperatureMax"],status:"next"},
+{id:"smn-extremes",module:"daily-extremes",granularity:"day",variables:["temperatureMin","temperatureMax"],status:"ingestor-enabled"},
+{id:"smn-temp365",module:"recent-temperature",granularity:"day",variables:["temperatureMin","temperatureMax"],status:"ingestor-enabled"},
 {id:"smn-forecast5",module:"forecast-five-days",granularity:"3-hour",variables:["temperature","windSpeed","windDirection","precipitation"],status:"next"},
-{id:"smn-normals",module:"climate-normals",granularity:"monthly",variables:["temperature","temperatureMax","temperatureMin","humidity","windSpeed","cloudiness"],period:"1981-2010",status:"planned"}
+{id:"smn-normals",module:"climate-normals",granularity:"monthly",variables:["temperature","temperatureMax","temperatureMin","humidity","windSpeed","cloudiness"],period:"1981-2010",status:"reference-only"}
+,
+{id:"smn-alerts",module:"weather-events",granularity:"event",variables:["alert","phenomenon"],status:"cataloged"},
+{id:"aic-hydrology",module:"hydrological-series",granularity:"day",variables:["riverLevel","dailyMeanFlow"],status:"active"},
+{id:"inta-hail",module:"documentary-events",granularity:"event",variables:["hail"],status:"active"}
 ];
