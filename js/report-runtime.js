@@ -1,32 +1,3 @@
-// Motor de reporte semanal local. Solo calcula sobre observaciones de San Patricio del Chañar.
-window.ClimateReportRuntime={
-  async load(){
-    if(!window.SMNHourlyAdapter)return this.empty("Adaptador horario ausente.");
-    const loaded=await window.SMNHourlyAdapter.load();
-    if(!loaded.ok)return this.empty(loaded.message);
-    const data=loaded.data||{};
-    if(data.status!=="ready"||!Array.isArray(data.records)||!data.records.length)return this.empty(data.notes||"No hay serie local validada.");
-    return this.build(data.records);
-  },
-  build(records){
-    const valid=records.filter(r=>r&&r.observedAt&&r.values);
-    const nums=(key)=>valid.map(r=>Number(r.values[key])).filter(Number.isFinite);
-    const avg=a=>a.length?a.reduce((x,y)=>x+y,0)/a.length:null;
-    const max=a=>a.length?Math.max(...a):null;
-    const min=a=>a.length?Math.min(...a):null;
-    const t=nums("temperature"),h=nums("humidity"),p=nums("pressure"),w=nums("windSpeed");
-    const start=valid.map(r=>r.observedAt).sort()[0]||null;
-    const end=valid.map(r=>r.observedAt).sort().at(-1)||null;
-    return {
-      status:"ready",scope:"San Patricio del Chañar",start,end,count:valid.length,
-      temperature:{min:min(t),max:max(t),average:avg(t)},
-      humidity:{average:avg(h),min:min(h),max:max(h)},
-      pressure:{average:avg(p),min:min(p),max:max(p)},
-      wind:{average:avg(w),max:max(w)},
-      precipitation:{available:false,value:null,note:"El dataset horario del SMN no aporta precipitación en este contrato."},
-      coverage:{state:valid.length?"partial":"unknown",records:valid.length},
-      note:"Resumen derivado de observaciones horarias locales; no reemplaza el dato original."
-    };
-  },
-  empty(note){return {status:"unavailable",scope:"San Patricio del Chañar",note,count:0};}
-};
+// Render del reporte semanal. Los números son derivados, no mediciones nuevas.
+const reportValue=(v,u)=>v==null?"—":(Number.isInteger(v)?v:v.toFixed(1))+(u||"");
+window.renderWeeklyReport=function(r){const box=document.getElementById("weekly-report");if(!box)return;if(!r||r.status!=="ready"){box.innerHTML='<article class="report-card report-status"><span>ESTADO</span><strong>Sin reporte local validado</strong><p>'+((r&&r.note)||"Todavía no existe cobertura horaria utilizable para San Patricio del Chañar.")+'</p></article>';return;}const cards=[["TEMPERATURA","Máxima",reportValue(r.temperature.max," °C"),"observaciones locales"],["TEMPERATURA","Mínima",reportValue(r.temperature.min," °C"),"observaciones locales"],["TEMPERATURA","Promedio",reportValue(r.temperature.average," °C"),"derivado"],["HUMEDAD","Promedio",reportValue(r.humidity.average," %"),"derivado"],["PRESIÓN","Rango",reportValue(r.pressure.min,"")+" — "+reportValue(r.pressure.max," hPa"),"observaciones locales"],["PRESIÓN","Promedio",reportValue(r.pressure.average," hPa"),"derivado"],["VIENTO","Promedio",reportValue(r.wind.average," km/h"),"derivado"],["VIENTO","Máximo",reportValue(r.wind.max," km/h"),"observaciones locales"]];box.innerHTML=cards.map(c=>'<article class="report-card"><span>'+c[0]+'</span><strong>'+c[2]+'</strong><p>'+c[1]+' · '+c[3]+'</p></article>').join("");const f=document.getElementById("report-footnote");if(f)f.textContent="Período: "+new Date(r.start).toLocaleDateString("es-AR")+" → "+new Date(r.end).toLocaleDateString("es-AR")+" · "+r.count+" observaciones locales procesadas. "+r.note;};
