@@ -60,6 +60,6 @@ La capa de procedencia queda organizada así:
 
 La regla crítica es **no convertir cercanía geográfica en identidad de estación**. Si el catálogo SMN no devuelve una coincidencia exacta y única para San Patricio del Chañar, la interfaz debe decirlo.
 
-El dataset oficial del SMN declara temperatura, presión, viento y humedad para sus estaciones meteorológicas; el listado de estaciones declara nombre, provincia, latitud, longitud, altura, número y OACI. citeturn0search1turn0search11
+El dataset oficial del SMN declara temperatura, presión, viento y humedad para sus estaciones meteorológicas; el listado de estaciones declara nombre, provincia, latitud, longitud, altura, número y OACI.
 
-AIC publica una estación denominada **COMPENSADOR EL CHANAR**, con mediciones hidrológicas de altura y caudal medio diario; se incorpora como contexto territorial, no como estación meteorológica local. citeturn0search8turn0search25
+AIC publica una estación denominada **COMPENSADOR EL CHANAR**, con mediciones hidrológicas de altura y caudal medio diario; se incorpora como contexto territorial, no como estación meteorológica local.
