@@ -1,10 +1,9 @@
-// OCARINA CLIMÁTICA V0.2.0
-// Configuración central: una sola puerta para cambiar fuentes, estación y comportamiento.
-// NO colocar datos inventados aquí.
+// OCARINA CLIMÁTICA V0.2.1
 window.CLIMATE_CONFIG={
-  version:"0.2.0",
+  version:"0.2.1",
   place:{name:"San Patricio del Chañar",province:"Neuquén",country:"Argentina"},
-  observation:{source:"SMN",status:"pendiente-de-conexion",refresh:"hourly"},
+  observation:{provider:"smn-present",status:"connector-enabled",refreshMinutes:60},
   quality:{unknownLabel:"Sin dato",estimatedLabel:"Estimado",observedLabel:"Observado",forecastLabel:"Pronóstico"},
+  validation:{maxObservationAgeMinutes:180},
   fallback:{showUnavailable:true}
 };
