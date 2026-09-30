@@ -1,0 +1,54 @@
+[
+  {
+    "id": "granizo-1966-1998",
+    "type": "granizo",
+    "title": "Serie histórica de granizadas",
+    "dateLabel": "1966–1998",
+    "year": 1966,
+    "evidence": "documental",
+    "sourceId": "inta-hail",
+    "locality": "San Patricio del Chañar",
+    "summary": "INTA documenta 10 eventos de granizo en Chañar durante el período 1966–1998.",
+    "details": "La fuente forma parte de un análisis de incidencia del granizo en la superficie frutícola neuquina.",
+    "sourceUrl": "https://repositorio.inta.gob.ar/bitstream/handle/20.500.12123/14080/INTA_CRPatagoniaNorte_EEAAltoValle_Villarreal_PL_Malla_para_proteger_frutales_granizo.pdf?isAllowed=y&sequence=1"
+  },
+  {
+    "id": "granizo-2011-2017",
+    "type": "granizo",
+    "title": "Serie reciente de granizadas",
+    "dateLabel": "2011–2017",
+    "year": 2011,
+    "evidence": "documental",
+    "sourceId": "inta-hail",
+    "locality": "San Patricio del Chañar",
+    "summary": "INTA registra 10 eventos de granizo en Chañar en la serie combinada 1966–1998 y 2011–2017; el documento permite distinguir ambos períodos para el análisis de frecuencia.",
+    "details": "La publicación de INTA señala que para Chañar la frecuencia relativa calculada pasó de 0,10 a 0,41 al comparar 1966–1998 con 2011–2017.",
+    "sourceUrl": "https://repositorio.inta.gob.ar/bitstream/handle/20.500.12123/14080/INTA_CRPatagoniaNorte_EEAAltoValle_Villarreal_PL_Malla_para_proteger_frutales_granizo.pdf?isAllowed=y&sequence=1"
+  },
+  {
+    "id": "heladas-2026-09-04",
+    "type": "helada",
+    "title": "Pronóstico de heladas · Norte del Alto Valle",
+    "dateLabel": "4 sep 2026",
+    "year": 2026,
+    "evidence": "forecast",
+    "sourceId": "aic-frost",
+    "locality": "El Chañar",
+    "summary": "AIC publicó un pronóstico para Añelo, El Chañar y Vista Alegre con mínimas probables de -1 a 2 °C.",
+    "details": "Es un episodio de pronóstico, no una medición retrospectiva de helada.",
+    "sourceUrl": "https://www.aic.gob.ar/sitio/novedades-ver?a=5991&z=1889037470"
+  },
+  {
+    "id": "hydro-2026-09-29",
+    "type": "crecida",
+    "title": "Registro hidrológico · Compensador El Chañar",
+    "dateLabel": "29 sep 2026",
+    "year": 2026,
+    "evidence": "observed",
+    "sourceId": "aic-el-chanar",
+    "locality": "San Patricio del Chañar",
+    "summary": "AIC publicó altura de 1,81 m y caudal medio diario de 443 m³/s.",
+    "details": "Son datos hidrológicos de la estación Compensador El Chañar; no deben interpretarse como precipitación ni como caudal del río dentro del casco urbano.",
+    "sourceUrl": "https://www.aic.gob.ar/sitio/estaciones-detalle?a=37&z=1840266588"
+  }
+]
