@@ -1,0 +1,74 @@
+{
+  "status": "ready",
+  "provider": "AIC",
+  "dataset": "Pronóstico para El Chañar",
+  "retrievedAt": "2026-09-30T20:05:00-03:00",
+  "sourceUrl": "https://www.aic.gob.ar/sitio/home?a=1015&z=1967225803",
+  "place": "El Chañar",
+  "forecast": [
+    {
+      "date": "2026-09-29",
+      "day": "martes 29",
+      "periods": [
+        {
+          "label": "día",
+          "temperature": 18,
+          "wind": 31,
+          "gust": 42,
+          "direction": "SO",
+          "pressure": 1014,
+          "sky": "Mayormente Cubierto"
+        },
+        {
+          "label": "noche",
+          "temperature": 3,
+          "wind": 31,
+          "gust": 44,
+          "direction": "SE",
+          "pressure": 1017,
+          "sky": "Cubierto"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-30",
+      "day": "miércoles 30",
+      "periods": [
+        {
+          "label": "día",
+          "temperature": 18,
+          "wind": 23,
+          "gust": 35,
+          "direction": "SE",
+          "pressure": 1016,
+          "sky": "Cubierto"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-01",
+      "day": "jueves 01",
+      "periods": [
+        {
+          "label": "día",
+          "temperature": 20,
+          "wind": 15,
+          "gust": 21,
+          "direction": "NE",
+          "pressure": 1014,
+          "sky": "Cubierto"
+        },
+        {
+          "label": "noche",
+          "temperature": 8,
+          "wind": 28,
+          "gust": 47,
+          "direction": "NE",
+          "pressure": 1014,
+          "sky": "Cubierto"
+        }
+      ]
+    }
+  ],
+  "note": "Pronóstico de AIC para El Chañar. No debe presentarse como observación medida."
+}
