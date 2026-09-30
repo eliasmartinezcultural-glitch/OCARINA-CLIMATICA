@@ -20,7 +20,7 @@ def iso_datetime(fecha, hora):
     raw = ((fecha or "") + " " + (hora or "")).strip()
     for fmt in ("%d/%m/%Y %H:%M", "%d/%m/%Y %H:%M:%S", "%Y-%m-%d %H:%M", "%Y-%m-%d %H:%M:%S"):
         try:
-            return datetime.strptime(raw, fmt).replace(tzinfo=timezone.utc).isoformat()
+            return datetime.strptime(raw, fmt).isoformat()+"-03:00"
         except ValueError:
             pass
     return None
