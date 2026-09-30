@@ -46,7 +46,7 @@ El catálogo oficial del SMN incluye, entre otros, Estado del Tiempo presente, D
 
 ### Red de fuentes reales · ampliación 2026
 
-El proyecto ahora separa tres capas operativas: **SMN presente**, **SMN horario** y **AIC hidrológico**. El catálogo oficial del SMN se consulta además para verificar la identidad de la estación antes de publicar una observación como local. El AIC se conserva como capa hidrológica independiente: nivel y caudal del río no se presentan como variables meteorológicas. El SMN publica datos horarios de temperatura, presión, viento y humedad, y su catálogo de estaciones aporta nombre, provincia, coordenadas, altura, número y OACI. citeturn0search0turn0search3
+El proyecto ahora separa tres capas operativas: **SMN presente**, **SMN horario** y **AIC hidrológico**. El catálogo oficial del SMN se consulta además para verificar la identidad de la estación antes de publicar una observación como local. El AIC se conserva como capa hidrológica independiente: nivel y caudal del río no se presentan como variables meteorológicas. El SMN publica datos horarios de temperatura, presión, viento y humedad, y su catálogo de estaciones aporta nombre, provincia, coordenadas, altura, número y OACI.
 
 ### Estado de la estación
 
