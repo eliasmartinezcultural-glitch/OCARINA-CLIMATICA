@@ -1,18 +1,17 @@
 import csv, io, json, re, urllib.request, zipfile
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from pathlib import Path
 URL="https://ssl.smn.gob.ar/dpd/zipopendata.php?dato=tiepre"
 TARGET="san patricio del chanar"
 OUT=Path("data/live/smn-present.json")
+ARG_TZ=timezone(timedelta(hours=-3))
 def norm(value):
-    value=(value or "").strip().lower()
-    value=value.replace("á","a").replace("é","e").replace("í","i").replace("ó","o").replace("ú","u").replace("ñ","n")
-    return re.sub(r"\\s+"," ",value)
+    value=(value or "").strip().lower(); value=value.replace("á","a").replace("é","e").replace("í","i").replace("ó","o").replace("ú","u").replace("ñ","n"); return re.sub(r"\\s+"," ",value)
 def clean_header(value): return norm(value).replace("_","")
 def iso_datetime(fecha,hora):
     raw=((fecha or "")+" "+(hora or "")).strip()
     for fmt in ("%d/%m/%Y %H:%M","%d/%m/%Y %H:%M:%S","%Y-%m-%d %H:%M","%Y-%m-%d %H:%M:%S"):
-        try: return datetime.strptime(raw,fmt).replace(tzinfo=timezone.utc).astimezone().isoformat()
+        try: return datetime.strptime(raw,fmt).replace(tzinfo=ARG_TZ).isoformat()
         except ValueError: pass
     return None
 def number(value):
@@ -33,8 +32,7 @@ def main():
     if not rows: raise RuntimeError("El recurso SMN llegó vacío.")
     hi=next((i for i,row in enumerate(rows[:10]) if any(clean_header(v)=="estacion" for v in row)),None)
     if hi is None: raise RuntimeError("No se encontró una cabecera reconocible en el recurso SMN.")
-    headers=[clean_header(v) for v in rows[hi]]
-    records=[dict(zip(headers,row)) for row in rows[hi+1:] if row]
+    headers=[clean_header(v) for v in rows[hi]]; records=[dict(zip(headers,row)) for row in rows[hi+1:] if row]
     match=next((r for r in records if norm(pick(r,"estacion"))==TARGET),None)
     result={"status":"unavailable","source":"SMN","dataset":"Estado del Tiempo presente","target":"San Patricio del Chañar","retrievedAt":datetime.now(timezone.utc).isoformat(),"station":None,"stationIdentity":{},"observedAt":None,"observations":{},"notes":"No se encontró una fila con localidad exacta. No se sustituye por otra estación."}
     if match:
