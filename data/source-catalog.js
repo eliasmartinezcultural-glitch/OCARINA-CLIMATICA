@@ -1,6 +1,6 @@
 // Catálogo de fuentes. Cada fuente declara función, procedencia y estado operativo.
 window.CLIMATE_SOURCE_CATALOG=[
-{id:"smn-present",name:"SMN · Estado del Tiempo presente",role:"observación actual",status:"active",official:true,refresh:"hourly",datasetUrl:"https://datos.gob.ar/dataset/smn-estado-tiempo-presente"},
+{id:"smn-present",name:"SMN · Estado del Tiempo presente",role:"observación actual",status:"conditional",official:true,refresh:"hourly",datasetUrl:"https://datos.gob.ar/dataset/smn-estado-tiempo-presente",condition:"solo si la identidad de estación es verificable"},
 {id:"smn-hourly",name:"SMN · Datos meteorológicos horarios",role:"serie meteorológica",status:"active",official:true,refresh:"hourly",datasetUrl:"https://datos.gob.ar/dataset/smn-datos-meteorologicos-horarios"},
 {id:"smn-stations",name:"SMN · Listado de Estaciones Meteorológicas",role:"identidad, coordenadas y metadatos de estación",status:"active",official:true,refresh:"daily",datasetUrl:"https://datos.gob.ar/dataset/smn-listado-estaciones-meteorologicas-smn"},
 {id:"smn-forecast5",name:"SMN · Pronóstico a 5 días",role:"pronóstico local",status:"next",official:true,refresh:"daily",datasetUrl:"https://datos.gob.ar/dataset/smn-pronostico-tiempo-5-dias"},
@@ -10,7 +10,7 @@ window.CLIMATE_SOURCE_CATALOG=[
 {id:"smn-solar",name:"SMN · Radiación Solar",role:"radiación",status:"planned",official:true,datasetUrl:"https://datos.gob.ar/dataset/smn-radiacion-solar"},
 {id:"smn-normals",name:"SMN · Estadísticas Climáticas Normales",role:"climatología",status:"planned",official:true},
 {id:"aic-el-chanar",name:"AIC · Compensador El Chañar",role:"nivel y caudal del sistema hídrico",status:"active",official:true,refresh:"daily",domain:"hidrología",measurement:"observed",locality:"San Patricio del Chañar",sourceUrl:"https://www.aic.gob.ar/sitio/estaciones-detalle?a=37&z=1840266588"},
-{id:"aic-forecast",name:"AIC · Pronóstico regional",role:"contexto meteorológico e hidrológico regional",status:"cataloged",official:true,domain:"meteorología/hidrología",measurement:"forecast",locality:"El Chañar"},
+{id:"aic-forecast",name:"AIC · Pronóstico regional",role:"contexto meteorológico e hidrológico regional",status:"active",official:true,domain:"meteorología/hidrología",measurement:"forecast",locality:"El Chañar",refresh:"30 min",sourceUrl:"https://www.aic.gob.ar/sitio/home?a=1015&z=1967225803"},
 {id:"inta-hail",name:"INTA Alto Valle · Granizo",role:"historia y climatología del granizo",status:"cataloged",official:true,domain:"agroclima",measurement:"documentary",locality:"San Patricio del Chañar",researchNote:"Serie documentada 1966–1998 y 2011–2017."},
 {id:"epea-station",name:"EPEA 3 · estación meteorológica histórica",role:"registros meteorológicos locales",status:"research",official:true,domain:"meteorología local",measurement:"observed",locality:"San Patricio del Chañar",researchNote:"Instalación documentada en 2015; serie y estado actual pendientes de localización."},
 {id:"open-meteo-era5",name:"Open-Meteo · ERA5/ERA5-Land",role:"reanálisis histórico y reconstrucción",status:"cataloged",official:false,domain:"modelo/reanálisis",measurement:"estimated",locality:"punto de referencia"},
