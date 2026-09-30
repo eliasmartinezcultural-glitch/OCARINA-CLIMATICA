@@ -9,5 +9,6 @@ window.CLIMATE_EXPLORER=[
 {label:"EXTREMOS",title:"Los días excepcionales",text:"Eventos documentados, con fecha, estación y fuente.",module:"extremes-engine",status:"diseñado"},
 {label:"CIELO",title:"Mirar hacia arriba",text:"Nubosidad, visibilidad, luz y archivo fotográfico.",module:"sky-archive",status:"diseñado"},
 {label:"COMPARAR",title:"Poner años frente a frente",text:"Comparar períodos solo con cobertura compatible.",module:"comparison-engine",status:"diseñado"},
+{label:"CRONOLOGÍA",title:"Viajar por el clima de Chañar",text:"Episodios documentados: nieve, heladas, granizo, tormentas, crecidas y aluviones.",module:"climate-chronology",status:"activo"},
 {label:"MEMORIA",title:"Lo que Chañar recuerda",text:"Fotos, relatos y testimonios separados de la medición.",module:"memory-archive",status:"diseñado"}
 ];
