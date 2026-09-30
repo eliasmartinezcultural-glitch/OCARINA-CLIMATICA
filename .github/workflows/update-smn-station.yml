@@ -1,0 +1,30 @@
+name: Verificar estación SMN local
+
+on:
+  schedule:
+    - cron: "37 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ocarina-climatica-smn-station
+  cancel-in-progress: true
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verificar identidad contra catálogo oficial SMN
+        run: python scripts/ingest_smn_station.py
+      - name: Publicar si cambió
+        run: |
+          git config user.name "ocarina-climatica-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/live/smn-station.json
+          git diff --cached --quiet && exit 0
+          git commit -m "data: verificar identidad estación SMN"
+          git push
