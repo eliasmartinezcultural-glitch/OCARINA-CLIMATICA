@@ -1,0 +1,18 @@
+window.ClimateValidator={
+  validate(record){
+    const errors=[];
+    if(!record)errors.push("registro-vacío");
+    if(record&&!record.source)errors.push("sin-fuente");
+    if(record&&!record.observedAt)errors.push("sin-fecha-observación");
+    if(record&&!record.station)errors.push("sin-estación");
+    if(record&&record.observedAt){
+      const age=(Date.now()-new Date(record.observedAt).getTime())/60000;
+      if(!Number.isFinite(age))errors.push("fecha-inválida");
+      else if(age< -15)errors.push("fecha-futura");
+      else if(age>(window.CLIMATE_CONFIG?.validation?.maxObservationAgeMinutes||180))errors.push("dato-desactualizado");
+    }
+    const ranges={temperature:[-60,60],humidity:[0,100],pressure:[850,1100],windSpeed:[0,250],gust:[0,350],precipitation:[0,1000]};
+    if(record)Object.entries(ranges).forEach(([k,r])=>{const v=record.observations?.[k]?.value;if(v!==null&&v!==undefined&&(!Number.isFinite(Number(v))||Number(v)<r[0]||Number(v)>r[1]))errors.push("rango-"+k);});
+    return {valid:errors.length===0,errors};
+  }
+};
