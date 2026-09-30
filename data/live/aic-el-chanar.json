@@ -1,0 +1,7 @@
+{
+  "status":"pending-ingestion",
+  "source":"AIC",
+  "dataset":"Estaciones · Compensador El Chañar",
+  "target":"San Patricio del Chañar",
+  "notes":"Archivo reservado para la primera ingesta automática. No contiene valores inventados."
+}
