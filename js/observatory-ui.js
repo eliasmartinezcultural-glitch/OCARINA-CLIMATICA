@@ -1,20 +1,19 @@
 function renderObservatory(){
-  const o=window.Observatory;
-  const map={
-    temperature:["now-temperature","Temperatura","°C"],
-    windSpeed:["now-wind","Viento","km/h"],
-    humidity:["now-humidity","Humedad","%"],
-    pressure:["now-pressure","Presión","hPa"]
-  };
-  Object.entries(map).forEach(([key,[id,label,unit]])=>{
-    const el=document.getElementById(id); if(!el)return;
-    const item=o.observations[key];
-    el.innerHTML=`<span>${label}</span><strong>${item.value==null?"—":item.value}</strong><small>${item.value==null?"sin dato":unit+" · "+qualityLabel(item.quality)}</small>`;
+  const o=window.Observatory||{};
+  const map={temperature:["now-temperature","Temperatura","°C"],windSpeed:["now-wind","Viento","km/h"],humidity:["now-humidity","Humedad","%"],pressure:["now-pressure","Presión","hPa"]};
+  Object.entries(map).forEach(([key,x])=>{
+    const el=document.getElementById(x[0]);if(!el)return;
+    const item=o.observations?.[key]||{};
+    el.innerHTML="<span>"+x[1]+"</span><strong>"+(item.value==null?"—":item.value)+"</strong><small>"+(item.value==null?"sin dato":x[2]+" · "+qualityLabel(item.quality))+"</small>";
   });
   const state=document.getElementById("observatory-state");
-  if(state) state.textContent=o.status==="live"?"Observación conectada":"Fuente en preparación";
+  if(state)state.textContent=o.status==="live"?"Observación validada":"Sin observación local validada";
   const stamp=document.getElementById("observatory-updated");
-  if(stamp) stamp.textContent=o.observedAt?"Actualizado "+new Date(o.observedAt).toLocaleString("es-AR"):"Todavía no hay una observación conectada";
+  if(stamp)stamp.textContent=o.observedAt?"Observado "+new Date(o.observedAt).toLocaleString("es-AR"):"No hay una observación validada disponible";
+  const badge=document.querySelector(".source-badge");
+  if(badge)badge.textContent=o.provenance?.provider?o.provenance.provider+" · "+(o.station||"estación no identificada"):"SMN · conector preparado";
+  const prov=document.querySelector(".provenance span");
+  if(prov)prov.textContent=o.provenance?.notes||"Cada dato debe conservar qué mide, dónde, cuándo, fuente y calidad.";
 }
 function qualityLabel(q){return ({observed:"Observado",estimated:"Estimado",forecast:"Pronóstico",unknown:"Sin dato"})[q]||"Sin dato";}
 window.renderObservatory=renderObservatory;
