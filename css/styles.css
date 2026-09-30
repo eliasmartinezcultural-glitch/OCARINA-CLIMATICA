@@ -47,3 +47,20 @@ button,a{touch-action:manipulation}button:focus-visible,a:focus-visible{outline:
 @media (max-width:680px){.site-header{position:sticky;top:0;z-index:20}.hero{min-height:auto}.hero-actions{display:grid;grid-template-columns:1fr}.button{width:100%;justify-content:center}.now-grid,.education-grid,.explore-grid,.territory-grid,.media-grid{grid-template-columns:1fr}.section{padding-inline:16px}.section-heading h2{font-size:clamp(1.7rem,8vw,2.5rem)}.explore-card{min-height:180px}.chronology-toolbar{gap:12px}.chronology-filters{display:flex;overflow-x:auto;padding-bottom:6px}.chronology-filters button{flex:0 0 auto}}
 @media (min-width:681px) and (max-width:1024px){.now-grid,.explore-grid,.education-grid,.territory-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
+
+/* PRONÓSTICO LOCAL · AIC */
+.forecast-section{background:#e6e2d6}
+.forecast-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.forecast-card{min-height:220px;padding:22px;border:1px solid var(--line);border-radius:24px;background:var(--cream);display:flex;flex-direction:column;justify-content:space-between}
+.forecast-card>div:first-child{display:flex;flex-direction:column;gap:5px}
+.forecast-card span{font-size:11px;color:var(--muted);font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.forecast-card strong{font-family:Georgia,serif;font-size:48px;line-height:1}
+.forecast-card small{color:var(--muted);min-height:22px}
+.forecast-row{display:flex!important;justify-content:space-between;gap:10px;padding-top:11px;border-top:1px solid var(--line);font-size:11px;color:var(--muted)}
+.forecast-empty{grid-column:1/-1;min-height:130px}
+.forecast-empty strong{font-size:26px}
+.forecast-empty p{color:var(--muted);margin:0}
+.forecast-meta{margin-top:14px;color:var(--muted);font-size:12px}
+.forecast-meta a{color:var(--ink);font-weight:800}
+@media(max-width:900px){.forecast-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.forecast-grid{grid-template-columns:1fr}.forecast-card{min-height:190px}}
