@@ -1,11 +1,2 @@
-// Registro de estaciones: identidad separada de la observación.
-window.CLIMATE_STATIONS={
-  "smn-present":{
-    target:"San Patricio del Chañar",
-    matchingPolicy:"exact-only",
-    status:"unverified",
-    station:null,
-    source:"SMN",
-    note:"No se sustituye una observación local por una estación cercana sin declararlo."
-  }
-};
+// Identidad de estaciones. Nunca se inventa ni se reemplaza silenciosamente.
+window.CLIMATE_STATIONS={"smn-present":{target:"San Patricio del Chañar",matchingPolicy:"exact-only",status:"unverified",station:{id:null,name:null,latitude:null,longitude:null,altitude:null,province:null,oaci:null},source:"SMN",note:"Primero se verifica la identidad oficial de la estación; recién después se agregan coordenadas, número y OACI."}};
