@@ -9,4 +9,12 @@ window.CLIMATE_SOURCE_CATALOG=[
 {id:"smn-alerts",name:"SMN · Alertas Meteorológicas (365 días)",role:"eventos meteorológicos",status:"planned",official:true,datasetUrl:"https://datos.gob.ar/dataset/smn-alertas-meteorologicas-365-dias"},
 {id:"smn-solar",name:"SMN · Radiación Solar",role:"radiación",status:"planned",official:true,datasetUrl:"https://datos.gob.ar/dataset/smn-radiacion-solar"},
 {id:"smn-normals",name:"SMN · Estadísticas Climáticas Normales",role:"climatología",status:"planned",official:true}
+,
+{id:"aic-el-chanar",name:"AIC · Estación hidrológica El Chañar",role:"río, caudal y estado hidrológico",status:"cataloged",official:true,domain:"hidrología",measurement:"observed",locality:"San Patricio del Chañar"},
+{id:"aic-frost",name:"AIC · Pronóstico de heladas",role:"heladas tardías en valles bajo riego",status:"cataloged",official:true,domain:"agrometeorología",measurement:"forecast",locality:"San Patricio del Chañar"},
+{id:"intA-hail",name:"INTA Alto Valle · Granizo",role:"historia y climatología del granizo",status:"cataloged",official:true,domain:"agroclima",measurement:"documentary",locality:"San Patricio del Chañar"},
+{id:"epea-station",name:"EPEA 3 · estación meteorológica histórica",role:"investigar registros locales históricos",status:"research",official:true,domain:"meteorología local",measurement:"observed",locality:"San Patricio del Chañar"},
+{id:"pws-centenario",name:"Weather Underground · PWS Centenario",role:"observación privada complementaria",status:"cataloged",official:false,domain:"meteorología",measurement:"observed",locality:"San Patricio del Chañar",note:"No sustituye una estación oficial."},
+{id:"open-meteo-era5",name:"Open-Meteo · ERA5/ERA5-Land",role:"reanálisis histórico y reconstrucción",status:"cataloged",official:false,domain:"modelo/reanálisis",measurement:"estimated",locality:"punto de referencia"},
+{id:"meteoblue-climate",name:"Meteoblue · Climate",role:"simulación histórica de contexto",status:"cataloged",official:false,domain:"modelo",measurement:"estimated",locality:"San Patricio del Chañar"}
 ];
