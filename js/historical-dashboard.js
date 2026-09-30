@@ -20,7 +20,17 @@ async function load(){
   if(d.status!=="ready"){state.innerHTML='<strong>Serie local en construcción</strong><p>La fuente SMN está identificada, pero todavía no se presenta una estación como local sin verificar su identidad.</p>';meta.textContent="Estado: "+d.status+" · cobertura: "+d.coverage.days+" días solicitados · 0 registros locales publicados.";return;}
   state.innerHTML='<strong>365 días disponibles</strong><p>Serie observada con procedencia y cobertura conservadas.</p>';
   meta.textContent="Fuente: "+d.source+" · estación: "+d.stationName+" · desde "+d.coverage.start+" hasta "+d.coverage.end+" · "+d.records.length+" registros.";
-  chart(d.records,"temperatureMax","Temperatura máxima diaria","°C"); chart(d.records,"temperatureMin","Temperatura mínima diaria","°C");
+  const ind=document.querySelector("#history-indicators");
+  if(ind&&Array.isArray(d.records)&&d.records.length){
+   const vals=d.records;
+   const max=vals.map(x=>Number(x.temperatureMax)).filter(Number.isFinite), min=vals.map(x=>Number(x.temperatureMin)).filter(Number.isFinite);
+   const cells=ind.querySelectorAll("article strong");
+   if(cells[0]&&max.length)cells[0].textContent=fmt(Math.max(...max))+" °C";
+   if(cells[1]&&min.length)cells[1].textContent=fmt(Math.min(...min))+" °C";
+   if(cells[3])cells[3].textContent=min.filter(x=>x<=0).length;
+   if(cells[4])cells[4].textContent=max.filter(x=>x>=35).length;
+   if(cells[5])cells[5].textContent="pendiente";
+  }\n  chart(d.records,"temperatureMax","Temperatura máxima diaria","°C"); chart(d.records,"temperatureMin","Temperatura mínima diaria","°C");
   chart(d.records,"precipitation","Precipitación diaria","mm"); chart(d.records,"windSpeed","Viento","km/h");
  }catch(e){state.innerHTML='<strong>Historial temporalmente no disponible</strong><p>El sistema no sustituye la serie por otra estación ni inventa valores.</p>';meta.textContent="Error de lectura del snapshot histórico."}
  const ev=await get("data/historical-events.json");
