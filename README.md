@@ -53,3 +53,17 @@ La identidad de una estación local no se da por supuesta. El motor puede recibi
 **V0.3 — EL TIEMPO SE CONVIERTE EN HISTORIA:** identidad de estaciones + series temporales + extremos + cobertura + archivo histórico, sin mezclar períodos incompatibles.
 
 **Ocarina Producciones · tecnología desarrollada por Elías Martínez.**
+
+
+## Archivo Climático Histórico · fase de investigación
+
+La cronología se amplió con antecedentes hidrológicos contextuales (1899, 1915, 1945, 1972), la historia de Tratayen, la emergencia agropecuaria por granizo de 1999, memorias documentadas de crecidas de 2002 y 2005 y la serie de granizo INTA 1966–1998 + 2011–2017. Estos registros conservan explícitamente su nivel de evidencia y no se presentan como mediciones locales cuando no existe evidencia local suficiente.
+
+### Fuentes históricas prioritarias aún por recuperar
+- estación meteorológica instalada en EPEA 3 en 2015: localizar responsable, instrumentos, período y archivos;
+- estación meteorológica del viñedo de San Patricio del Chañar utilizada por CFI: localizar propietario, coordenadas, variables, período y archivos originales;
+- registros meteorológicos de bodegas y establecimientos productivos;
+- series INTA y agroclimáticas locales;
+- registros hidrométricos AIC de 2002, 2005 y 2006;
+- archivos municipales, prensa local y fotografías fechadas;
+- documentación primaria de eventos anteriores a 1966.
