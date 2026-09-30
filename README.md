@@ -17,7 +17,7 @@ Un observatorio local que combina observación meteorológica, series histórica
 
 ### Motor actual
 
-**FUENTE → INGESTOR → ADAPTADOR → VALIDACIÓN → OBSERVATORIO → INTERFAZ**
+**FUENTE → INGESTOR → ADAPTADOR → VALIDACIÓN → OBSERVATORIO → REPORTE → INTERFAZ**
 
 La observación del SMN llega mediante GitHub Actions a data/live/smn-present.json. El navegador consume únicamente ese registro normalizado. Así, un cambio de proveedor no obliga a reconstruir toda la interfaz.
 
