@@ -81,6 +81,33 @@ def read_smn_zip(url):
         except Exception: continue
     return rows
 
+
+def historical_hourly():
+    try:
+        rows=read_smn_zip(SMN_HOURLY_URL)
+        if not rows:return {"status":"pending-local-station-verification","target":"San Patricio del Chañar","source":"SMN","records":[]}
+        hourly=[]
+        for row in rows:
+            station=find_value(row,["estacion","station","nombreestacion"])
+            date=find_value(row,["fecha","date"])
+            hour=find_value(row,["hora","hour"])
+            if not station or not date:continue
+            hourly.append({
+              "observedAt":str(date)+" "+str(hour or ""),
+              "stationName":str(station),
+              "temperature":number(str(find_value(row,["temperatura","temp"]))) if find_value(row,["temperatura","temp"]) is not None else None,
+              "pressure":number(str(find_value(row,["presion","pressure"]))) if find_value(row,["presion","pressure"]) is not None else None,
+              "humidity":number(str(find_value(row,["humedad","humidity"]))) if find_value(row,["humedad","humidity"]) is not None else None,
+              "windSpeed":number(str(find_value(row,["velocidadviento","viento","windspeed"]))) if find_value(row,["velocidadviento","viento","windspeed"]) is not None else None,
+              "windDirection":number(str(find_value(row,["direccionviento","direccion","winddirection"]))) if find_value(row,["direccionviento","direccion","winddirection"]) is not None else None,
+              "precipitation":number(str(find_value(row,["precipitacion","precip","lluvia"]))) if find_value(row,["precipitacion","precip","lluvia"]) is not None else None,
+              "sourceId":"smn-hourly","quality":"observed"
+            })
+        hourly=hourly[-24*365:]
+        return {"status":"ready" if hourly else "pending-local-station-verification","target":"San Patricio del Chañar","source":"SMN","retrievedAt":now(),"stationName":hourly[-1]["stationName"] if hourly else None,"coverage":{"records":len(hourly)},"records":hourly}
+    except Exception as exc:
+        return {"status":"error","target":"San Patricio del Chañar","source":"SMN","retrievedAt":now(),"error":str(exc),"records":[]}
+
 def historical_365():
     try:
         rows=read_smn_zip(SMN_EXTREMES_URL)
@@ -104,7 +131,7 @@ def aic_station():\n    r=requests.get(AIC_STATION_URL,timeout=25,headers={"User
     (LIVE/name).write_text(json.dumps(data,ensure_ascii=False,indent=2),encoding="utf-8")
 
 try:
-    write("aic-forecast.json",aic())\n    write("aic-el-chanar.json",aic_station())\n    write("historical-365.json",historical_365())
+    write("aic-forecast.json",aic())\n    write("aic-el-chanar.json",aic_station())\n    write("historical-365.json",historical_365())\n    write("historical-hourly.json",historical_hourly())
 except Exception as exc:
     write("aic-forecast-error.json",{"status":"error","provider":"AIC","retrievedAt":now(),"error":str(exc)})
     raise
