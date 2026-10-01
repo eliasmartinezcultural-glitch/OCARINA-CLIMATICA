@@ -1,13 +1,22 @@
 {
-  "status": "ready",
-  "provider": "AIC",
-  "dataset": "Estación Compensador El Chañar",
-  "station": "Compensador El Chañar",
-  "retrievedAt": "2026-10-01T02:15:09.384909+00:00",
-  "sourceUrl": "https://www.aic.gob.ar/sitio/estaciones-detalle?a=37&z=1840266588",
-  "observations": {
-    "dailyMeanFlow": null,
-    "riverLevel": null
+  "status": "unavailable",
+  "source": "AIC",
+  "dataset": "Estaciones · Compensador El Chañar",
+  "target": "San Patricio del Chañar",
+  "retrievedAt": "2026-10-01T05:44:44.871929+00:00",
+  "station": {
+    "name": "COMPENSADOR EL CHANAR",
+    "latitude": -38.599587,
+    "longitude": -68.389558
   },
-  "note": "Datos hidrológicos publicados por AIC."
+  "observations": {
+    "riverLevel": "",
+    "dailyMeanFlow": ""
+  },
+  "updatedAt": "01/10/2026",
+  "quality": {
+    "riverLevel": "observed",
+    "dailyMeanFlow": "observed"
+  },
+  "notes": "Capa hidrológica independiente de la meteorología. No debe presentarse como temperatura, lluvia o viento."
 }
