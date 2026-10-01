@@ -3,6 +3,7 @@
 "use strict";
 const $=(s,r=document)=>r.querySelector(s), esc=v=>String(v??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));
 const home=$("#view-ahora"); if(!home)return;
+const legacyWorld=document.querySelector(".v320-world"); if(legacyWorld) legacyWorld.hidden=true;
 
 /* Remove the previous injected central if the file is hot-reloaded. */
 home.querySelectorAll(".v322-central,.v323-central").forEach(x=>x.remove());
@@ -82,6 +83,7 @@ async function load(path){try{const r=await fetch(path+"?v=323",{cache:"no-store
 (async()=>{
  const f=await load("data/live/aic-forecast.json");
  const h=await load("data/live/historical-365.json");
+ const a=await load("data/live/aic-el-chanar.json");
  const fp=f?.status==="ready"?f.forecast?.[0]?.periods?.[0]:null;
  if(fp){
    $("#v323Temp").textContent=fp.temperature!=null?fp.temperature+" °C":"Disponible";
@@ -90,6 +92,11 @@ async function load(path){try{const r=await fetch(path+"?v=323",{cache:"no-store
  }else{
    $("#v323Temp").textContent="Sin pronóstico";
    $("#v323Wind").textContent="Sin pronóstico";
+ }
+ if(a?.status==="ready"){
+   const level=a?.observations?.riverLevel, flow=a?.observations?.dailyMeanFlow;
+   const value=level!==""&&level!=null ? level+" m" : (flow!==""&&flow!=null ? flow+" m³/s" : "Disponible");
+   const water=central.querySelector(".water .v323-door-data"); if(water) water.innerHTML="<b>"+esc(value)+"</b> · AIC";
  }
  if(h?.status==="ready"){
    $("#v323Rain").textContent="Serie disponible";
