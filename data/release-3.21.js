@@ -1,0 +1,26 @@
+window.OCARINA_RELEASE_321=Object.freeze({
+ version:"3.21",
+ base:"PL1+V3.18+V3.20",
+ status:"trunk-60-40-short-deep",
+ editorialRatio:"60-text-40-visual",
+ interaction:"100-simple",
+ surface:"short",
+ depth:"on-demand",
+ principles:[
+  "serious-official-real-information",
+  "faithful-representation",
+  "60-percent-text",
+  "40-percent-visual",
+  "100-percent-simple-interaction",
+  "multidevice-by-origin",
+  "deep-system-simple-front",
+  "few-large-compositions",
+  "exact-source-credit-inside",
+  "no-webgraphy-as-main-experience",
+  "puntual-or-immersive-by-choice",
+  "repair-before-add"
+ ],
+ devices:["320","390","420","680","tablet","laptop","desktop"],
+ evidenceStates:["observed","forecast","derived","estimated","documentary","memory"],
+ acceptance:["reality","clarity","beauty","utility","accessibility","performance","traceability","reversibility"]
+});
