@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Ocarina Climática climate record",
+  "type": "object",
+  "required": ["observedAt", "stationName", "sourceId", "quality"],
+  "properties": {
+    "observedAt": {"type": "string", "minLength": 1},
+    "stationName": {"type": "string", "minLength": 1},
+    "sourceId": {"type": "string", "minLength": 1},
+    "quality": {"enum": ["observed", "forecast", "derived", "estimated", "documentary", "memory"]},
+    "temperature": {"type": ["number", "null"]},
+    "temperatureMin": {"type": ["number", "null"]},
+    "temperatureMax": {"type": ["number", "null"]},
+    "precipitation": {"type": ["number", "null"], "minimum": 0},
+    "windSpeed": {"type": ["number", "null"], "minimum": 0},
+    "windGust": {"type": ["number", "null"], "minimum": 0},
+    "humidity": {"type": ["number", "null"], "minimum": 0, "maximum": 100},
+    "pressure": {"type": ["number", "null"], "minimum": 0}
+  },
+  "additionalProperties": true
+}
