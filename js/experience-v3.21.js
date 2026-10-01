@@ -4,15 +4,33 @@
 const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
 document.documentElement.dataset.ocarinaVersion="3.21";
 const design=window.OCARINA_TRUNK_DESIGN_V321||{};
-const deep=$(".v320-deep");
-if(deep){deep.classList.add("v321-deep-shell");deep.hidden=true;}
 const anchor=$(".question-strip"); if(!anchor)return;
-const dock=document.createElement("section"); dock.className="v321-depth-dock"; dock.setAttribute("aria-labelledby","v321DepthTitle");
+const dock=document.createElement("section");
+dock.className="v321-depth-dock";
+dock.setAttribute("aria-labelledby","v321DepthTitle");
 dock.innerHTML='<div class="v321-dock-head"><div><span class="eyebrow">V3.21 · PROFUNDIDAD A ELECCIÓN</span><h3 id="v321DepthTitle">Página corta. Información profunda.</h3><p>Entrá, resolvé lo que buscás o abrí el universo completo cuando tengas ganas de quedarte.</p></div><span class="v321-status"><i></i> sistema conectado</span></div><div class="v321-dock-actions"><button class="v321-depth-button" data-depth="quick"><strong>Quiero algo puntual</strong><small>Dato, pronóstico, historia, explicación o fuente.</small></button><button class="v321-depth-button" data-depth="deep"><strong>Quiero sumergirme</strong><small>Conexiones, contexto, evidencia, método y archivo.</small></button></div><button class="v321-deep-trigger" type="button" aria-expanded="false" aria-controls="v321DeepShell">Ver cómo está organizado <span>↓</span></button></section>';
 anchor.insertAdjacentElement("afterend",dock);
-const deepBtn=dock.querySelector('[data-depth="deep"]'),quickBtn=dock.querySelector('[data-depth="quick"]'),trigger=dock.querySelector(".v321-deep-trigger");
-if(deep){deep.id="v321DeepShell";trigger.addEventListener("click",()=>{const open=!deep.hidden;deep.hidden=open;trigger.setAttribute("aria-expanded",String(!open));trigger.lastElementChild.textContent=open?"↓":"↑";if(!open)deep.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion:reduce)").matches?"auto":"smooth",block:"start"});});deepBtn.addEventListener("click",()=>{deep.hidden=false;trigger.setAttribute("aria-expanded","true");trigger.lastElementChild.textContent="↑";deep.scrollIntoView({behavior:"smooth",block:"start"});});}
-quickBtn.addEventListener("click",()=>{const sheet=document.createElement("div");sheet.className="v321-topic-sheet";sheet.dataset.open="true";sheet.setAttribute("role","dialog");sheet.setAttribute("aria-modal","true");sheet.setAttribute("aria-labelledby","v321QuickTitle");sheet.innerHTML='<button class="v321-sheet-close" type="button" aria-label="Cerrar">×</button><span class="eyebrow">ENTRADA RÁPIDA</span><h3 id="v321QuickTitle">¿Qué querés encontrar?</h3><p>Elegí una puerta. Ocarina te lleva al contenido sin obligarte a recorrer todo.</p><div class="v321-sheet-grid"><button class="v321-sheet-item" data-go="pronostico"><b>Qué viene</b><small>Pronóstico</small></button><button class="v321-sheet-item" data-go="historial"><b>Cómo estuvo</b><small>Archivo 365 días</small></button><button class="v321-sheet-item" data-go="historias"><b>Qué pasó</b><small>Historias y documentos</small></button><button class="v321-sheet-item" data-go="aprender"><b>Quiero entender</b><small>Laboratorio</small></button></div></div>';document.body.appendChild(sheet);
-const close=()=>{sheet.remove();quickBtn.focus()};sheet.querySelector(".v321-sheet-close").addEventListener("click",close);sheet.addEventListener("click",e=>{if(e.target===sheet)close()});sheet.addEventListener("keydown",e=>{if(e.key==="Escape")close()});$$("[data-go]",sheet).forEach(b=>b.addEventListener("click",()=>{const target=b.dataset.go;close();const nav=document.querySelector('[data-go="'+target+'"]');if(nav)nav.click();}));sheet.querySelector(".v321-sheet-close").focus();});
+const quickBtn=dock.querySelector('[data-depth="quick"]'),deepBtn=dock.querySelector('[data-depth="deep"]'),trigger=dock.querySelector(".v321-deep-trigger");
+let deep=null, wired=false;
+function wireDeep(section){
+ if(!section||wired)return;
+ deep=section; wired=true; deep.classList.add("v321-deep-shell"); deep.id="v321DeepShell"; deep.hidden=true;
+ const setOpen=(open)=>{deep.hidden=!open;trigger.setAttribute("aria-expanded",String(open));trigger.lastElementChild.textContent=open?"↑":"↓";if(open)deep.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion:reduce)").matches?"auto":"smooth",block:"start");};
+ trigger.addEventListener("click",()=>setOpen(deep.hidden));
+ deepBtn.addEventListener("click",()=>setOpen(true));
+}
+const existing=$(".v320-deep"); if(existing)wireDeep(existing);
+new MutationObserver(()=>{const late=$(".v320-deep");if(late)wireDeep(late);}).observe(document.body,{childList:true,subtree:true});
+quickBtn.addEventListener("click",()=>{
+ const sheet=document.createElement("div");sheet.className="v321-topic-sheet";sheet.dataset.open="true";sheet.setAttribute("role","dialog");sheet.setAttribute("aria-modal","true");sheet.setAttribute("aria-labelledby","v321QuickTitle");
+ sheet.innerHTML='<button class="v321-sheet-close" type="button" aria-label="Cerrar">×</button><span class="eyebrow">ENTRADA RÁPIDA</span><h3 id="v321QuickTitle">¿Qué querés encontrar?</h3><p>Elegí una puerta. Ocarina te lleva al contenido sin obligarte a recorrer todo.</p><div class="v321-sheet-grid"><button class="v321-sheet-item" data-go="pronostico"><b>Qué viene</b><small>Pronóstico</small></button><button class="v321-sheet-item" data-go="historial"><b>Cómo estuvo</b><small>Archivo 365 días</small></button><button class="v321-sheet-item" data-go="historias"><b>Qué pasó</b><small>Historias y documentos</small></button><button class="v321-sheet-item" data-go="aprender"><b>Quiero entender</b><small>Laboratorio</small></button></div></div>';
+ document.body.appendChild(sheet);
+ const close=()=>{sheet.remove();quickBtn.focus()};
+ sheet.querySelector(".v321-sheet-close").addEventListener("click",close);
+ sheet.addEventListener("click",e=>{if(e.target===sheet)close()});
+ sheet.addEventListener("keydown",e=>{if(e.key==="Escape")close()});
+ $$("[data-go]",sheet).forEach(b=>b.addEventListener("click",()=>{const target=b.dataset.go;close();const nav=document.querySelector('[data-go="'+target+'"]');if(nav)nav.click();}));
+ sheet.querySelector(".v321-sheet-close").focus();
+});
 window.OCARINA_EXPERIENCE_321=Object.freeze({version:"3.21",formula:"60-text-40-visual",interaction:"100-simple",surface:"short",depth:"on-demand",system:design});
 })();
