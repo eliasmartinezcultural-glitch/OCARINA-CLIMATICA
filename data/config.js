@@ -4,7 +4,7 @@ window.CLIMATE_CONFIG={
   masterBaseline:"OCARINA-CLIMATICA-CORE-4",
   place:{name:"San Patricio del Chañar",province:"Neuquén",country:"Argentina",scopePolicy:"exact-local-only"},
   observation:{provider:"multi-source",status:"truth-first",refreshMinutes:30,localityRule:"exact-only"},
-  historical:{provider:"smn-hourly",refreshMinutes:60,windowDays:14,derivedOnly:true},
+  historical:{provider:"smn-hourly",refreshMinutes:60,windowDays:365,derivedOnly:true},
   report:{periodDays:7,language:"es-AR"},
   chronology:{startYear:1900,endYear:2026,status:"documented-initial-base",exhaustive:false},archive:{visual:true,audio:true,video:true,documents:true,photos:true,rightsRequired:true},
   quality:{unknownLabel:"Sin dato",estimatedLabel:"Estimado",observedLabel:"Observado",forecastLabel:"Pronóstico",derivedLabel:"Derivado"},
