@@ -1,0 +1,31 @@
+{
+  "version": "1.0.0",
+  "states": {
+    "LIVE": {
+      "meaning": "Snapshot available and within the configured freshness window.",
+      "publicLabel": "Disponible",
+      "allowedAs": ["observed", "forecast", "derived", "estimated"]
+    },
+    "STALE": {
+      "meaning": "Snapshot exists but is older than the freshness target.",
+      "publicLabel": "Desactualizado",
+      "allowedAs": ["observed", "forecast", "derived", "estimated"],
+      "rule": "Never relabel stale data as current."
+    },
+    "DEGRADED": {
+      "meaning": "The source exists but one or more quality or coverage checks require caution.",
+      "publicLabel": "Calidad limitada",
+      "rule": "Expose the limitation and retain the original evidence class."
+    },
+    "UNAVAILABLE": {
+      "meaning": "No usable snapshot is available.",
+      "publicLabel": "Sin dato",
+      "rule": "Do not fill the gap with an unannounced substitute."
+    },
+    "PENDING_VERIFICATION": {
+      "meaning": "A source or station identity is not sufficiently verified for the requested local claim.",
+      "publicLabel": "En verificación",
+      "rule": "Do not publish the value as a local observation."
+    }
+  }
+}
