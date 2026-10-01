@@ -1,0 +1,12 @@
+// OCARINA CLIMÁTICA · REGISTRO MULTIMEDIA
+window.CLIMATE_MEDIA_REGISTRY=[
+{id:"smn-radar-neuquen",type:"radar",provider:"SMN",evidence:"observed",geography:"regional",url:"https://ws2.smn.gob.ar/radar",rights:"consultar condiciones del sitio",rule:"contextual; no equivale a una medición puntual de Chañar"},
+{id:"conae-satellite",type:"satellite",provider:"CONAE",evidence:"estimated",geography:"local/regional",url:"https://www.argentina.gob.ar/ciencia/conae/aplicaciones-de-la-informacion-satelital/acceso-la-informacion-satelital",rights:"según producto/licencia",rule:"atribuir sensor, fecha y producto"},
+{id:"conae-saocom",type:"satellite-radar",provider:"CONAE",evidence:"estimated",geography:"local/regional",url:"https://www.argentina.gob.ar/ciencia/conae/productos-saocom/catalogo-de-imagenes",rights:"requiere revisar licencia/acceso del producto",rule:"no presentar como fotografía convencional"},
+{id:"ign-cartography",type:"map",provider:"IGN",evidence:"documentary",geography:"local/regional",url:"https://www.ign.gob.ar/NuestrasActividades/InformacionGeoespacial/CapasSIG",rights:"según condiciones de uso",rule:"conservar metadatos cartográficos"},
+{id:"aic-station",type:"hydrology",provider:"AIC",evidence:"observed",geography:"local",url:"https://www.aic.gob.ar/sitio/estaciones-detalle?a=37&z=1840266588",rights:"consultar fuente",rule:"mostrar fecha/hora y aclaraciones de medición"},
+{id:"inta-hail-document",type:"pdf-document",provider:"INTA",evidence:"documentary",geography:"local/regional",url:"https://repositorio.inta.gob.ar/bitstream/handle/20.500.12123/14080/INTA_CRPatagoniaNorte_EEAAltoValle_Villarreal_PL_Malla_para_proteger_frutales_granizo.pdf?isAllowed=y&sequence=1",rights:"según repositorio",rule:"citar documento y páginas utilizadas"},
+{id:"local-photo",type:"photograph",provider:"community",evidence:"documentary-or-memory",geography:"exact-local",url:null,rights:"must-be-cleared",rule:"require author, date, place, consent/rights and evidence label"},
+{id:"local-audio",type:"oral-history",provider:"community",evidence:"memory",geography:"exact-local",url:null,rights:"must-be-cleared",rule:"never convert testimony into instrumental observation"},
+{id:"local-video",type:"video",provider:"community",evidence:"documentary-or-memory",geography:"exact-local",url:null,rights:"must-be-cleared",rule:"require author, date, place, consent/rights and evidence label"}
+];
