@@ -7,13 +7,8 @@
   },
   "variables": [
     "temperatureMin",
-    "temperatureMax",
-    "precipitation",
-    "windSpeed",
-    "windGust",
-    "humidity",
-    "pressure"
+    "temperatureMax"
   ],
   "source": "SMN",
-  "message": "El ingestor buscará una estación cuya identidad corresponda exactamente a la localidad. Hasta verificarla, no se presentan valores como locales."
+  "message": "El dataset SMN fue consultado, pero no apareció una fila cuya identidad pudiera verificarse como San Patricio del Chañar/El Chañar."
 }
