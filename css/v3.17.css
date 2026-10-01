@@ -1,0 +1,7 @@
+/* OCARINA CLIMÁTICA · V3.17 */
+:root{scroll-padding-bottom:100px}
+html[data-ocarina-version="3.17"] .focus-card,html[data-ocarina-version="3.17"] .learn-card,html[data-ocarina-version="3.17"] .chip,html[data-ocarina-version="3.17"] .bottom-nav button{touch-action:manipulation}
+.ocarina-modal-open{overflow:hidden}
+.release-tag{display:inline-flex;align-items:center;min-height:30px;padding:0 9px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--muted);font-size:9px;font-weight:850;letter-spacing:.12em;white-space:nowrap}
+.story-card:focus{outline:3px solid var(--accent);outline-offset:5px}
+@media(max-width:620px){.release-tag{display:none}}
