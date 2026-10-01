@@ -29,7 +29,7 @@ def aic():
     target=None
     for table in tables:
         txt=clean(table.get_text(" ",strip=True))
-        if "Temperatura" in txt and "Viento" in txt and "El Chañar" in txt:
+        if "Temperatura" in txt and "Viento" in txt and "Ráfagas" in txt:
             target=table
             break
     if target is None:
