@@ -1,0 +1,22 @@
+/* V3.21 · SCREEN-BY-SCREEN REPAIR
+   One large composition per screen. Short surface, deep content on demand. */
+.v320-world.v321-hidden{display:none}
+.v321-home-repair .focus-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.v321-home-repair .focus-card{min-height:190px;border-radius:30px;padding:24px}
+.v321-home-repair .focus-card strong{font-size:clamp(26px,4vw,42px);max-width:11ch}
+.v321-home-repair .question-strip{margin-top:14px}
+.v321-screen-composition{max-width:1180px;margin-inline:auto}
+.v321-view-lead{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(240px,.65fr);gap:24px;align-items:end;margin-bottom:22px}
+.v321-view-lead h2{font:clamp(42px,6vw,72px)/.94 Georgia,serif;letter-spacing:-.055em;margin:0 0 10px}
+.v321-view-lead p{max-width:720px;color:var(--muted);font-size:17px;line-height:1.5;margin:0}
+.v321-context{border:1px solid #ccd8d1;border-radius:25px;padding:18px;background:linear-gradient(145deg,#f5f1df,#edf2ec)}
+.v321-context b{display:block;font-size:10px;letter-spacing:.16em;color:#61756b}.v321-context strong{display:block;font:25px/1 Georgia,serif;color:#16352b;margin-top:10px}.v321-context small{display:block;color:#6a7a72;margin-top:7px;line-height:1.4}
+.v321-feature{border-radius:32px;border:1px solid #d3dcd6;background:var(--surface);padding:24px;box-shadow:0 22px 60px #0d171412}
+.v321-feature-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:16px}.v321-feature-head h3{margin:0;font:31px/1 Georgia,serif}.v321-feature-head p{margin:0;color:var(--muted);max-width:560px}
+.v321-screen-stack{display:grid;gap:14px}
+.v321-return{margin-top:14px;text-align:center;color:var(--muted);font-size:12px}
+.v321-immersive-action{margin-top:12px;width:100%;border:1px solid #cbd6cf;border-radius:19px;background:#fff;padding:13px 16px;color:var(--ink);font-weight:850;cursor:pointer}
+.v321-immersive-action:focus-visible,.v321-immersive-action:hover{outline:2px solid var(--v321-water);outline-offset:2px}
+.v321-home-repair .v320-world{margin-top:18px}
+@media(max-width:760px){.v321-home-repair .focus-grid{grid-template-columns:1fr}.v321-home-repair .focus-card{min-height:145px}.v321-view-lead{grid-template-columns:1fr}.v321-context{min-height:0}.v321-feature{padding:18px;border-radius:24px}.v321-feature-head{display:block}.v321-feature-head p{margin-top:7px}}
+@media(max-width:420px){.v321-view-lead h2{font-size:39px}.v321-feature{padding:15px}.v321-home-repair .focus-card{padding:19px}}
