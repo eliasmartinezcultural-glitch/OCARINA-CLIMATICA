@@ -4,6 +4,7 @@
 const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
 document.documentElement.dataset.ocarinaVersion="3.21";
 const design=window.OCARINA_TRUNK_DESIGN_V321||{};
+[...document.querySelectorAll(".view")].forEach(v=>v.classList.add("v321-screen-composition"));
 const home=document.querySelector("#view-ahora");
 const world=document.querySelector(".v320-world");
 if(home)home.classList.add("v321-home-repair");
