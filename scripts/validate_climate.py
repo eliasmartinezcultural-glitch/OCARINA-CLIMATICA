@@ -44,6 +44,9 @@ def validate_snapshot(path, errors):
     data = load_json(path, errors)
     if data is None:
         return
+    status=data.get("status")
+    if status=="ready" and not data.get("retrievedAt"):
+        fail(errors, f"{path.relative_to(ROOT)}: snapshot ready sin retrievedAt")
     records = data.get("records")
     if records is None:
         return
