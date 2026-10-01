@@ -25,6 +25,12 @@ $$(".story-card").forEach(card=>{
  box.innerHTML="<b>Fuente acreditada:</b> "+(text==="Abrir fuente"?"registro documental":"fuente")+" · <span>detalle de procedencia conservado en el proyecto</span>";
  link.replaceWith(box);
 });
+function internalizeSources(){
+ const names={"inta-hail":"INTA · Estación Experimental Agropecuaria Alto Valle","aic-frost":"AIC · Autoridad Interjurisdiccional de Cuencas","aic-el-chanar":"AIC · estación Compensador El Chañar"};
+ $(".story-card").forEach(card=>{const link=$("a",card);if(!link||card.querySelector(".v320-source-credit"))return;const source=(card.querySelector(".story-date")?.textContent||"")+" · "+(link.getAttribute("href")?"fuente registrada":"fuente");const box=document.createElement("div");box.className="v320-source-credit";box.innerHTML="<b>Fuente acreditada:</b> "+source+" · referencia conservada dentro del proyecto.";link.replaceWith(box);});
+}
+internalizeSources();
+new MutationObserver(internalizeSources).observe($("#storyList")||document.body,{childList:true,subtree:true});
 // Make the five-door system feel like one connected place.
 $$(".focus-card[data-go]").forEach(card=>card.dataset.connected="true");
 window.OCARINA_EXPERIENCE_320={version:"3.20",status:"active",law:"single-place",visuals:library.length,principle:"everything-inside"};
