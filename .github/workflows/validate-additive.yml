@@ -19,3 +19,5 @@ jobs:
         run: python scripts/validate_additive.py
       - name: Validar sintaxis Python
         run: python -m compileall -q scripts
+      - name: Validar sintaxis JavaScript nueva
+        run: node --check js/search-repair.js
