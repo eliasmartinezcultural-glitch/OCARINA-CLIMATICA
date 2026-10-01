@@ -35,3 +35,4 @@ new MutationObserver(internalizeSources).observe($("#storyList")||document.body,
 $$(".focus-card[data-go]").forEach(card=>card.dataset.connected="true");
 window.OCARINA_EXPERIENCE_320={version:"3.20",status:"active",law:"single-place",visuals:library.length,principle:"everything-inside"};
 })();
+import("./v3.20-deep-loader.js").catch(()=>{});
