@@ -1,0 +1,23 @@
+name: Ocarina Climática · validación aditiva
+on:
+  push:
+    branches: [main, additive-data-v1]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validar snapshots aditivos
+        run: python scripts/validate_additive.py
+      - name: Validar sintaxis Python
+        run: python -m compileall -q scripts
+      - name: Validar sintaxis JavaScript nueva
+        run: node --check js/search-repair.js
