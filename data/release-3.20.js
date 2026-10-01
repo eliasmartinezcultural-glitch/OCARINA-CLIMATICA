@@ -1,25 +1,16 @@
 window.OCARINA_RELEASE_320=Object.freeze({
  version:"3.20",
+ successor:"3.21",
  status:"trunk-reformulated",
  base:"PL1+V3.18",
  compatibility:"additive",
  law:"trunk-world-law-v2",
  rule:"serious-real-official-representative",
- editorialRatio:"40-visual-60-text",
+ editorialRatio:"60-text-40-visual",
  interaction:"100-simple",
- principles:[
-  "official-real-information",
-  "faithful-representation",
-  "40-percent-visual",
-  "60-percent-text",
-  "100-percent-simple-interaction",
-  "multidevice-by-origin",
-  "deep-system-simple-front",
-  "large-design-color-image",
-  "source-credit-inside",
-  "no-webgraphy-as-main-experience"
- ],
+ experience:"short-surface-deep-system",
+ principles:["official-real-information","faithful-representation","60-percent-text","40-percent-visual","100-percent-simple-interaction","multidevice-by-origin","deep-system-simple-front","large-design-color-image","source-credit-inside","no-webgraphy-as-main-experience","depth-on-demand"],
  devices:["320","390","420","680","tablet","laptop","desktop"],
  evidenceStates:["observed","forecast","derived","estimated","documentary","memory"],
- acceptance:["reality","clarity","beauty","utility","accessibility","performance","traceability"]
+ acceptance:["reality","clarity","beauty","utility","accessibility","performance","traceability","reversibility"]
 });
