@@ -7,7 +7,8 @@ from bs4 import BeautifulSoup
 ROOT=Path(__file__).resolve().parents[1]
 LIVE=ROOT/"data/live"
 LIVE.mkdir(parents=True,exist_ok=True)
-AIC_URL="https://www.aic.gob.ar/sitio/home?a=1015&z=1967225803"\nAIC_STATION_URL="https://www.aic.gob.ar/sitio/estaciones-detalle?a=37&z=1840266588"
+AIC_URL="https://www.aic.gob.ar/sitio/home?a=1015&z=1967225803"
+AIC_STATION_URL="https://www.aic.gob.ar/sitio/estaciones-detalle?a=37&z=1840266588"
 
 def now():
     return datetime.now(timezone.utc).astimezone().isoformat()
@@ -127,11 +128,22 @@ def historical_365():
     except Exception as exc:
         return {"status":"error","target":"San Patricio del Chañar","source":"SMN","retrievedAt":now(),"error":str(exc)}
 
-def aic_station():\n    r=requests.get(AIC_STATION_URL,timeout=25,headers={"User-Agent":"Ocarina-Climatica/3.0"})\n    r.raise_for_status()\n    text=clean(BeautifulSoup(r.text,"html.parser").get_text(" ",strip=True))\n    level=re.search(r"Altura Río/Lago\\s+([0-9]+(?:[.,][0-9]+)?)\\s*m",text,re.I)\n    flow=re.search(r"Caudal Medio Diario\\s+([0-9]+(?:[.,][0-9]+)?)\\s*m3/s",text,re.I)\n    return {"status":"ready","provider":"AIC","dataset":"Estación Compensador El Chañar","station":"Compensador El Chañar","retrievedAt":now(),"sourceUrl":AIC_STATION_URL,"observations":{"dailyMeanFlow":number(flow.group(1)) if flow else None,"riverLevel":number(level.group(1)) if level else None},"note":"Datos hidrológicos publicados por AIC."}\n\ndef write(name,data):
+def aic_station():
+    r=requests.get(AIC_STATION_URL,timeout=25,headers={"User-Agent":"Ocarina-Climatica/3.0"})
+    r.raise_for_status()
+    text=clean(BeautifulSoup(r.text,"html.parser").get_text(" ",strip=True))
+    level=re.search(r"Altura Río/Lago\\s+([0-9]+(?:[.,][0-9]+)?)\\s*m",text,re.I)
+    flow=re.search(r"Caudal Medio Diario\\s+([0-9]+(?:[.,][0-9]+)?)\\s*m3/s",text,re.I)
+    return {"status":"ready","provider":"AIC","dataset":"Estación Compensador El Chañar","station":"Compensador El Chañar","retrievedAt":now(),"sourceUrl":AIC_STATION_URL,"observations":{"dailyMeanFlow":number(flow.group(1)) if flow else None,"riverLevel":number(level.group(1)) if level else None},"note":"Datos hidrológicos publicados por AIC."}
+
+def write(name,data):
     (LIVE/name).write_text(json.dumps(data,ensure_ascii=False,indent=2),encoding="utf-8")
 
 try:
-    write("aic-forecast.json",aic())\n    write("aic-el-chanar.json",aic_station())\n    write("historical-365.json",historical_365())\n    write("historical-hourly.json",historical_hourly())
+    write("aic-forecast.json",aic())
+    write("aic-el-chanar.json",aic_station())
+    write("historical-365.json",historical_365())
+    write("historical-hourly.json",historical_hourly())
 except Exception as exc:
     write("aic-forecast-error.json",{"status":"error","provider":"AIC","retrievedAt":now(),"error":str(exc)})
     raise
