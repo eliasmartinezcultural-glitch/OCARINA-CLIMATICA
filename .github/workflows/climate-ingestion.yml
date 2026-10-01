@@ -5,6 +5,9 @@ on:
   workflow_dispatch:
 permissions:
   contents: write
+concurrency:
+  group: ocarina-climatica-ingestion
+  cancel-in-progress: true
 jobs:
   ingest:
     runs-on: ubuntu-latest
@@ -17,6 +20,8 @@ jobs:
           python-version: "3.12"
       - name: Instalar dependencias
         run: python -m pip install requests beautifulsoup4
+      - name: Verificar identidad de estación SMN
+        run: python scripts/ingest_smn_station.py
       - name: Ingerir fuentes oficiales
         run: python scripts/ingest_climate.py
       - name: Validar constitución y snapshots
