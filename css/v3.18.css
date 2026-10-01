@@ -1,0 +1,106 @@
+/* OCARINA CLIMÁTICA · V3.18 · VISUAL CLEAN SYSTEM */
+:root{
+  --ink:#0d1714;--paper:#eef1ea;--surface:#fbfcf8;--line:#cfd8d0;
+  --forest:#12352d;--moss:#5e806d;--sky:#77a9bd;--water:#4f91a7;
+  --sun:#d5a84b;--clay:#b87555;--mist:#dce7e2;
+  --shadow:0 18px 55px rgba(13,23,20,.10);
+  --shadow-strong:0 28px 80px rgba(13,23,20,.16);
+}
+body{background:
+ radial-gradient(900px 500px at 85% 0%,rgba(119,169,189,.18),transparent 60%),
+ radial-gradient(700px 500px at 0% 35%,rgba(94,128,109,.13),transparent 60%),
+ var(--paper);}
+.app-shell{isolation:isolate;overflow:clip}
+.topbar{border-bottom:1px solid rgba(207,216,208,.8);background:rgba(238,241,234,.82)}
+.brand-orbit{background:linear-gradient(145deg,var(--forest),#2d5d4e);color:#fff;border:0;box-shadow:0 7px 20px rgba(18,53,45,.18)}
+.release-tag{background:#e3ebe5;border-color:#bdcdc2;color:var(--forest)}
+.hero-compact{position:relative}
+.hero-compact:before{content:"";position:absolute;width:230px;height:230px;right:30%;top:-30px;border:1px solid rgba(79,145,167,.24);border-radius:50%;box-shadow:0 0 0 28px rgba(79,145,167,.035),0 0 0 58px rgba(79,145,167,.025);pointer-events:none}
+.hero-compact>div:first-child{position:relative;z-index:1}
+.eyebrow{color:#587063}
+.hero-compact h1,.view-heading h2{letter-spacing:-.055em}
+.hero-compact h1 em{color:var(--water)}
+.hero-compact p,.view-heading p{max-width:680px}
+.orbit-card{position:relative;overflow:hidden;min-height:310px;background:
+ radial-gradient(circle at 72% 20%,rgba(255,255,255,.9) 0 7%,transparent 7.5%),
+ radial-gradient(circle at 78% 18%,rgba(255,255,255,.4) 0 2%,transparent 2.5%),
+ linear-gradient(145deg,#b9d2d3 0 35%,#628d87 36% 62%,#b99c68 63%);
+ box-shadow:var(--shadow-strong);transform:translateZ(0)}
+.orbit-card:after{content:"";position:absolute;width:190px;height:190px;border:1px solid rgba(255,255,255,.35);border-radius:50%;right:-55px;top:-50px;box-shadow:0 0 0 30px rgba(255,255,255,.06),0 0 0 60px rgba(255,255,255,.04)}
+.orbit-card>*{position:relative;z-index:1}
+.now-command{border-color:#c8d6cd;background:rgba(251,252,248,.92);box-shadow:0 8px 28px rgba(13,23,20,.06)}
+.live-dot{background:#4c9b69;box-shadow:0 0 0 5px rgba(76,155,105,.13)}
+.focus-grid{gap:14px}
+.focus-card,.learn-card,.chart-card,.story-card,.forecast-card,.truth-panel,.metric{background:rgba(251,252,248,.88);border-color:#cfd8d0;box-shadow:0 8px 26px rgba(13,23,20,.045)}
+.focus-card{min-height:205px;position:relative;overflow:hidden;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.focus-card:after{content:"";position:absolute;inset:auto -20px -50px auto;width:130px;height:130px;border-radius:50%;background:var(--card-glow,rgba(79,145,167,.12));pointer-events:none}
+.focus-card:nth-child(2){--card-glow:rgba(213,168,75,.16)}
+.focus-card:nth-child(3){--card-glow:rgba(94,128,109,.14)}
+.focus-card:nth-child(4){--card-glow:rgba(184,117,85,.14)}
+.focus-card:hover,.learn-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:#aabdb1}
+.focus-card:active,.learn-card:active{transform:translateY(-1px) scale(.995)}
+.focus-card strong{max-width:14ch}
+.focus-now{background:linear-gradient(145deg,#102f28,#1d493e);border-color:#214f43;box-shadow:0 15px 35px rgba(18,53,45,.18)}
+.question-strip{border-top-color:#cfd8d0}
+.question-strip button,.chip{background:#f9fbf7;border-color:#c9d5cc}
+.question-strip button:hover,.chip:hover{border-color:#91aa9c;background:#eef5ef}
+.view-heading{position:relative}
+.view-heading:after{content:"";display:block;width:72px;height:4px;margin-top:24px;border-radius:99px;background:linear-gradient(90deg,var(--water),var(--moss),var(--sun))}
+.forecast-rail{scrollbar-width:thin;scrollbar-color:#9db4a7 transparent}
+.forecast-card{position:relative;overflow:hidden}
+.forecast-card:before{content:"";position:absolute;inset:0 auto 0 0;width:5px;background:linear-gradient(var(--sun),var(--water))}
+.truth-panel{box-shadow:var(--shadow)}
+.metric{transition:transform .2s ease}
+.metric:hover{transform:translateY(-2px)}
+.chart-card{min-height:275px}
+.story-card{transition:transform .2s ease,box-shadow .2s ease}
+.story-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.evidence{background:#e3ebe5;color:#305544}
+.learn-grid{gap:14px}
+.learn-card{position:relative;overflow:hidden}
+.learn-card:before{content:"";position:absolute;right:-28px;top:-28px;width:110px;height:110px;border-radius:50%;background:rgba(119,169,189,.11)}
+.learn-card:nth-child(2):before{background:rgba(213,168,75,.14)}
+.learn-card:nth-child(3):before{background:rgba(79,145,167,.12)}
+.learn-card:nth-child(4):before{background:rgba(184,117,85,.12)}
+.learn-card strong{position:relative;z-index:1}
+.learn-panel{background:linear-gradient(145deg,#10362d,#1e5145);box-shadow:var(--shadow-strong)}
+.bottom-nav{border:1px solid rgba(255,255,255,.10);box-shadow:0 18px 50px rgba(0,0,0,.28)}
+.bottom-nav button{min-height:48px;transition:background .18s ease,color .18s ease,transform .18s ease}
+.bottom-nav button.active{box-shadow:0 5px 16px rgba(0,0,0,.12)}
+.bottom-nav button:active{transform:scale(.96)}
+.drawer{box-shadow:-25px 0 70px rgba(0,0,0,.18)}
+.modal{backdrop-filter:blur(8px)}
+.modal-box{box-shadow:var(--shadow-strong);border:1px solid #d0dad2}
+.search-item:hover{background:#edf4ef;border-color:#9eb6a8}
+.quick-menu{box-shadow:var(--shadow-strong);border-color:#cbd7ce}
+.quick-menu button:hover{background:#edf4ef}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #0b6f67;outline-offset:4px;box-shadow:0 0 0 2px rgba(255,255,255,.9)}
+.view.view-enter{animation:v318-enter .28s ease both}
+@keyframes v318-enter{from{opacity:.45;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media(max-width:900px){
+ .hero-compact:before{right:5%;top:0}
+ .orbit-card{min-height:230px}
+ .focus-card{min-height:185px}
+}
+@media(max-width:620px){
+ body{background:
+  radial-gradient(500px 300px at 100% 0%,rgba(119,169,189,.15),transparent 60%),var(--paper)}
+ .topbar{height:64px}
+ .view{padding-left:15px;padding-right:15px}
+ .hero-compact h1{font-size:clamp(45px,14vw,60px)}
+ .hero-compact:before{width:150px;height:150px;right:-30px;top:40px}
+ .orbit-card{min-height:205px;border-radius:28px}
+ .focus-card{min-height:160px;padding:18px}
+ .focus-card strong{font-size:24px}
+ .question-strip{gap:7px}
+ .question-strip>span{width:100%;margin:0 0 2px}
+ .view-heading h2{font-size:clamp(39px,12vw,54px)}
+ .chart-card{min-height:230px}
+ .bottom-nav{border-radius:18px}
+}
+@media(hover:none){
+ .focus-card:hover,.learn-card:hover,.story-card:hover,.metric:hover{transform:none;box-shadow:0 8px 26px rgba(13,23,20,.045)}
+}
+@media(prefers-reduced-motion:reduce){
+ .view.view-enter{animation:none}
+}

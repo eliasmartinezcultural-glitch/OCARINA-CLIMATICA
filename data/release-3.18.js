@@ -1,0 +1,11 @@
+window.OCARINA_RELEASE=Object.freeze({
+  version:"3.18",
+  status:"cleaned-redesigned-interactive-multidevice",
+  base:"PL1+V3.17",
+  compatibility:"additive",
+  law:"visual-interaction-law-1.0",
+  rule:"deep-system-simple-view",
+  focus:["remove-overlap","remove-broken-links","remove-disconnected-ui","visual-hierarchy","responsive","interaction","accessibility","performance"],
+  devices:["320","390","680","tablet","desktop"],
+  evidenceStates:["observed","forecast","derived","estimated","documentary","memory"]
+});
