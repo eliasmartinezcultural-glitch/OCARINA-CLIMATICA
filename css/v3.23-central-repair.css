@@ -1,0 +1,52 @@
+/* OCARINA CLIMÁTICA · V3.23 · CENTRAL REPAIR
+   Portada: una composición dominante, cuatro puertas, profundidad bajo demanda. */
+.v323-central{max-width:1180px;margin:0 auto}
+.v323-shell{display:grid;grid-template-columns:minmax(0,1.18fr) minmax(360px,.82fr);gap:12px}
+.v323-hero{position:relative;min-height:560px;border-radius:34px;overflow:hidden;background:#10241f;color:#fff;border:1px solid #28483f;box-shadow:0 28px 80px #10241f20}
+.v323-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.v323-hero:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#10241f08 20%,#10241fc9 72%,#10241fee 100%);z-index:1}
+.v323-hero:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 76% 17%,#fff5 0 1px,transparent 2px),radial-gradient(circle at 68% 27%,#fff4 0 1px,transparent 2px);opacity:.55}
+.v323-hero-copy{position:absolute;z-index:2;left:28px;right:28px;bottom:27px}
+.v323-hero-copy .eyebrow{color:#d9e5df;margin-bottom:10px}
+.v323-hero h2{font:clamp(48px,6vw,82px)/.86 Georgia,serif;letter-spacing:-.06em;margin:0 0 15px;max-width:680px}
+.v323-hero h2 em{font-style:normal;color:#d6c999}
+.v323-hero p{max-width:610px;color:#e2ebe6;margin:0;line-height:1.45}
+.v323-proof{display:flex;gap:7px;flex-wrap:wrap;margin-top:16px}
+.v323-proof span{padding:7px 9px;border:1px solid #ffffff30;border-radius:999px;background:#10241f99;font-size:9px;font-weight:850;letter-spacing:.1em}
+.v323-credit{position:absolute;z-index:3;top:14px;right:14px;padding:7px 10px;border-radius:999px;background:#10241fb8;color:#dce8e2;font-size:9px;letter-spacing:.08em}
+.v323-doors{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.v323-door{position:relative;min-height:275px;border:1px solid #d2dbd5;border-radius:28px;padding:18px;text-align:left;background:#faf8f0;color:#17352c;overflow:hidden;transition:transform .2s,box-shadow .2s}
+.v323-door:hover,.v323-door:focus-visible{transform:translateY(-3px);box-shadow:0 20px 45px #10241f18}
+.v323-door:before{content:"";position:absolute;right:-45px;bottom:-55px;width:145px;height:145px;border-radius:50%;background:var(--door-glow,#dce9e1);opacity:.75}
+.v323-door.rain{--door-glow:#cfe4e4;background:linear-gradient(145deg,#eef6f4,#faf8f0)}
+.v323-door.wind{--door-glow:#d9e1d1;background:linear-gradient(145deg,#f0f4ed,#faf8f0)}
+.v323-door.temp{--door-glow:#ead9bd;background:linear-gradient(145deg,#f7eee2,#faf8f0)}
+.v323-door.water{--door-glow:#cadfd5;background:linear-gradient(145deg,#eaf4ef,#faf8f0)}
+.v323-door-top{display:flex;align-items:center;justify-content:space-between;position:relative;z-index:1}
+.v323-icon{font:31px Georgia,serif}
+.v323-state{display:inline-flex;align-items:center;gap:5px;font-size:8px;font-weight:900;letter-spacing:.1em;color:#66766e}
+.v323-state i{width:7px;height:7px;border-radius:50%;background:#9aa7a0}
+.v323-state.ready i{background:#3d7c6d}.v323-state.pending i{background:#b88942}
+.v323-door h3{position:relative;z-index:1;font:30px/.95 Georgia,serif;margin:38px 0 7px;letter-spacing:-.035em}
+.v323-door p{position:relative;z-index:1;max-width:25ch;color:#687870;font-size:11px;line-height:1.35;margin:0}
+.v323-door-data{position:absolute;z-index:1;left:18px;right:18px;bottom:17px;border-top:1px solid #17352c18;padding-top:10px;font-size:10px;color:#63736b}
+.v323-door-data b{font-size:13px;color:#17352c}
+.v323-mini-chart{position:absolute;z-index:1;right:12px;bottom:13px;width:100px;height:40px;opacity:.7}
+.v323-mini-chart svg{width:100%;height:100%}.v323-mini-chart polyline{fill:none;stroke:#3d7c6d;stroke-width:2.5}
+.v323-route{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-top:10px}
+.v323-route button{border:1px solid #d3ddd7;background:#f7f5ec;color:#53655c;border-radius:999px;padding:9px 6px;font-size:9px;font-weight:900;letter-spacing:.09em}
+.v323-route button:hover{background:#10241f;color:#fff}
+.v323-local-evidence{display:grid;grid-template-columns:1.25fr .75fr .75fr;gap:10px;margin-top:10px}
+.v323-evidence-card{min-height:150px;border-radius:24px;overflow:hidden;position:relative;border:1px solid #ccd6d0;background:#dfe4dc}
+.v323-evidence-card img{width:100%;height:100%;object-fit:cover;display:block}
+.v323-evidence-card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,#10241fc7)}
+.v323-evidence-card figcaption{position:absolute;z-index:1;left:12px;right:12px;bottom:11px;color:#fff;font-size:10px;line-height:1.25}
+.v323-evidence-card figcaption b{display:block;font:21px Georgia,serif;margin-bottom:3px}
+.v323-placeholder{display:grid;place-items:center;height:100%;padding:20px;text-align:center;background:linear-gradient(145deg,#dfe6de,#c8d1c7);color:#52635b}
+.v323-placeholder b{font:22px Georgia,serif;color:#17352c;display:block}
+.v323-placeholder small{display:block;max-width:25ch;margin-top:5px}
+.v323-note{margin-top:10px;padding:13px 15px;border-radius:18px;background:#e8e2d4;color:#69776f;font-size:11px}
+.v323-note b{color:#17352c}
+@media(max-width:900px){.v323-shell{grid-template-columns:1fr}.v323-hero{min-height:430px}.v323-doors{grid-template-columns:repeat(4,minmax(170px,1fr));overflow-x:auto;padding-bottom:4px}.v323-door{min-height:210px}.v323-local-evidence{grid-template-columns:1.2fr 1fr}.v323-evidence-card:nth-child(3){display:none}}
+@media(max-width:620px){.v323-hero{min-height:350px;border-radius:26px}.v323-hero-copy{left:18px;right:18px;bottom:18px}.v323-hero h2{font-size:46px}.v323-proof span{font-size:8px}.v323-doors{grid-template-columns:1fr 1fr;overflow:visible}.v323-door{min-height:178px;padding:14px;border-radius:21px}.v323-door h3{font-size:23px;margin-top:20px}.v323-door p{font-size:10px}.v323-door-data{left:14px;right:14px;bottom:12px}.v323-mini-chart{display:none}.v323-route{grid-template-columns:1fr 1fr}.v323-local-evidence{grid-template-columns:1fr}.v323-evidence-card:nth-child(3){display:block}.v323-evidence-card{min-height:125px}}
+@media(prefers-reduced-motion:reduce){.v323-door{transition:none}.v323-door:hover{transform:none}}
