@@ -1,0 +1,17 @@
+name: V3.20 experience QA
+on:
+  push:
+    branches: [main, v3.20-universe-deep-repair]
+  pull_request:
+    branches: [main]
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Node syntax
+        run: |
+          node --check js/experience-v3.20.js
+          node --check js/visual-interaction-v3.18.js
+      - name: V3.20 contract
+        run: node scripts/qa-v3.20.mjs

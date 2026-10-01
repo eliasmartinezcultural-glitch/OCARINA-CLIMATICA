@@ -42,7 +42,7 @@ document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeDrawer();$("#s
 
 let stories=[];
 function renderStories(filter="todos"){
- const list=$("#storyList"),items=filter==="todos"?stories:stories.filter(x=>x.evidence===filter);
+ const list=$("#storyList"),map={observed:"observed",forecast:"forecast",documentary:"documental"},wanted=map[filter]||filter,items=filter==="todos"?stories:stories.filter(x=>x.evidence===wanted);
  list.innerHTML=items.map(x=>'<article class="story-card"><span class="story-date">'+esc(x.dateLabel)+'</span><h3>'+esc(x.title)+'</h3><span class="evidence">'+esc(x.evidence)+'</span><p>'+esc(x.summary)+'</p><a href="'+esc(x.sourceUrl)+'" target="_blank" rel="noopener">Abrir fuente</a></article>').join("")||'<div class="truth-panel"><strong>No hay piezas con ese filtro.</strong><p>El archivo prefiere estar vacío antes que completar una categoría con material que no corresponda.</p></div>';
 }
 $$("[data-story-filter]").forEach(b=>b.addEventListener("click",()=>{$$("[data-story-filter]").forEach(x=>x.classList.remove("active"));b.classList.add("active");renderStories(b.dataset.storyFilter)}));
@@ -65,7 +65,7 @@ async function init(){
  if(forecast?.status==="ready"&&Array.isArray(forecast.forecast)){
    const cards=forecast.forecast.slice(0,5).map(day=>{const p=day.periods?.[0]||{};return '<article class="forecast-card"><span class="date">'+esc(day.day||day.date)+'</span><strong>'+esc(p.temperature??"—")+'°</strong><span class="sky">'+esc(p.sky||"Sin descripción")+'</span><div class="forecast-meta"><span>Viento '+esc(p.wind??"—")+' km/h</span><span>Ráfaga '+esc(p.gust??"—")+' km/h</span></div></article>'}).join("");
    $("#forecastCards").innerHTML=cards;
-   $("#forecastSource").innerHTML='Fuente: <a href="'+esc(forecast.sourceUrl)+'" target="_blank" rel="noopener">AIC</a> · obtenido '+esc(forecast.retrievedAt||"");
+   $("#forecastSource").innerHTML='Fuente acreditada: Autoridad Interjurisdiccional de Cuencas (AIC) · obtenido '+esc(forecast.retrievedAt||"")+' · la ficha se consulta dentro de Ocarina Climática.';
    const first=forecast.forecast[0]?.periods?.[0];$("#forecastHeadline").textContent=first?.temperature!=null?first.temperature+" °C":"Disponible";$("#forecastSub").textContent=first?.sky||"Pronóstico AIC";
  }else{$("#forecastCards").innerHTML='<div class="truth-panel"><strong>Pronóstico no disponible</strong><p>El motor no inventa ni conserva un valor viejo como si fuera actual.</p></div>'}
 
