@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="t d">
+<title id="t">Representación visual de San Patricio del Chañar</title>
+<desc id="d">Composición gráfica del valle irrigado, río Neuquén, chacras, cortinas forestales, bardas, localidad y cielo.</desc>
+<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#b8d7df"/><stop offset=".62" stop-color="#e8e1c8"/><stop offset="1" stop-color="#d5c59b"/></linearGradient><linearGradient id="land" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#8e8b66"/><stop offset="1" stop-color="#c9b982"/></linearGradient></defs>
+<rect width="1600" height="900" fill="url(#sky)"/>
+<path d="M0 405 Q260 350 470 395 T900 365 T1280 390 T1600 350 V520 H0Z" fill="#7c7564" opacity=".7"/>
+<path d="M0 510 Q300 430 650 505 T1050 480 T1600 500 V900 H0Z" fill="url(#land)"/>
+<path d="M0 650 C230 560 430 680 620 615 S1010 540 1180 650 S1420 730 1600 620 V900 H0Z" fill="#8bb3a0" opacity=".72"/>
+<path d="M0 690 C250 615 420 750 650 670 S1030 610 1200 700 S1420 770 1600 680" fill="none" stroke="#dce9e1" stroke-width="34" opacity=".9"/>
+<path d="M0 690 C250 615 420 750 650 670 S1030 610 1200 700 S1420 770 1600 680" fill="none" stroke="#3c766a" stroke-width="11"/>
+<g stroke="#486b58" stroke-width="18" opacity=".85"><path d="M120 535V760"/><path d="M210 515V750"/><path d="M300 505V770"/><path d="M1200 500V770"/><path d="M1290 490V760"/><path d="M1380 500V780"/><path d="M1470 490V760"/></g>
+<g fill="#cbd2bb" opacity=".9"><rect x="700" y="555" width="75" height="45" rx="4"/><rect x="790" y="530" width="92" height="70" rx="4"/><rect x="900" y="550" width="65" height="50" rx="4"/><rect x="985" y="525" width="105" height="75" rx="4"/></g>
+<g stroke="#fff" stroke-width="9" stroke-linecap="round" opacity=".72"><path d="M1120 180 C1250 130 1350 155 1460 120"/><path d="M1090 220 C1220 170 1330 195 1510 160"/><path d="M1180 260 C1290 225 1410 240 1540 215"/></g>
+<g fill="#d9e1d8"><circle cx="137" cy="96" r="4"/><circle cx="220" cy="130" r="3"/><circle cx="410" cy="88" r="4"/></g>
+</svg>
