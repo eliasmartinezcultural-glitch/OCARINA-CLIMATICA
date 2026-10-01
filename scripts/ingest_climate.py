@@ -114,8 +114,18 @@ def read_smn_zip(url):
     return rows
 
 
+def station_is_verified():
+    path=LIVE/"smn-station.json"
+    if not path.exists(): return False
+    try:
+        data=json.loads(path.read_text(encoding="utf-8"))
+        return data.get("status")=="verified" and bool(data.get("station",{}).get("name"))
+    except Exception: return False
+
 def historical_hourly():
     try:
+        if not station_is_verified():
+            return {"status":"pending-local-station-verification","target":"San Patricio del Chañar","source":"SMN","records":[],"message":"La identidad de estación SMN todavía no está verificada."}
         rows=read_smn_zip(SMN_HOURLY_URL)
         if not rows:return {"status":"pending-local-station-verification","target":"San Patricio del Chañar","source":"SMN","records":[]}
         hourly=[]
@@ -142,6 +152,8 @@ def historical_hourly():
 
 def historical_365():
     try:
+        if not station_is_verified():
+            return {"status":"pending-local-station-verification","target":"San Patricio del Chañar","coverage":{"days":365,"records":0},"variables":["temperatureMin","temperatureMax"],"source":"SMN","message":"La identidad de estación SMN todavía no está verificada."}
         rows=read_smn_zip(SMN_EXTREMES_URL)
         if not rows:
             return {"status":"pending-local-station-verification","target":"San Patricio del Chañar","coverage":{"days":365,"records":0},"variables":["temperatureMin","temperatureMax"],"source":"SMN","message":"El dataset SMN fue consultado, pero no apareció una fila cuya identidad pudiera verificarse como San Patricio del Chañar/El Chañar."}
