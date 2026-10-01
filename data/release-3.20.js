@@ -1,7 +1,25 @@
 window.OCARINA_RELEASE_320=Object.freeze({
- version:"3.20",status:"deep-repair-unified-experience",base:"PL1+V3.18",compatibility:"additive",
- law:"single-place-climate-experience-1.0",rule:"everything-inside-project",
- principles:["one-place","deep-system-simple-view","visual-first","multidevice-first","evidence-inside","source-credit-inside","no-webgraphy-navigation"],
- devices:["320","390","680","tablet","laptop","desktop"],evidenceStates:["observed","forecast","derived","estimated","documentary","memory"],
- acceptance:["connected-content","visual-hierarchy","interaction","accessibility","performance","traceability","reversibility"]
+ version:"3.20",
+ status:"trunk-reformulated",
+ base:"PL1+V3.18",
+ compatibility:"additive",
+ law:"trunk-world-law-v2",
+ rule:"serious-real-official-representative",
+ editorialRatio:"40-visual-60-text",
+ interaction:"100-simple",
+ principles:[
+  "official-real-information",
+  "faithful-representation",
+  "40-percent-visual",
+  "60-percent-text",
+  "100-percent-simple-interaction",
+  "multidevice-by-origin",
+  "deep-system-simple-front",
+  "large-design-color-image",
+  "source-credit-inside",
+  "no-webgraphy-as-main-experience"
+ ],
+ devices:["320","390","420","680","tablet","laptop","desktop"],
+ evidenceStates:["observed","forecast","derived","estimated","documentary","memory"],
+ acceptance:["reality","clarity","beauty","utility","accessibility","performance","traceability"]
 });
