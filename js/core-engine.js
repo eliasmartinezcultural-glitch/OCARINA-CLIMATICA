@@ -65,7 +65,7 @@ async function init(){
  if(forecast?.status==="ready"&&Array.isArray(forecast.forecast)){
    const cards=forecast.forecast.slice(0,5).map(day=>{const p=day.periods?.[0]||{};return '<article class="forecast-card"><span class="date">'+esc(day.day||day.date)+'</span><strong>'+esc(p.temperature??"—")+'°</strong><span class="sky">'+esc(p.sky||"Sin descripción")+'</span><div class="forecast-meta"><span>Viento '+esc(p.wind??"—")+' km/h</span><span>Ráfaga '+esc(p.gust??"—")+' km/h</span></div></article>'}).join("");
    $("#forecastCards").innerHTML=cards;
-   $("#forecastSource").innerHTML='Fuente: <a href="'+esc(forecast.sourceUrl)+'" target="_blank" rel="noopener">AIC</a> · obtenido '+esc(forecast.retrievedAt||"");
+   $("#forecastSource").innerHTML='Fuente acreditada: Autoridad Interjurisdiccional de Cuencas (AIC) · obtenido '+esc(forecast.retrievedAt||"")+' · la ficha se consulta dentro de Ocarina Climática.';
    const first=forecast.forecast[0]?.periods?.[0];$("#forecastHeadline").textContent=first?.temperature!=null?first.temperature+" °C":"Disponible";$("#forecastSub").textContent=first?.sky||"Pronóstico AIC";
  }else{$("#forecastCards").innerHTML='<div class="truth-panel"><strong>Pronóstico no disponible</strong><p>El motor no inventa ni conserva un valor viejo como si fuera actual.</p></div>'}
 
