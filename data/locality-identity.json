@@ -1,0 +1,39 @@
+{
+  "version": "1.0.0",
+  "target": {
+    "name": "San Patricio del Chañar",
+    "province": "Neuquén",
+    "country": "Argentina",
+    "aliases": ["El Chañar"]
+  },
+  "rule": "exact-only",
+  "identities": [
+    {
+      "source": "SMN",
+      "status": "pending-verification",
+      "acceptedLocality": "San Patricio del Chañar",
+      "stationId": null,
+      "stationName": null,
+      "latitude": null,
+      "longitude": null,
+      "icao": null,
+      "evidence": "La existencia o antecedente de una estación local no alcanza para publicar una serie actual como local; la identidad debe verificarse contra el registro de estaciones y los datos."
+    },
+    {
+      "source": "AIC",
+      "status": "verified-hydrology",
+      "stationName": "Compensador El Chañar",
+      "latitude": -38.599587,
+      "longitude": -68.389558,
+      "domain": "hidrología",
+      "evidenceType": "observed",
+      "scope": "water-system station; not atmospheric weather station"
+    }
+  ],
+  "substitutionPolicy": {
+    "nearbyStation": "never-silent",
+    "regionalForecast": "allowed-only-as-forecast",
+    "reanalysis": "allowed-only-as-estimated",
+    "missingLocalObservation": "show-unavailable"
+  }
+}
