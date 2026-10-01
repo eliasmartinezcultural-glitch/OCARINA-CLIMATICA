@@ -40,3 +40,18 @@ Los errores se corrigen de forma trazable. No se oculta incertidumbre ni se rell
 > ¿Esto ayuda a San Patricio del Chañar a conocer, comprender, documentar, recordar o amar mejor su clima y su territorio?
 
 Si la respuesta es no, el contenido queda fuera. Si no está claro, debe investigarse antes de incorporarlo.
+
+
+## 17. LEY TRONCAL DE PRODUCTO · V3.20
+Desde V3.20, la experiencia se rige además por la **LEY MUNDIAL TRONCAL V2.0** registrada en `docs/LEY-MUNDIAL-TRONCAL-V2.md`.
+
+Su referencia de producto es:
+**40 % visual · 60 % texto · 100 % interacción sencilla · 100 % multidispositivo.**
+
+El proyecto debe ser serio, basado en información oficial y real cuando corresponda, y mantener una representación fiel de la naturaleza de cada evidencia.
+
+La complejidad tecnológica pertenece al sistema de fondo. La simplicidad, el diseño, la imagen, el color y la comprensión pertenecen al frente.
+
+Las fuentes y sus créditos deben poder comprenderse dentro de Ocarina, sin convertir la experiencia principal en una webgrafía.
+
+**Nuevo norte:** mucho sistema detrás, muchísima simplicidad delante.
