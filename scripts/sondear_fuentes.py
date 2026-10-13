@@ -18,6 +18,7 @@ SMN_HOME = "https://www.smn.gob.ar/"
 AIC_FORECAST = "https://www.aic.gob.ar/sitio/home?a=1015&z=1967225803"
 AIC_RIVER = "https://www.aic.gob.ar/sitio/estaciones-detalle?a=37&z=1840266588"
 OPEN_METEO_DOCS = "https://open-meteo.com/en/docs"
+METNO_URL = "https://api.met.no/weatherapi/locationforecast/2.0/compact?" + urllib.parse.urlencode({"lat": round(LAT, 4), "lon": round(LON, 4), "altitude": 357})
 OPEN_METEO_API = "https://api.open-meteo.com/v1/forecast?" + urllib.parse.urlencode({
     "latitude": LAT, "longitude": LON, "current": "temperature_2m,weather_code",
     "hourly": "temperature_2m,precipitation_probability,weather_code",
@@ -29,7 +30,8 @@ def now():
     return datetime.now(timezone.utc).isoformat()
 
 def get(url, timeout=20, max_bytes=5_000_000):
-    req = urllib.request.Request(url, headers={"User-Agent": "OcarinaClimatica-SourceScout/1.0", "Accept": "application/geo+json, application/json, text/html, */*"})
+    user_agent = "OcarinaClimatica/1.0 (https://eliasmartinezcultural-glitch.github.io/OCARINA-CLIMATICA/)" if "api.met.no" in url else "OcarinaClimatica-SourceScout/1.0"
+    req = urllib.request.Request(url, headers={"User-Agent": user_agent, "Accept": "application/geo+json, application/json, text/html, */*"})
     with urllib.request.urlopen(req, timeout=timeout) as response:
         status = response.status
         content_type = response.headers.get("Content-Type", "")
@@ -138,7 +140,8 @@ def main():
       ("smn-present-download",SMN_PRESENT,"Archivo de estado del tiempo presente SMN","head"),
       ("aic-forecast",AIC_FORECAST,"Pronóstico regional AIC",None),
       ("aic-hydrology",AIC_RIVER,"Altura y caudal de la estación AIC Compensador El Chañar",None),
-      ("open-meteo-documentation",OPEN_METEO_DOCS,"Documentación y límites de Open-Meteo",None)
+      ("open-meteo-documentation",OPEN_METEO_DOCS,"Documentación y límites de Open-Meteo",None),
+      ("metno-locationforecast",METNO_URL,"Pronóstico independiente MET Norway para el punto local","json")
     ]
     checks=[check(*source) for source in sources]
     stations=discover_stations()
