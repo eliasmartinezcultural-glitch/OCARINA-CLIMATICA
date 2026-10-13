@@ -1,5 +1,13 @@
 name: Ocarina Climática · autoactualizador y sondeador
 on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/**"
+      - ".github/workflows/climate-ingestion.yml"
+      - "index.html"
+      - "data/config.js"
+      - "data/source-catalog.js"
   schedule:
     - cron: "*/30 * * * *"
   workflow_dispatch:
