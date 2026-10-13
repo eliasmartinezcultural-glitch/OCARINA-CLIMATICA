@@ -59,6 +59,30 @@ jobs:
             echo "Sin cambios de datos; fuentes sondeadas correctamente."
           else
             git commit -m "data: actualizar clima y salud de fuentes"
-            git pull --rebase origin main
+            if ! git pull --rebase origin main; then
+              conflicts="$(git diff --name-only --diff-filter=U)"
+              if [ -z "$conflicts" ]; then
+                echo "No se pudo sincronizar el commit de datos con main."
+                exit 1
+              fi
+              while IFS= read -r file; do
+                case "$file" in
+                  data/live/*.json)
+                    echo "Conflicto de snapshot: se conserva la versión ya publicada de $file"
+                    git checkout --ours -- "$file"
+                    git add -- "$file"
+                    ;;
+                  *)
+                    echo "Conflicto inesperado fuera de data/live: $file"
+                    exit 1
+                    ;;
+                esac
+              done <<< "$conflicts"
+              if git diff --cached --quiet; then
+                git rebase --skip
+              else
+                GIT_EDITOR=true git rebase --continue
+              fi
+            fi
             git push
           fi
