@@ -1,10 +1,40 @@
 {
-  "status":"pending-ingestion",
-  "source":"SMN",
-  "dataset":"Listado de Estaciones Meteorológicas del SMN",
-  "target":"San Patricio del Chañar",
-  "retrievedAt":null,
-  "station":null,
-  "matches":[],
-  "notes":"Debe ser generado por GitHub Actions mediante el catálogo oficial. Hasta entonces la identidad de estación permanece sin verificar."
+  "schemaVersion": 1,
+  "status": "not-found",
+  "source": "SMN",
+  "dataset": "Catálogo oficial OAPI de estaciones",
+  "target": "San Patricio del Chañar",
+  "retrievedAt": "2026-10-13T22:50:13.676555+00:00",
+  "station": null,
+  "exactMatches": [],
+  "nearbyStations": [
+    {
+      "name": "NEUQUEN AERO",
+      "latitude": -38.95204,
+      "longitude": -68.1367,
+      "distanceKm": 39.0,
+      "wigosStationIdentifier": "0-20000-0-87715",
+      "properties": {
+        "name": "NEUQUEN AERO",
+        "wigos_station_identifier": "0-20000-0-87715",
+        "id": "0-20000-0-87715"
+      },
+      "sourceUrl": "https://w2b.smn.gov.ar/oapi/collections/stations/items?f=json&limit=1000"
+    },
+    {
+      "name": "CIPOLLETTI",
+      "latitude": -38.94121,
+      "longitude": -67.97849,
+      "distanceKm": 44.9,
+      "wigosStationIdentifier": "0-32-0-0087719CONV",
+      "properties": {
+        "name": "CIPOLLETTI",
+        "wigos_station_identifier": "0-32-0-0087719CONV",
+        "id": "0-32-0-0087719CONV"
+      },
+      "sourceUrl": "https://w2b.smn.gov.ar/oapi/collections/stations/items?f=json&limit=1000"
+    }
+  ],
+  "sourceUrl": "https://w2b.smn.gov.ar/oapi/collections/stations/items?f=json&limit=1000",
+  "policy": "Solo una coincidencia oficial exacta permite identificar estación local. Las estaciones cercanas se publican como referencias regionales, nunca como medición local."
 }
