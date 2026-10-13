@@ -1,0 +1,33 @@
+name: Prueba funcional publicada · Ocarina Climática
+
+on:
+  workflow_run:
+    workflows: ["Deploy Ocarina Climática to GitHub Pages"]
+    types: [completed]
+
+permissions:
+  contents: read
+
+jobs:
+  browser-smoke-test:
+    if: ${{ github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Descargar el commit publicado
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
+      - name: Preparar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Instalar Playwright
+        run: |
+          npm init -y
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+      - name: Probar página publicada en escritorio y móvil
+        env:
+          OCARINA_URL: https://eliasmartinezcultural-glitch.github.io/OCARINA-CLIMATICA/
+        run: node scripts/smoke-published-weather.mjs
