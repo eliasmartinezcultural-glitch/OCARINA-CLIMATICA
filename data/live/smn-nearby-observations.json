@@ -4,7 +4,7 @@
   "sourceUrl": "https://w2b.smn.gov.ar/oapi/collections",
   "dataset": "Observaciones sinópticas y automáticas de superficie",
   "target": "Entorno regional de San Patricio del Chañar",
-  "retrievedAt": "2026-10-13T22:53:00.390366+00:00",
+  "retrievedAt": "2026-10-13T23:07:07.661137+00:00",
   "status": "ready",
   "measurementType": "station-observation",
   "referencePoint": {
@@ -93,7 +93,7 @@
     "stationName": "NEUQUEN AERO"
   },
   "temperature": 16.9,
-  "ageMinutes": 53,
+  "ageMinutes": 67,
   "nearbyReports": [
     {
       "stationId": "0-20000-0-87715",
@@ -1927,86 +1927,6 @@
           "value": 15000.0,
           "units": "m",
           "phenomenonTime": "2026-10-12T13:00:00Z",
-          "description": null
-        }
-      },
-      "sourceCollections": [
-        "https://w2b.smn.gov.ar/oapi/collections/urn%3Awmo%3Amd%3Aar-smn%3Aslt0ci/items"
-      ],
-      "stationName": "NEUQUEN AERO"
-    },
-    {
-      "stationId": "0-20000-0-87715",
-      "reportId": "0-20000-0-87715-202610121100",
-      "observedAt": "2026-10-12T11:00:00Z",
-      "distanceKm": 39.0,
-      "latitude": -38.95194,
-      "longitude": -68.13667,
-      "variables": {
-        "non_coordinate_pressure": {
-          "value": 983.2,
-          "units": "hPa",
-          "phenomenonTime": "2026-10-12T11:00:00Z",
-          "description": null
-        },
-        "pressure_reduced_to_mean_sea_level": {
-          "value": 1015.4,
-          "units": "hPa",
-          "phenomenonTime": "2026-10-12T11:00:00Z",
-          "description": null
-        },
-        "3hour_pressure_change": {
-          "value": 0.9,
-          "units": "hPa",
-          "phenomenonTime": "2026-10-12T11:00:00Z",
-          "description": null
-        },
-        "air_temperature": {
-          "value": 12.4,
-          "units": "Celsius",
-          "phenomenonTime": "2026-10-12T11:00:00Z",
-          "description": null
-        },
-        "dewpoint_temperature": {
-          "value": 11.7,
-          "units": "Celsius",
-          "phenomenonTime": "2026-10-12T11:00:00Z",
-          "description": null
-        },
-        "horizontal_visibility": {
-          "value": 10000.0,
-          "units": "m",
-          "phenomenonTime": "2026-10-12T11:00:00Z",
-          "description": null
-        },
-        "cloud_cover_total": {
-          "value": 100.0,
-          "units": "%",
-          "phenomenonTime": "2026-10-12T11:00:00Z",
-          "description": null
-        },
-        "height_of_base_of_cloud": {
-          "value": 300.0,
-          "units": "m",
-          "phenomenonTime": "2026-10-12T11:00:00Z",
-          "description": null
-        },
-        "true_direction_from_which_aphenomenon_or_clouds_are_moving_or_in_which_they_are_observed": {
-          "value": 501.0,
-          "units": "deg",
-          "phenomenonTime": "2026-10-12T11:00:00Z",
-          "description": null
-        },
-        "wind_direction": {
-          "value": 50.0,
-          "units": "deg",
-          "phenomenonTime": "2026-10-12T10:50:00Z/2026-10-12T11:00:00Z",
-          "description": null
-        },
-        "wind_speed": {
-          "value": 2.6,
-          "units": "m/s",
-          "phenomenonTime": "2026-10-12T10:50:00Z/2026-10-12T11:00:00Z",
           "description": null
         }
       },
