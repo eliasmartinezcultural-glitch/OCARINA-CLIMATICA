@@ -1,0 +1,44 @@
+name: Ocarina Climática · fuente independiente MET Norway
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/ingest_metno.py"
+      - ".github/workflows/metno-ingestion.yml"
+  schedule:
+    - cron: "17,47 * * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ocarina-metno-ingestion
+  cancel-in-progress: false
+jobs:
+  update-metno:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Consultar MET Norway
+        run: python scripts/ingest_metno.py
+      - name: Validar JSON generado
+        run: python -m json.tool data/live/metno-forecast.json > /dev/null
+      - name: Publicar snapshot sin tocar otros datos
+        run: |
+          git config user.name "ocarina-climatica-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/live/metno-forecast.json
+          if git diff --cached --quiet; then
+            echo "Sin cambios en snapshot MET Norway."
+          else
+            git commit -m "data: actualizar pronóstico independiente MET Norway"
+            git pull --rebase origin main
+            git push
+          fi
