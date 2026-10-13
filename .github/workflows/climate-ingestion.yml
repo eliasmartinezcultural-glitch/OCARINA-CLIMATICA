@@ -1,4 +1,4 @@
-name: Ocarina Climática · ingestión de fuentes
+name: Ocarina Climática · autoactualizador y sondeador
 on:
   schedule:
     - cron: "*/30 * * * *"
@@ -7,33 +7,46 @@ permissions:
   contents: write
 concurrency:
   group: ocarina-climatica-ingestion
-  cancel-in-progress: true
+  cancel-in-progress: false
 jobs:
-  ingest:
+  refresh-and-scout:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
-      - name: Checkout
+      - name: Descargar repositorio
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Preparar Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Instalar dependencias
+      - name: Instalar dependencias de ingestión
         run: python -m pip install requests beautifulsoup4
-      - name: Verificar identidad de estación SMN
+      - name: Actualizar pronóstico modelado Open-Meteo
+        run: python scripts/ingest_open_meteo.py
+      - name: Sondear fuentes públicas y descubrir estaciones SMN
+        run: python scripts/sondear_fuentes.py
+      - name: Normalizar identidad local y estaciones de referencia
         run: python scripts/ingest_smn_station.py
-      - name: Ingerir fuentes oficiales
+      - name: Ingerir fuentes adicionales SMN y AIC
+        continue-on-error: true
         run: python scripts/ingest_climate.py
-      - name: Validar constitución y snapshots
-        run: python scripts/validate_climate.py
-      - name: Publicar snapshots
+      - name: Ingerir observación AIC independiente
+        continue-on-error: true
+        run: python scripts/ingest_aic_el_chanar.py
+      - name: Validar snapshots, procedencia y reglas de calidad
+        run: |
+          python scripts/validate_climate.py
+          python scripts/validate_additive.py
+      - name: Publicar snapshots nuevos o modificados
         run: |
           git config user.name "ocarina-climatica-bot"
           git config user.email "actions@users.noreply.github.com"
           git add data/live/
           if git diff --cached --quiet; then
-            echo "Sin cambios de datos."
+            echo "Sin cambios de datos; fuentes sondeadas correctamente."
           else
-            git commit -m "data: actualizar fuentes climáticas"
+            git commit -m "data: actualizar clima y salud de fuentes"
             git push
           fi
