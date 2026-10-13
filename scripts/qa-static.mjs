@@ -17,7 +17,7 @@ if (isSimplifiedWeatherPage) {
   const requiredIds = [
     'updated', 'coordinates', 'refresh', 'temperature', 'condition',
     'currentIcon', 'feels', 'humidity', 'wind', 'gust', 'precip',
-    'hourly', 'days', 'error'
+    'hourly', 'days', 'error', 'regionalStatus', 'regionalTemp', 'regionalDetail'
   ];
   for (const id of requiredIds) {
     if (!ids.includes(id)) errors.push('Falta elemento requerido: #' + id);
