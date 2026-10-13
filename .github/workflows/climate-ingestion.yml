@@ -29,6 +29,9 @@ jobs:
         run: python scripts/sondear_fuentes.py
       - name: Normalizar identidad local y estaciones de referencia
         run: python scripts/ingest_smn_station.py
+      - name: Recuperar observaciones oficiales cercanas con antigüedad y distancia
+        continue-on-error: true
+        run: python scripts/ingest_smn_nearby_observations.py
       - name: Ingerir fuentes adicionales SMN y AIC
         continue-on-error: true
         run: python scripts/ingest_climate.py
