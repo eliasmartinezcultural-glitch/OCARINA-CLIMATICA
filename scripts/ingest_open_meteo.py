@@ -105,7 +105,7 @@ def compare_models():
     except Exception as exc:
         output["status"] = "unavailable"
         output["error"] = str(exc)[:300]
-    (ROOT / "data/live/model-comparison.json").write_text(json.dumps(output, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
+    (ROOT / "data/live/model-comparison.json").write_text(json.dumps(output, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 if __name__ == "__main__":
     main()
