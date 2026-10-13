@@ -58,7 +58,7 @@ def main():
         "note": "La temperatura actual es una estimación del modelo para el punto indicado, no una medición de una estación meteorológica en el pueblo."
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
-    OUT.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
+    OUT.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     compare_models()
     print("Open-Meteo OK · válido para " + str(result["validTime"]) + " · " + str(len(hourly["time"])) + " horas")
 
