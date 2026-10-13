@@ -10,10 +10,11 @@ LAT, LON = -38.625, -68.300
 STATIONS_URL = "https://w2b.smn.gov.ar/oapi/collections/stations/items?f=json&limit=1000"
 SMN_SYNOPTIC = "https://w2b.smn.gov.ar/oapi/collections/urn%3Awmo%3Amd%3Aar-smn%3Aslt0ci/items?f=json&limit=1"
 SMN_AUTOMATIC = "https://w2b.smn.gov.ar/oapi/collections/urn%3Awmo%3Amd%3Aar-smn%3Aautosmn/items?f=json&limit=1"
-SMN_CATALOG = "https://www.datos.gob.ar/dataset/smn-listado-estaciones-meteorologicas-smn"
+SMN_CATALOG = "https://www.datos.gob.ar/dataset/smn-listado-estaciones-meteorologicas-smn/archivo/smn_9.1"
 SMN_HOURLY = "https://ssl.smn.gob.ar/dpd/zipopendata.php?dato=datohorario"
 SMN_PRESENT = "https://ssl.smn.gob.ar/dpd/zipopendata.php?dato=tiepre"
 SMN_ALERTS = "https://ws2.smn.gob.ar/alertas"
+SMN_HOME = "https://www.smn.gob.ar/"
 AIC_FORECAST = "https://www.aic.gob.ar/sitio/home?a=1015&z=1967225803"
 AIC_RIVER = "https://www.aic.gob.ar/sitio/estaciones-detalle?a=37&z=1840266588"
 OPEN_METEO_DOCS = "https://open-meteo.com/en/docs"
@@ -137,6 +138,7 @@ def main():
       ("smn-hourly-download",SMN_HOURLY,"Archivo de datos meteorológicos horarios SMN","head"),
       ("smn-present-download",SMN_PRESENT,"Archivo de estado del tiempo presente SMN","head"),
       ("smn-active-alerts",SMN_ALERTS,"Portal oficial de alertas SMN",None),
+      ("smn-official-home",SMN_HOME,"Portal oficial del SMN y acceso a alertas",None),
       ("aic-forecast",AIC_FORECAST,"Pronóstico regional AIC",None),
       ("aic-hydrology",AIC_RIVER,"Altura y caudal de la estación AIC Compensador El Chañar",None),
       ("open-meteo-documentation",OPEN_METEO_DOCS,"Documentación y límites de Open-Meteo",None)
