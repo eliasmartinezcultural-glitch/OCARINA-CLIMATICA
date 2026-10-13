@@ -29,7 +29,7 @@ if (isSimplifiedWeatherPage) {
     errors.push('No se encontró la actualización automática cada 30 minutos');
   }
   if (!html.includes('./data/live/open-meteo.json')) errors.push('No se encontró el respaldo publicado Open-Meteo');
-  if (!html.includes('mode: \'snapshot\'')) errors.push('No se encontró el modo de recuperación por snapshot');
+  if (!html.includes('mode:'snapshot'')) errors.push('No se encontró el modo de recuperación por snapshot');
   if (!html.includes("addEventListener('click',update)")) {
     errors.push('El botón de actualización manual no está conectado');
   }
