@@ -2,6 +2,10 @@ name: V3.23 central-first QA
 on:
   push:
     branches: [main]
+    paths:
+      - "js/v3.23-central-repair.js"
+      - "scripts/qa-v3.23-central.mjs"
+      - ".github/workflows/qa-v3.23-central.yml"
   pull_request:
     branches: [main]
   workflow_dispatch:
