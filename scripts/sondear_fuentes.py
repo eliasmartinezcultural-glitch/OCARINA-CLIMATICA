@@ -146,7 +146,7 @@ def main():
     result={
       "schemaVersion":1,"source":"Ocarina Climática · sondeador de fuentes","status":"ready" if any(x["status"]=="online" for x in checks) else "degraded",
       "target":"San Patricio del Chañar, Neuquén, Argentina",
-      "scoutedAt":now(),"scheduleMinutes":30,"scheduler":"GitHub Actions (puede sufrir demoras de cola)",
+      "retrievedAt":now(),"scoutedAt":now(),"scheduleMinutes":30,"scheduler":"GitHub Actions (puede sufrir demoras de cola)",
       "counts":{"checked":len(checks),"online":sum(x["status"]=="online" for x in checks),
                 "errors":sum(x["status"]!="online" for x in checks)},
       "checks":checks,"stationDiscovery":{"status":stations["status"],"catalogCount":stations.get("catalogCount",0),
