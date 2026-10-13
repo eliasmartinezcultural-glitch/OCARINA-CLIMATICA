@@ -134,11 +134,8 @@ def main():
       ("smn-stations",STATIONS_URL,"Catálogo geográfico de estaciones SMN","json"),
       ("smn-synoptic-observations",SMN_SYNOPTIC,"Observaciones sinópticas SMN","json"),
       ("smn-automatic-observations",SMN_AUTOMATIC,"Observaciones de estaciones automáticas SMN","json"),
-      ("smn-station-catalog-page",SMN_CATALOG,"Catálogo público de estaciones SMN",None),
       ("smn-hourly-download",SMN_HOURLY,"Archivo de datos meteorológicos horarios SMN","head"),
       ("smn-present-download",SMN_PRESENT,"Archivo de estado del tiempo presente SMN","head"),
-      ("smn-active-alerts",SMN_ALERTS,"Portal oficial de alertas SMN",None),
-      ("smn-official-home",SMN_HOME,"Portal oficial del SMN y acceso a alertas",None),
       ("aic-forecast",AIC_FORECAST,"Pronóstico regional AIC",None),
       ("aic-hydrology",AIC_RIVER,"Altura y caudal de la estación AIC Compensador El Chañar",None),
       ("open-meteo-documentation",OPEN_METEO_DOCS,"Documentación y límites de Open-Meteo",None)
@@ -151,7 +148,12 @@ def main():
       "retrievedAt":now(),"scoutedAt":now(),"scheduleMinutes":30,"scheduler":"GitHub Actions (puede sufrir demoras de cola)",
       "counts":{"checked":len(checks),"online":sum(x["status"]=="online" for x in checks),
                 "errors":sum(x["status"]!="online" for x in checks)},
-      "checks":checks,"stationDiscovery":{"status":stations["status"],"catalogCount":stations.get("catalogCount",0),
+      "checks":checks,
+      "manualReferences":[
+        {"id":"smn-station-catalog-page","url":SMN_CATALOG,"status":"manual-reference","note":"El sondeador usa la colección OAPI de estaciones, que sí se consulta automáticamente; la página del catálogo devuelve HTTP 404 desde el runner."},
+        {"id":"smn-active-alerts-page","url":SMN_ALERTS,"status":"manual-review-required","note":"Portal oficial del Sistema de Alerta Temprana. El runner de GitHub Actions no pudo resolver o consultar este host de forma estable; no se infiere que no haya alertas."}
+      ],
+      "stationDiscovery":{"status":stations["status"],"catalogCount":stations.get("catalogCount",0),
        "exactLocalMatches":len(stations.get("exactLocalMatches",[])),
        "nearbyStations":len(stations.get("nearbyStations",[]))},
       "interpretation":"La disponibilidad HTTP no demuestra por sí sola que un dato sea correcto ni que una estación represente al casco urbano. Se verifican por separado disponibilidad, identidad, vigencia y tipo de dato."
