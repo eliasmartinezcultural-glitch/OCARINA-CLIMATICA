@@ -1,61 +1,30 @@
-import csv,io,json,re,urllib.request,zipfile
-from datetime import datetime,timezone
+#!/usr/bin/env python3
+"""Normaliza identidad de estación SMN sin confundir cercanía con localidad exacta."""
+import json
+from datetime import datetime, timezone
 from pathlib import Path
-
-PACKAGE_URL="https://datos.gob.ar/api/3/action/package_show?id=smn-listado-estaciones-meteorologicas-smn"
-TARGET="san patricio del chanar"
-OUT=Path("data/live/smn-station.json")
-
-def norm(v):
-    v=(v or "").strip().lower()
-    for a,b in (("á","a"),("é","e"),("í","i"),("ó","o"),("ú","u"),("ñ","n")): v=v.replace(a,b)
-    return re.sub(r"\s+"," ",v)
-
-def header(v): return norm(v).replace("_","")
-
-def num(v):
-    try: return float(str(v).strip().replace(",","."))
-    except: return None
-
-def download(url):
-    req=urllib.request.Request(url,headers={"User-Agent":"OCARINA-CLIMATICA/station-verifier"})
-    with urllib.request.urlopen(req,timeout=45) as r: return r.read()
+ROOT=Path(__file__).resolve().parents[1]
+LIVE=ROOT/"data/live"
+SOURCE=LIVE/"smn-nearby-stations.json"
+OUT=LIVE/"smn-station.json"
 
 def main():
-    package=json.loads(download(PACKAGE_URL).decode("utf-8"))
-    resources=package["result"]["resources"]
-    resource=next((r for r in resources if str(r.get("format","")).lower()=="zip"),None)
-    if not resource: raise RuntimeError("El dataset oficial no expone un recurso ZIP reconocible.")
-    payload=download(resource["url"])
-    with zipfile.ZipFile(io.BytesIO(payload)) as z:
-        name=next((n for n in z.namelist() if n.lower().endswith((".txt",".csv"))),None)
-        if not name: raise RuntimeError("El catálogo SMN no contiene TXT/CSV reconocible.")
-        raw=z.read(name).decode("latin-1",errors="replace")
-    rows=list(csv.reader(io.StringIO(raw),delimiter=";"))
-    hi=next((i for i,row in enumerate(rows[:15]) if any(header(x)=="estacion" for x in row)),None)
-    if hi is None: raise RuntimeError("No se encontró la columna estacion en el catálogo SMN.")
-    hs=[header(x) for x in rows[hi]]
-    candidates=[]
-    for row in rows[hi+1:]:
-        if not row: continue
-        r=dict(zip(hs,row))
-        if norm(r.get("estacion"))==TARGET:
-            candidates.append({
-                "name":r.get("estacion"),"province":r.get("provincia"),
-                "latitude":num(r.get("latitud")),"longitude":num(r.get("longitud")),
-                "altitude":num(r.get("altura")),"stationNumber":r.get("nroestacion"),
-                "oaci":r.get("nrooaci")
-            })
+    retrieved=datetime.now(timezone.utc).isoformat()
+    if not SOURCE.exists():
+        raise RuntimeError("Falta data/live/smn-nearby-stations.json; ejecutar primero sondear_fuentes.py")
+    catalog=json.loads(SOURCE.read_text(encoding="utf-8"))
+    exact=catalog.get("exactLocalMatches",[]) if catalog.get("status")=="ready" else []
+    nearby=catalog.get("nearbyStations",[]) if catalog.get("status")=="ready" else []
+    verified=(len(exact)==1 and bool(exact[0].get("latitude") is not None) and bool(exact[0].get("longitude") is not None))
     result={
-      "status":"verified" if len(candidates)==1 else ("ambiguous" if candidates else "not-found"),
-      "source":"SMN","dataset":"Listado de Estaciones Meteorológicas del SMN",
-      "target":"San Patricio del Chañar","retrievedAt":datetime.now(timezone.utc).isoformat(),
-      "station":candidates[0] if len(candidates)==1 else None,
-      "matches":candidates,
-      "resourceUrl":resource.get("url"),
-      "notes":"La identidad se considera verificada solo con una coincidencia exacta y única en el catálogo oficial."
+      "schemaVersion":1,"status":"verified" if verified else ("ambiguous" if len(exact)>1 else ("error" if catalog.get("status")=="error" else "not-found")),
+      "source":"SMN","dataset":"Catálogo oficial OAPI de estaciones",
+      "target":"San Patricio del Chañar","retrievedAt":retrieved,
+      "station":exact[0] if verified else None,
+      "exactMatches":exact,"nearbyStations":nearby,
+      "sourceUrl":catalog.get("sourceUrl"),
+      "policy":"Solo una coincidencia oficial exacta permite identificar estación local. Las estaciones cercanas se publican como referencias regionales, nunca como medición local."
     }
-    OUT.parent.mkdir(parents=True,exist_ok=True)
     OUT.write_text(json.dumps(result,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
-
+    print("Estación local SMN:",result["status"],"· coincidencias exactas:",len(exact),"· referencias cercanas:",len(nearby))
 if __name__=="__main__": main()
