@@ -35,6 +35,9 @@ jobs:
         run: python scripts/ingest_open_meteo.py
       - name: Sondear fuentes públicas y descubrir estaciones SMN
         run: python scripts/sondear_fuentes.py
+      - name: Incorporar pronóstico independiente MET Norway
+        continue-on-error: true
+        run: python scripts/ingest_metno.py
       - name: Normalizar identidad local y estaciones de referencia
         run: python scripts/ingest_smn_station.py
       - name: Recuperar observaciones oficiales cercanas con antigüedad y distancia
