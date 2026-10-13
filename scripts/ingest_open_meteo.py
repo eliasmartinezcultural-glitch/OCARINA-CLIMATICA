@@ -4,6 +4,7 @@ El dato es un pronóstico/modelo para el punto geográfico, no una observación 
 """
 import json
 import math
+import statistics
 import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
