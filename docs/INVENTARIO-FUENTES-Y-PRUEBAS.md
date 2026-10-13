@@ -76,7 +76,7 @@ La interfaz actual usa `-38.625, -68.300` como referencia del pueblo. La estaci�
 2. **Rehacer QA estático para la interfaz actual:** validar IDs requeridos, script, URL de API, variables solicitadas, botón, temporizador y mensajes de error.
 3. **Agregar una prueba de humo automatizada:** solicitar el sitio publicado y la API Open-Meteo desde GitHub Actions, validar HTTP, JSON y variables esenciales. No requiere servidor propio.
 4. **Corregir AIC:** comparar el parser con el HTML actual y rechazar valores vacíos o datos demasiado antiguos como “actuales”.
-5. **Definir la coordenada urbana:** registrar el punto y su fuente antes de comparar estaciones.
+5. **Definir la coordenada urbana:** registrar el punto y su fuente antes de comparar estaciones.\n6. **Esperar el siguiente despliegue exitoso y revisar el smoke test:** se añadió \`scripts/smoke-published-weather.mjs\` y el workflow \`.github/workflows/smoke-published-weather.yml\` para probar en navegador Chromium escritorio y móvil, API, tarjetas horarias/diarias, actualización manual, errores JavaScript y desbordamiento horizontal. Primer resultado aún pendiente.\n7. **Solo después:** decidir si el SMN puede ser la fuente observacional local o si Open-Meteo debe seguir siendo el único motor meteorológico inicial.
 6. **Solo después:** decidir si el SMN puede ser la fuente observacional local o si Open-Meteo debe seguir siendo el único motor meteorológico inicial.
 
 ## 6. Condición de uso de Open-Meteo
