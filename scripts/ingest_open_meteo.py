@@ -50,7 +50,7 @@ def main():
         "location": {"name": "San Patricio del Chañar", "latitude": LAT, "longitude": LON,
                      "coordinateStatus": "provisional-reference-point"},
         "measurementType": "model-estimate-and-forecast",
-        "model": data.get("current_units", {}).get("temperature_2m"),
+        "model": "Open-Meteo Best Match (selección automática del modelo disponible)",
         "attribution": "Weather data by Open-Meteo.com",
         "data": data,
         "quality": {"shape": "passed", "essentialVariables": "passed",
