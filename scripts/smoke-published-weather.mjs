@@ -17,6 +17,29 @@ async function testViewport(name, viewport) {
       const condition = document.querySelector('#condition')?.textContent?.trim();
       return temp && temp !== '—' && condition && !condition.startsWith('Consultando');
     }, { timeout: 30000 });
+
+    const base = url.endsWith('/') ? url : url + '/';
+    const snapshotResponse = await page.request.get(base + 'data/live/open-meteo.json');
+    if (!snapshotResponse.ok()) throw new Error('El snapshot publicado Open-Meteo no responde HTTP 2xx');
+    const publishedSnapshot = await snapshotResponse.json();
+    if (publishedSnapshot.status !== 'ready' || !publishedSnapshot.data?.current || !publishedSnapshot.data?.hourly || !publishedSnapshot.data?.daily) {
+      throw new Error('El snapshot publicado no cumple el contrato de datos meteorológicos');
+    }
+    const healthResponse = await page.request.get(base + 'data/live/source-health.json');
+    if (!healthResponse.ok()) throw new Error('El sondeador de fuentes no publicó source-health.json');
+    const sourceHealth = await healthResponse.json();
+    if (!sourceHealth.retrievedAt || !sourceHealth.counts || typeof sourceHealth.counts.checked !== 'number') {
+      throw new Error('El estado de salud de fuentes no cumple el contrato');
+    }
+    const observationsResponse = await page.request.get(base + 'data/live/smn-nearby-observations.json');
+    if (!observationsResponse.ok()) throw new Error('No se publicó el snapshot de observaciones regionales SMN');
+    const regionalSnapshot = await observationsResponse.json();
+    if (!regionalSnapshot.status || !regionalSnapshot.retrievedAt) throw new Error('El snapshot de observaciones regionales carece de estado o fecha');
+    await page.waitForFunction(() => {
+      const state = document.querySelector('#regionalStatus')?.textContent || '';
+      return state && !state.includes('SONDEANDO');
+    }, { timeout: 12000 });
+
     const snapshot = await page.evaluate(() => ({
       temperature: document.querySelector('#temperature')?.textContent?.trim(),
       condition: document.querySelector('#condition')?.textContent?.trim(),
@@ -34,7 +57,7 @@ async function testViewport(name, viewport) {
     if (pageErrors.length) throw new Error('Errores JavaScript: ' + pageErrors.join(' | '));
     await page.locator('#refresh').click();
     await page.waitForFunction(() => (document.querySelector('#refresh')?.textContent || '').includes('Actualizar ahora'), { timeout: 15000 });
-    results.push({ viewport: name, status: 'PASS', temperature: snapshot.temperature, condition: snapshot.condition, hourly: snapshot.hourly, days: snapshot.days, manualRefresh: 'PASS' });
+    results.push({ viewport: name, status: 'PASS', temperature: snapshot.temperature, condition: snapshot.condition, hourly: snapshot.hourly, days: snapshot.days, manualRefresh: 'PASS', publishedSnapshot: 'PASS', sourceHealth: sourceHealth.counts, regionalObservationStatus: regionalSnapshot.status });
   } catch (error) {
     failures.push(name + ': ' + error.message);
     results.push({ viewport: name, status: 'FAIL', error: error.message });
