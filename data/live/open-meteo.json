@@ -3,7 +3,7 @@
   "status": "ready",
   "source": "Open-Meteo",
   "sourceUrl": "https://open-meteo.com/en/docs",
-  "retrievedAt": "2026-10-13T22:50:49.815530+00:00",
+  "retrievedAt": "2026-10-13T22:51:55.399602+00:00",
   "validTime": "2026-10-13T19:45",
   "location": {
     "name": "San Patricio del Chañar",
@@ -12,12 +12,12 @@
     "coordinateStatus": "provisional-reference-point"
   },
   "measurementType": "model-estimate-and-forecast",
-  "model": "°C",
+  "model": "Open-Meteo Best Match (selección automática del modelo disponible)",
   "attribution": "Weather data by Open-Meteo.com",
   "data": {
     "latitude": -38.629173,
     "longitude": -68.32654,
-    "generationtime_ms": 46.98967933654785,
+    "generationtime_ms": 0.45359134674072266,
     "utc_offset_seconds": -10800,
     "timezone": "America/Argentina/Cordoba",
     "timezone_abbreviation": "GMT-3",
