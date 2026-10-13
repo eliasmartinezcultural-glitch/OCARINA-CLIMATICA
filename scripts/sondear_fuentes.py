@@ -13,6 +13,7 @@ SMN_AUTOMATIC = "https://w2b.smn.gov.ar/oapi/collections/urn%3Awmo%3Amd%3Aar-smn
 SMN_CATALOG = "https://datos.gob.ar/dataset/smn-listado-estaciones-meteorologicas-smn"
 SMN_HOURLY = "https://ssl.smn.gob.ar/dpd/zipopendata.php?dato=datohorario"
 SMN_PRESENT = "https://ssl.smn.gob.ar/dpd/zipopendata.php?dato=tiepre"
+SMN_ALERTS = "https://ws.smn.gob.ar/alerts/type/AL"
 AIC_FORECAST = "https://www.aic.gob.ar/sitio/home?a=1015&z=1967225803"
 AIC_RIVER = "https://www.aic.gob.ar/sitio/estaciones-detalle?a=37&z=1840266588"
 OPEN_METEO_DOCS = "https://open-meteo.com/en/docs"
@@ -40,7 +41,14 @@ def check(name, url, role, parser=None):
     started = time.time()
     item = {"id": name, "url": url, "role": role, "checkedAt": now()}
     try:
-        status, content_type, payload = get(url)
+        if parser == "head":
+            request = urllib.request.Request(url, headers={"User-Agent": "OcarinaClimatica-SourceScout/1.0"}, method="HEAD")
+            with urllib.request.urlopen(request, timeout=15) as response:
+                status = response.status
+                content_type = response.headers.get("Content-Type", "")
+                payload = b""
+        else:
+            status, content_type, payload = get(url)
         if status < 200 or status >= 300:
             raise RuntimeError("HTTP " + str(status))
         parsed = None
@@ -125,9 +133,10 @@ def main():
       ("smn-stations",STATIONS_URL,"Catálogo geográfico de estaciones SMN","json"),
       ("smn-synoptic-observations",SMN_SYNOPTIC,"Observaciones sinópticas SMN","json"),
       ("smn-automatic-observations",SMN_AUTOMATIC,"Observaciones de estaciones automáticas SMN","json"),
-      ("smn-station-catalog-page",SMN_CATALOG,"Catálogo público de estaciones SMN",None),
-      ("smn-hourly-download",SMN_HOURLY,"Archivo de datos meteorológicos horarios SMN",None),
-      ("smn-present-download",SMN_PRESENT,"Archivo de estado del tiempo presente SMN",None),
+      ("smn-station-catalog-page",SMN_CATALOG,"Catálogo público de estaciones SMN","head"),
+      ("smn-hourly-download",SMN_HOURLY,"Archivo de datos meteorológicos horarios SMN","head"),
+      ("smn-present-download",SMN_PRESENT,"Archivo de estado del tiempo presente SMN","head"),
+      ("smn-active-alerts",SMN_ALERTS,"Endpoint de alertas oficiales SMN","json"),
       ("aic-forecast",AIC_FORECAST,"Pronóstico regional AIC",None),
       ("aic-hydrology",AIC_RIVER,"Altura y caudal de la estación AIC Compensador El Chañar",None),
       ("open-meteo-documentation",OPEN_METEO_DOCS,"Documentación y límites de Open-Meteo",None)
@@ -135,7 +144,7 @@ def main():
     checks=[check(*source) for source in sources]
     stations=discover_stations()
     result={
-      "schemaVersion":1,"status":"ready" if any(x["status"]=="online" for x in checks) else "degraded",
+      "schemaVersion":1,"source":"Ocarina Climática · sondeador de fuentes","status":"ready" if any(x["status"]=="online" for x in checks) else "degraded",
       "target":"San Patricio del Chañar, Neuquén, Argentina",
       "scoutedAt":now(),"scheduleMinutes":30,"scheduler":"GitHub Actions (puede sufrir demoras de cola)",
       "counts":{"checked":len(checks),"online":sum(x["status"]=="online" for x in checks),
