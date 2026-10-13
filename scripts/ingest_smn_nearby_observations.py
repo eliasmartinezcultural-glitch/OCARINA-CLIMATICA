@@ -58,6 +58,17 @@ def main():
         if base not in item["sourceCollections"]:item["sourceCollections"].append(base)
         if parse_time(report_time) and (not parse_time(item.get("observedAt")) or parse_time(report_time)>parse_time(item.get("observedAt"))):item["observedAt"]=report_time
     records=list(groups.values())
+    station_names={}
+    station_file=LIVE/"smn-nearby-stations.json"
+    if station_file.exists():
+        try:
+            station_data=json.loads(station_file.read_text(encoding="utf-8"))
+            for station in station_data.get("nearbyStations",[]):
+                for identity in (station.get("wigosStationIdentifier"),station.get("properties",{}).get("id")):
+                    if identity: station_names[str(identity)]=station.get("name")
+        except Exception: pass
+    for record in records:
+        record["stationName"]=station_names.get(str(record.get("stationId"))) or ("Estación SMN "+str(record.get("stationId")))
     records.sort(key=lambda x:(x["distanceKm"],-(parse_time(x.get("observedAt")).timestamp() if parse_time(x.get("observedAt")) else 0)))
     def temperature(record):
         for key,val in record["variables"].items():
