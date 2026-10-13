@@ -43,7 +43,7 @@ La dispersión entre modelos es una señal orientativa de incertidumbre, no una 
 - Pronóstico regional y estación hidrológica de AIC.
 - Documentación de Open-Meteo.
 
-El resultado no es un buscador de toda la web ni prueba por sí solo la calidad meteorológica. Es un sondeador técnico de un registro explícito de fuentes: responde si una fuente está disponible, registra latencia/HTTP y ayuda a descubrir estaciones. Las nuevas fuentes que se encuentren en futuras investigaciones deben incorporarse al catálogo con URL, variable, cobertura, frecuencia, licencia y criterio de calidad.
+El resultado no es un buscador de toda la web ni prueba por sí solo la calidad meteorológica. Es un sondeador técnico de un registro explícito de endpoints: responde si una fuente de datos está disponible, registra latencia/HTTP y ayuda a descubrir estaciones. Las páginas institucionales que bloquean a los runners o no tienen endpoint estable quedan en `manualReferences`, no se cuentan como fuentes meteorológicas caídas. El portal oficial de alertas permanece enlazado para consulta humana; no se inventa ni se deduce el estado de una alerta cuando el endpoint no pudo validarse. Las nuevas fuentes que se encuentren en futuras investigaciones deben incorporarse al catálogo con URL, variable, cobertura, frecuencia, licencia y criterio de calidad.
 
 ## Qué significa “clima real” en esta aplicación
 
