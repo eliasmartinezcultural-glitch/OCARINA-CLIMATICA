@@ -157,8 +157,8 @@ const cold=hasTemp&&Number(temp)<=0;
 let kind='cloud';
 if([95,96,99,82].includes(Number(code)))kind='storm';
 else if([71,73,75,77,85,86].includes(Number(code)))kind='snow';
-else if(cold)kind='cold';
 else if([51,53,55,56,57,61,63,65,66,67,80,81].includes(Number(code)))kind='rain';
+else if(cold)kind='cold';
 else if(hasWind&&Number(wind)>=40)kind='wind';
 else if(hot)kind='hot';
 else if([45,48].includes(Number(code)))kind='fog';
@@ -185,7 +185,7 @@ else if(kind==='fog')scene='<path d="M14 63Q32 49 51 61T91 60T148 61" fill="none
 else scene=cloud+ground+person;
 return commonStart+scene+end;
 }
-const desc=(c,temp=null,wind=null)=>{const base=codes[c]||['Condición variable',''];let label=base[0];if(String(c)==='flood')label='Advertencia de inundación';else if(wind!==null&&wind!==undefined&&wind!==''&&Number.isFinite(Number(wind))&&Number(wind)>=40&&!([95,96,99].includes(Number(c))))label='Viento fuerte';else if(temp!==null&&temp!==undefined&&temp!==''&&Number.isFinite(Number(temp))&&Number(temp)>=33&&!([95,96,99].includes(Number(c))))label='Mucho calor';return [label,weatherArt(c,temp,wind)];};
+const desc=(c,temp=null,wind=null)=>{const base=codes[c]||['Condición variable',''];let label=base[0];if(String(c)==='flood')label='Advertencia de inundación';else if(wind!==null&&wind!==undefined&&wind!==''&&Number.isFinite(Number(wind))&&Number(wind)>=40&&!([95,96,99].includes(Number(c))))label='Viento fuerte';else if(temp!==null&&temp!==undefined&&temp!==''&&Number.isFinite(Number(temp))&&Number(temp)>=33&&[0,1,2,3].includes(Number(c)))label='Mucho calor';return [label,weatherArt(c,temp,wind)];};
 function dayName(s){return new Date(s+'T12:00:00').toLocaleDateString('es-AR',{weekday:'short',day:'numeric'}).replace('.','')}
 function hourName(s){return new Date(s).toLocaleTimeString('es-AR',{hour:'2-digit',minute:'2-digit'})}
 function render(data,meta={}){
