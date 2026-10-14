@@ -129,6 +129,38 @@ button:hover{border-color:#c7772f;transform:translateY(-2px);box-shadow:0 5px 0 
 @media(max-width:700px){.icon{width:90px;height:82px}.small-icon .weather-art{width:43px;height:40px}}
 @media(prefers-reduced-motion:reduce){.weather-art *{animation:none!important}}
 
+
+/* Dirección de arte: atlas meteorológico del valle */
+.weather-art{border-radius:18px;overflow:visible;filter:drop-shadow(0 4px 2px #35574616)}
+.current{position:relative;isolation:isolate;overflow:hidden}
+.current:before{content:"";position:absolute;inset:0 0 auto;height:5px;z-index:0;display:block!important;background:linear-gradient(90deg,#E7A52F,#74B7C0,#80A879,#D96E50);opacity:.9}
+.current-top,.now,.metrics{position:relative;z-index:1}
+.current .icon{width:clamp(105px,16vw,164px);height:124px}
+.current .weather-art{width:100%;height:100%;filter:drop-shadow(0 7px 5px #304a2c12)}
+.hour,.day{position:relative;isolation:isolate;overflow:hidden}
+.hour:before,.day:before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#e7a52f,#82b8bf,#8db386);opacity:.8}
+.hour .small-icon,.day .small-icon{position:relative;z-index:1;min-height:52px}
+.hour .weather-art,.day .weather-art{filter:drop-shadow(0 3px 2px #284b4316)}
+.weather-art .vineyard{transform-origin:80px 105px;animation:ocarina-vineyard 7s ease-in-out infinite}
+.weather-art.art-rain .cloud,.weather-art.art-storm .cloud{animation-name:ocarina-storm-cloud;animation-duration:3s}
+.weather-art.art-rain .rain-drops,.weather-art.art-storm .rain-drops{animation-duration:.58s}
+.weather-art.art-sun .sun-rays,.weather-art.art-hot .sun-rays{animation-duration:13s}
+.weather-art.art-hot{filter:drop-shadow(0 4px 4px #e7a52f22)}
+.weather-art.art-fog{filter:drop-shadow(0 4px 3px #7da5a522)}
+.weather-art.art-snow .snowflakes,.weather-art.art-cold .snowflakes{animation-duration:5s}
+.weather-art.art-flood .person{animation:ocarina-person 4s ease-in-out infinite}
+@keyframes ocarina-storm-cloud{0%,100%{transform:translateX(-1px)}50%{transform:translateX(4px)}}
+@keyframes ocarina-vineyard{0%,100%{opacity:.68}50%{opacity:.9}}
+@media(max-width:700px){
+ .current .icon{width:102px;height:98px}
+ .hour .small-icon,.day .small-icon{min-height:46px}
+}
+@media(max-width:430px){
+ .current .icon{width:86px;height:86px}
+ .hour .weather-art,.day .weather-art{width:39px;height:37px}
+}
+@media(prefers-reduced-motion:reduce){.weather-art .vineyard{animation:none!important}}
+
 </style>
 </head>
 <body><div class="wrap">
@@ -171,6 +203,7 @@ const sun='<g class="sun-rays" stroke="#E7A52F" stroke-width="4" stroke-linecap=
 const cloud='<g class="cloud"><path d="M39 54c-9 0-15-6-15-14 0-8 7-14 15-14 4-11 14-16 25-12 7 2 11 8 12 14 10-2 19 5 19 14 0 7-6 12-14 12Z" fill="#F8FCF8" stroke="#77999A" stroke-width="2.8" stroke-linejoin="round"/></g>';
 const person='<g class="person" stroke="#284B43" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="112" cy="63" r="8" fill="#D99B70"/><path d="M103 60q9-13 18 0" fill="#E7A52F" stroke="#284B43"/><path d="M104 74q8-5 16 0l4 22h-24Z" fill="#D76D4D"/><path d="M105 96l-4 15M119 96l5 15M102 79l-12 11M119 79l9 6" fill="none"/></g>';
 const ground='<path d="M7 103Q36 91 62 101T113 99T153 101V120H7Z" fill="#A8C9A1"/><path d="M8 108Q40 99 67 109T151 106" fill="none" stroke="#7EA884" stroke-width="2"/>';
+const backdrop='<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="'+(kind==='rain'||kind==='storm'||kind==='fog'?'#C9DFE2':kind==='snow'||kind==='cold'?'#EAF5F5':'#FFF0C7')+'"/><stop offset="1" stop-color="'+(kind==='rain'||kind==='storm'?'#E9F2ED':kind==='snow'||kind==='cold'?'#F8FCF7':'#F9F7E9')+'"/></linearGradient><linearGradient id="river" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#80C5D9"/><stop offset="1" stop-color="#4E9FBF"/></linearGradient></defs><rect x="1" y="1" width="158" height="118" rx="18" fill="url(#sky)"/><circle cx="137" cy="18" r="20" fill="#FFFFFF" opacity=".25"/><path d="M0 81L24 58 39 69 65 44 88 68 111 52 137 71 160 56V120H0Z" fill="'+(kind==='snow'||kind==='cold'?'#C5DCDD':'#C8D9BC')+'"/><path d="M0 91Q22 74 45 87T90 83T130 88T160 80V120H0Z" fill="'+(kind==='rain'||kind==='storm'?'#8FB8A6':'#9FBE94')+'"/><g class="vineyard" fill="none" stroke="'+(kind==='rain'||kind==='storm'?'#5F927F':'#709B6D')+'" stroke-width="2" opacity=".72"><path d="M-6 120L45 92M14 120L63 92M34 120L81 94M54 120L99 95M74 120L118 95M94 120L137 96M114 120L156 98"/><path d="M-2 111Q50 96 93 108T162 105" stroke-width="1.5"/></g><path d="M0 114Q32 106 59 114T110 111T160 112V120H0Z" fill="'+(kind==='flood'?'#69B5D0':'#7FAE7A')+'"/>';
 let scene='';
 if(kind==='sun')scene=sun+ground+'<g class="sun-person" stroke="#284B43" stroke-width="3" stroke-linecap="round"><circle cx="107" cy="72" r="7" fill="#D99B70"/><path d="M99 70q8-12 16 0" fill="#E7A52F"/><path d="M100 82l14 0 5 15H96Z" fill="#4D8F86"/><path d="M99 96l-7 8M113 96l7 8M99 84l-10-4M113 84l9-7" fill="none"/><path d="M88 106h37" stroke-width="4"/></g><path d="M133 88q8-9 14 0M140 80v17" fill="none" stroke="#477F54" stroke-width="3" stroke-linecap="round"/>';
 else if(kind==='partly')scene=sun+cloud+ground+person;
@@ -183,7 +216,7 @@ else if(kind==='flood')scene='<path d="M0 77Q16 68 32 77T64 77T96 77T128 77T160 
 else if(kind==='hot')scene='<g class="heat"><path d="M20 57q-8-9 0-18t0-18M40 57q-8-9 0-18t0-18M60 57q-8-9 0-18t0-18" fill="none" stroke="#E7A52F" stroke-width="3" stroke-linecap="round"/></g>'+sun+ground+'<g class="person" stroke="#284B43" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M90 73q22-16 44 0Z" fill="#E7A52F"/><path d="M98 73q12-6 27 0" fill="#D99B70"/><circle cx="112" cy="80" r="8" fill="#D99B70"/><path d="M103 79q9-12 18 0" fill="#6B5038"/><path d="M103 89l18 0 4 15H99Z" fill="#D96E50"/><path d="M103 103l-4 8M120 103l4 8M103 92l-9 5M120 92l7 5" fill="none"/><path d="M132 87v13q0 4 4 4t4-4V87Z" fill="#8CC5D5" stroke-width="2"/><path d="M131 87h10" stroke-width="3"/></g>';
 else if(kind==='fog')scene='<path d="M14 63Q32 49 51 61T91 60T148 61" fill="none" stroke="#C2D6D0" stroke-width="13" stroke-linecap="round"/><path d="M10 79Q32 65 52 77T99 76T150 77" fill="none" stroke="#AFC9C5" stroke-width="10" stroke-linecap="round"/>'+ground+'<g class="person" stroke="#284B43" stroke-width="3" stroke-linecap="round"><circle cx="112" cy="72" r="8" fill="#D99B70"/><path d="M103 70q9-13 18 0" fill="#477C73"/><path d="M103 82h18l3 20H100Z" fill="#A3BDB6"/><path d="M104 101l-3 10M118 101l5 10" fill="none"/></g>';
 else scene=cloud+ground+person;
-return commonStart+scene+end;
+return commonStart+backdrop+scene+end;
 }
 const desc=(c,temp=null,wind=null)=>{const base=codes[c]||['Condición variable',''];let label=base[0];if(String(c)==='flood')label='Advertencia de inundación';else if(wind!==null&&wind!==undefined&&wind!==''&&Number.isFinite(Number(wind))&&Number(wind)>=40&&!([95,96,99].includes(Number(c))))label='Viento fuerte';else if(temp!==null&&temp!==undefined&&temp!==''&&Number.isFinite(Number(temp))&&Number(temp)>=33&&[0,1,2,3].includes(Number(c)))label='Mucho calor';return [label,weatherArt(c,temp,wind)];};
 function dayName(s){return new Date(s+'T12:00:00').toLocaleDateString('es-AR',{weekday:'short',day:'numeric'}).replace('.','')}
