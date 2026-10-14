@@ -95,6 +95,38 @@ button:hover{border-color:#c7772f;transform:translateY(-2px);box-shadow:0 5px 0 
  .hour,.day,button{transition:none}
 }
 
+
+/* Biblioteca ilustrada original de Ocarina: escenas SVG según código y temperatura */
+.current:before,.current:after{content:none!important;display:none!important}
+.icon{width:clamp(84px,13vw,142px);height:104px;display:flex;align-items:center;justify-content:center;flex:0 0 auto;filter:none;animation:none}
+.icon .weather-art{width:100%;height:100%;overflow:visible}
+.small-icon{height:49px;display:flex;align-items:center;justify-content:center;margin:5px 0 8px!important;font-size:0!important}
+.small-icon .weather-art{width:47px;height:43px;overflow:visible;flex:0 0 auto}
+.weather-art{overflow:visible}
+.weather-art .sun-rays{transform-origin:29px 30px;animation:ocarina-rays 18s linear infinite}
+.weather-art .cloud{transform-origin:65px 38px;animation:ocarina-cloud 4.5s ease-in-out infinite}
+.weather-art .rain-drops{animation:ocarina-rain .8s linear infinite}
+.weather-art .snowflakes{animation:ocarina-snow 3.8s ease-in-out infinite}
+.weather-art .person{transform-origin:112px 92px;animation:ocarina-person 3.8s ease-in-out infinite}
+.weather-art .umbrella{transform-origin:110px 77px;animation:ocarina-umbrella 3s ease-in-out infinite}
+.weather-art .lightning{transform-origin:68px 74px;animation:ocarina-flash 3.7s steps(1,end) infinite}
+.weather-art .heat{animation:ocarina-heat 2s ease-in-out infinite}
+.weather-art.art-hot .sun-rays{animation-duration:10s}
+.weather-art.art-snow .person{animation-name:ocarina-shiver;animation-duration:.45s}
+.weather-art.art-wind .person{animation-name:ocarina-lean}
+@keyframes ocarina-rays{to{transform:rotate(360deg)}}
+@keyframes ocarina-cloud{0%,100%{transform:translateX(0)}50%{transform:translateX(3px)}}
+@keyframes ocarina-rain{0%{transform:translateY(-1px)}100%{transform:translateY(5px)}}
+@keyframes ocarina-snow{0%,100%{transform:translateY(-1px)}50%{transform:translateY(4px)}}
+@keyframes ocarina-person{0%,100%{transform:translateY(0)}50%{transform:translateY(-2px)}}
+@keyframes ocarina-umbrella{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2deg)}}
+@keyframes ocarina-flash{0%,88%,94%,100%{opacity:1}90%,92%{opacity:.1}}
+@keyframes ocarina-heat{0%,100%{transform:translateY(0);opacity:.8}50%{transform:translateY(-4px);opacity:1}}
+@keyframes ocarina-shiver{0%,100%{transform:translateX(0)}25%{transform:translateX(-1.5px)}75%{transform:translateX(1.5px)}}
+@keyframes ocarina-lean{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
+@media(max-width:700px){.icon{width:90px;height:82px}.small-icon .weather-art{width:43px;height:40px}}
+@media(prefers-reduced-motion:reduce){.weather-art *{animation:none!important}}
+
 </style>
 </head>
 <body><div class="wrap">
@@ -115,15 +147,43 @@ const $=id=>document.getElementById(id);
 const lat=-38.625,lon=-68.3;
 const codes={0:['Despejado','☀️'],1:['Mayormente despejado','🌤️'],2:['Parcialmente nublado','⛅'],3:['Nublado','☁️'],45:['Niebla','🌫️'],48:['Niebla engelante','🌫️'],51:['Llovizna leve','🌦️'],53:['Llovizna','🌦️'],55:['Llovizna intensa','🌧️'],56:['Llovizna engelante','🌧️'],57:['Llovizna engelante intensa','🌧️'],61:['Lluvia leve','🌦️'],63:['Lluvia','🌧️'],65:['Lluvia intensa','🌧️'],66:['Lluvia engelante','🌧️'],67:['Lluvia engelante intensa','🌧️'],71:['Nieve leve','🌨️'],73:['Nevada','🌨️'],75:['Nevada intensa','❄️'],77:['Granizo menudo','🌨️'],80:['Chaparrones leves','🌦️'],81:['Chaparrones','🌧️'],82:['Chaparrones intensos','⛈️'],85:['Chubascos de nieve','🌨️'],86:['Chubascos de nieve intensos','❄️'],95:['Tormenta','⛈️'],96:['Tormenta con granizo','⛈️'],99:['Tormenta fuerte con granizo','⛈️']};
 const fmt=(v,suffix='',digits=0)=>v==null||!Number.isFinite(Number(v))?'—':Number(v).toFixed(digits)+suffix;
-const desc=c=>codes[c]||['Condición variable','🌤️'];
+function weatherArt(code,temp=null){
+const hot=Number.isFinite(Number(temp))&&Number(temp)>=33;
+const cold=Number.isFinite(Number(temp))&&Number(temp)<=0;
+let kind='cloud';
+if([95,96,99,82].includes(Number(code)))kind='storm';
+else if([71,73,75,77,85,86].includes(Number(code))||cold)kind='snow';
+else if([51,53,55,56,57,61,63,65,66,67,80,81].includes(Number(code)))kind='rain';
+else if(hot)kind='hot';
+else if([45,48].includes(Number(code)))kind='fog';
+else if(Number(code)===0||Number(code)===1)kind='sun';
+else if(Number(code)===2)kind='partly';
+const commonStart='<svg class="weather-art art-'+kind+'" viewBox="0 0 160 120" role="img" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">';
+const end='</svg>';
+const sun='<g class="sun-rays" stroke="#E7A52F" stroke-width="4" stroke-linecap="round"><path d="M29 10v7M29 43v7M8 30h7M43 30h7M14 15l5 5M39 40l5 5M44 15l-5 5M19 40l-5 5"/></g><circle cx="29" cy="30" r="13" fill="#FFD25D" stroke="#E7A52F" stroke-width="2"/>';
+const cloud='<g class="cloud"><path d="M39 54c-9 0-15-6-15-14 0-8 7-14 15-14 4-11 14-16 25-12 7 2 11 8 12 14 10-2 19 5 19 14 0 7-6 12-14 12Z" fill="#F8FCF8" stroke="#77999A" stroke-width="2.8" stroke-linejoin="round"/></g>';
+const person='<g class="person" stroke="#284B43" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="112" cy="63" r="8" fill="#D99B70"/><path d="M103 60q9-13 18 0" fill="#E7A52F" stroke="#284B43"/><path d="M104 74q8-5 16 0l4 22h-24Z" fill="#D76D4D"/><path d="M105 96l-4 15M119 96l5 15M102 79l-12 11M119 79l9 6" fill="none"/></g>';
+const ground='<path d="M7 103Q36 91 62 101T113 99T153 101V120H7Z" fill="#A8C9A1"/><path d="M8 108Q40 99 67 109T151 106" fill="none" stroke="#7EA884" stroke-width="2"/>';
+let scene='';
+if(kind==='sun')scene=sun+ground+'<g class="sun-person" stroke="#284B43" stroke-width="3" stroke-linecap="round"><circle cx="107" cy="72" r="7" fill="#D99B70"/><path d="M99 70q8-12 16 0" fill="#E7A52F"/><path d="M100 82l14 0 5 15H96Z" fill="#4D8F86"/><path d="M99 96l-7 8M113 96l7 8M99 84l-10-4M113 84l9-7" fill="none"/><path d="M88 106h37" stroke-width="4"/></g><path d="M133 88q8-9 14 0M140 80v17" fill="none" stroke="#477F54" stroke-width="3" stroke-linecap="round"/>';
+else if(kind==='partly')scene=sun+cloud+ground+person;
+else if(kind==='rain')scene=cloud+'<g class="rain-drops" stroke="#439BC8" stroke-width="4" stroke-linecap="round"><path d="M44 63l-4 10M61 63l-4 10M78 63l-4 10M92 62l-4 10"/></g>'+ground+'<g class="umbrella"><path d="M88 77Q110 49 133 77Q122 72 116 79Q105 70 98 79Z" fill="#D96E50" stroke="#284B43" stroke-width="2.5"/><path d="M110 76v23q0 7 7 5" fill="none" stroke="#284B43" stroke-width="3" stroke-linecap="round"/></g><g class="person" stroke="#284B43" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="109" cy="82" r="6" fill="#D99B70"/><path d="M102 80q7-9 14 0" fill="#E7A52F"/><path d="M103 90l13 0 3 13h-19Z" fill="#4C8F9B"/><path d="M103 102l-3 9M115 102l4 9M103 92l-8 3M115 92l6 2" fill="none"/><path d="M99 111h7M116 111h7" stroke="#D96E50" stroke-width="4"/></g>';
+else if(kind==='snow')scene=cloud+'<g class="snowflakes" fill="#FFFFFF" stroke="#65A9CC" stroke-width="2.5"><path d="M43 65v13M37 69l12 7M49 69l-12 7"/><path d="M73 63v13M67 67l12 7M79 67l-12 7"/><circle cx="91" cy="71" r="3"/></g>'+ground+'<g class="person" stroke="#284B43" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="113" cy="76" r="8" fill="#D99B70"/><path d="M103 74q10-15 20 0" fill="#477C73"/><path d="M103 73q10-12 20 0" fill="none" stroke="#E7A52F" stroke-width="4"/><path d="M101 85q12-5 23 1l4 18h-31Z" fill="#6D83B7"/><path d="M105 102l-4 9M119 102l5 9M102 88l-9 7M122 88l8 7" fill="none"/><path d="M105 87h15" stroke="#D96E50" stroke-width="4"/></g>';
+else if(kind==='storm')scene=cloud+'<path class="lightning" d="M68 57l-11 20h11l-7 17 22-26H71l8-11Z" fill="#FFD25D" stroke="#D99A2B" stroke-width="2" stroke-linejoin="round"/><g class="rain-drops" stroke="#439BC8" stroke-width="4" stroke-linecap="round"><path d="M42 64l-4 10M91 63l-4 10"/></g>'+ground+'<path d="M96 82l18-15 19 15" fill="#D96E50" stroke="#284B43" stroke-width="3" stroke-linejoin="round"/><path d="M101 81v24h27V81" fill="#FFF0D3" stroke="#284B43" stroke-width="3"/><rect x="111" y="91" width="7" height="14" rx="2" fill="#7CA6B5"/>';
+else if(kind==='hot')scene='<g class="heat"><path d="M20 57q-8-9 0-18t0-18M40 57q-8-9 0-18t0-18M60 57q-8-9 0-18t0-18" fill="none" stroke="#E7A52F" stroke-width="3" stroke-linecap="round"/></g>'+sun+ground+'<g class="person" stroke="#284B43" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M90 73q22-16 44 0Z" fill="#E7A52F"/><path d="M98 73q12-6 27 0" fill="#D99B70"/><circle cx="112" cy="80" r="8" fill="#D99B70"/><path d="M103 79q9-12 18 0" fill="#6B5038"/><path d="M103 89l18 0 4 15H99Z" fill="#D96E50"/><path d="M103 103l-4 8M120 103l4 8M103 92l-9 5M120 92l7 5" fill="none"/><path d="M132 87v13q0 4 4 4t4-4V87Z" fill="#8CC5D5" stroke-width="2"/><path d="M131 87h10" stroke-width="3"/></g>';
+else if(kind==='fog')scene='<path d="M14 63Q32 49 51 61T91 60T148 61" fill="none" stroke="#C2D6D0" stroke-width="13" stroke-linecap="round"/><path d="M10 79Q32 65 52 77T99 76T150 77" fill="none" stroke="#AFC9C5" stroke-width="10" stroke-linecap="round"/>'+ground+'<g class="person" stroke="#284B43" stroke-width="3" stroke-linecap="round"><circle cx="112" cy="72" r="8" fill="#D99B70"/><path d="M103 70q9-13 18 0" fill="#477C73"/><path d="M103 82h18l3 20H100Z" fill="#A3BDB6"/><path d="M104 101l-3 10M118 101l5 10" fill="none"/></g>';
+else scene=cloud+ground+person;
+return commonStart+scene+end;
+}
+const desc=(c,temp=null)=>{const base=codes[c]||['Condición variable',''];let label=base[0];if(Number.isFinite(Number(temp))&&Number(temp)>=33&&!([95,96,99].includes(Number(c))))label='Mucho calor';return [label,weatherArt(c,temp)];};
 function dayName(s){return new Date(s+'T12:00:00').toLocaleDateString('es-AR',{weekday:'short',day:'numeric'}).replace('.','')}
 function hourName(s){return new Date(s).toLocaleTimeString('es-AR',{hour:'2-digit',minute:'2-digit'})}
 function render(data,meta={}){
-const c=data.current, d=desc(c.weather_code);
-$('temperature').textContent=fmt(c.temperature_2m);$('condition').textContent=d[0];$('currentIcon').textContent=d[1];$('feels').textContent=fmt(c.apparent_temperature);$('humidity').textContent=fmt(c.relative_humidity_2m,'%');$('wind').textContent=fmt(c.wind_speed_10m,' km/h');$('gust').textContent=fmt(c.wind_gusts_10m,' km/h');$('precip').textContent=fmt(c.precipitation,' mm',1);
+const c=data.current, d=desc(c.weather_code,c.temperature_2m);
+$('temperature').textContent=fmt(c.temperature_2m);$('condition').textContent=d[0];$('currentIcon').innerHTML=d[1];$('feels').textContent=fmt(c.apparent_temperature);$('humidity').textContent=fmt(c.relative_humidity_2m,'%');$('wind').textContent=fmt(c.wind_speed_10m,' km/h');$('gust').textContent=fmt(c.wind_gusts_10m,' km/h');$('precip').textContent=fmt(c.precipitation,' mm',1);
 const times=data.hourly.time, start=times.findIndex(t=>t>=c.time), idx=Math.max(0,start);
-$('hourly').innerHTML=Array.from({length:8},(_,i)=>{const n=idx+i,wx=desc(data.hourly.weather_code[n]);if(n>=times.length)return '';return '<div class="hour"><time>'+ (i===0?'Ahora':hourName(times[n]))+'</time><div class="small-icon">'+wx[1]+'</div><b>'+fmt(data.hourly.temperature_2m[n])+'°</b><small>💧 '+fmt(data.hourly.precipitation_probability[n],'%')+'</small></div>'}).join('');
-$('days').innerHTML=data.daily.time.map((date,i)=>{const wx=desc(data.daily.weather_code[i]);return '<div class="day"><strong>'+dayName(date)+'</strong><div class="small-icon">'+wx[1]+'</div><div class="range">'+fmt(data.daily.temperature_2m_max[i])+'° <span>'+fmt(data.daily.temperature_2m_min[i])+'°</span></div><div class="rain">💧 '+fmt(data.daily.precipitation_probability_max[i],'%')+'</div></div>'}).join('');
+$('hourly').innerHTML=Array.from({length:8},(_,i)=>{const n=idx+i,wx=desc(data.hourly.weather_code[n],data.hourly.temperature_2m[n]);if(n>=times.length)return '';return '<div class="hour"><time>'+ (i===0?'Ahora':hourName(times[n]))+'</time><div class="small-icon">'+wx[1]+'</div><b>'+fmt(data.hourly.temperature_2m[n])+'°</b><small>💧 '+fmt(data.hourly.precipitation_probability[n],'%')+'</small></div>'}).join('');
+$('days').innerHTML=data.daily.time.map((date,i)=>{const wx=desc(data.daily.weather_code[i],data.daily.temperature_2m_max[i]);return '<div class="day"><strong>'+dayName(date)+'</strong><div class="small-icon">'+wx[1]+'</div><div class="range">'+fmt(data.daily.temperature_2m_max[i])+'° <span>'+fmt(data.daily.temperature_2m_min[i])+'°</span></div><div class="rain">💧 '+fmt(data.daily.precipitation_probability_max[i],'%')+'</div></div>'}).join('');
 const stamp=new Date(c.time);const stampText=Number.isNaN(stamp.getTime())?'hora no disponible':stamp.toLocaleString('es-AR',{day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'});const retrieved=meta.retrievedAt?new Date(meta.retrievedAt):null;const retrievedText=retrieved&&!Number.isNaN(retrieved.getTime())?' · consultado '+retrieved.toLocaleTimeString('es-AR',{hour:'2-digit',minute:'2-digit'}):'';$('updated').textContent='Modelo válido: '+stampText+retrievedText;$('error').classList.remove('show');$('coordinates').textContent='Punto de referencia provisional · '+lat+'°, '+lon+'°';
 }
 let busy=false;let lastGoodData=null;
