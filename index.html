@@ -8,6 +8,93 @@
 <title>Ocarina Climática · San Patricio del Chañar</title>
 <style>
 :root{color-scheme:dark;--bg:#0b1715;--panel:#142521;--line:#294039;--muted:#a8bbb2;--text:#f4f7ef;--lime:#d9f278;--blue:#a6d9f4}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 85% 0%,#23473a 0,transparent 42%),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;min-height:100vh}.wrap{max-width:1050px;margin:auto;padding:22px clamp(16px,4vw,42px) 30px}.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:7px 0 24px;border-bottom:1px solid var(--line)}.brand{font-weight:900;letter-spacing:.13em;font-size:13px}.brand span{display:block;color:var(--lime);font-weight:500;font-size:10px;margin-top:4px;letter-spacing:.22em}.place{font-size:11px;letter-spacing:.11em;color:var(--muted);text-align:right}.hero{padding:34px 0 24px;display:grid;grid-template-columns:1.25fr .75fr;gap:20px;align-items:end}.eyebrow{color:var(--lime);font-size:11px;letter-spacing:.16em;font-weight:800}.hero h1{font-size:clamp(38px,7vw,76px);line-height:.98;letter-spacing:-.06em;margin:13px 0 14px;max-width:650px}.hero h1 em{font-style:normal;color:var(--lime)}.sub{color:var(--muted);font-size:14px;line-height:1.6;max-width:470px}.status{justify-self:end;text-align:right;color:var(--muted);font-size:12px;line-height:1.7}.status strong{display:block;color:var(--text);font-size:13px}.current{background:linear-gradient(125deg,#1b342c,#12231f 75%);border:1px solid #355346;border-radius:24px;padding:clamp(20px,4vw,38px);position:relative;overflow:hidden}.current:after{content:"";position:absolute;width:250px;height:250px;border:1px solid #466453;border-radius:50%;right:-65px;top:-100px;box-shadow:0 0 0 28px #ffffff04,0 0 0 58px #ffffff03;pointer-events:none}.current-top{display:flex;justify-content:space-between;gap:15px;align-items:center;color:var(--muted);font-size:12px}.live{color:var(--lime);font-weight:800;letter-spacing:.1em}.now{display:flex;align-items:center;gap:18px;margin:12px 0 22px;position:relative;z-index:1}.icon{font-size:clamp(55px,9vw,90px);line-height:1}.temp{font-size:clamp(64px,12vw,112px);letter-spacing:-.09em;font-weight:750;line-height:1}.desc{font-size:16px;margin-top:5px}.feels{font-size:12px;color:var(--muted);margin-top:8px}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.metric{border-top:1px solid #466052;padding-top:13px}.metric span{display:block;font-size:11px;color:var(--muted);margin-bottom:7px}.metric b{font-size:clamp(15px,2vw,21px);font-weight:700}.section-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:29px 0 13px}.section-head h2{font-size:18px;margin:0;letter-spacing:-.02em}.section-head span{font-size:11px;color:var(--muted)}.hourly{display:grid;grid-template-columns:repeat(8,minmax(72px,1fr));gap:8px;overflow-x:auto;padding-bottom:5px}.hour{background:var(--panel);border:1px solid var(--line);border-radius:15px;text-align:center;padding:13px 8px;min-width:0}.hour time{font-size:11px;color:var(--muted)}.hour .small-icon{font-size:23px;margin:11px 0}.hour b{font-size:16px}.hour small{display:block;font-size:10px;color:var(--muted);margin-top:8px}.days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px}.day{background:#111f1c;border:1px solid var(--line);border-radius:14px;padding:13px 8px;text-align:center}.day strong{font-size:11px}.day .small-icon{font-size:24px;margin:10px 0}.range{font-size:13px;font-weight:700}.range span{color:var(--muted);font-weight:500;margin-left:4px}.rain{font-size:10px;color:var(--blue);margin-top:8px}.foot{display:flex;justify-content:space-between;gap:15px;border-top:1px solid var(--line);margin-top:28px;padding-top:16px;color:var(--muted);font-size:10px;line-height:1.6}.foot a{color:var(--lime)}button{border:1px solid #587363;background:#1c352b;color:var(--text);border-radius:999px;padding:9px 13px;font:inherit;font-size:11px;cursor:pointer}button:hover{border-color:var(--lime)}.error{background:#402d21;border:1px solid #75543b;border-radius:12px;padding:12px 15px;color:#ffe2bd;font-size:12px;margin-top:12px;display:none}.error.show{display:block}.regional{margin-top:12px;background:#101f1c;border:1px solid var(--line);border-radius:16px;padding:17px 19px;display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center}.regional h2{font-size:14px;margin:0 0 6px}.regional p{margin:0;color:var(--muted);font-size:11px;line-height:1.6}.regional .regional-temp{font-size:30px;font-weight:800;letter-spacing:-.05em}.regional .regional-state{font-size:10px;color:var(--lime);font-weight:800;letter-spacing:.08em;margin-bottom:5px}@media(max-width:400px){.regional{grid-template-columns:1fr}.regional .regional-temp{font-size:26px}}.loading{opacity:.65}@media(max-width:700px){.hero{grid-template-columns:1fr;gap:5px;padding-top:25px}.status{justify-self:start;text-align:left}.metrics{grid-template-columns:repeat(2,1fr);row-gap:17px}.days{grid-template-columns:repeat(4,minmax(0,1fr))}.day:nth-child(n+5){margin-top:0}.foot{flex-direction:column}.place{max-width:155px;font-size:9px}.current{border-radius:19px}}@media(max-width:400px){.days{grid-template-columns:repeat(2,minmax(0,1fr))}.now{gap:12px}.current{padding:18px}}
+
+/* OCARINA ILUSTRADA · capa visual solamente; conserva DOM y comportamiento */
+:root{
+ color-scheme:light;
+ --bg:#f7f3e8;--panel:#fffdf6;--line:#d8dfd0;--muted:#68786b;--text:#20382f;
+ --lime:#d68a35;--blue:#378eb8;
+}
+body{
+ background:
+ radial-gradient(ellipse at 8% 3%,#ffe6a8 0,transparent 25%),
+ radial-gradient(ellipse at 95% 20%,#d9eee2 0,transparent 28%),
+ var(--bg);
+ color:var(--text);
+}
+.top{border-bottom:2px solid #d9dfd1}
+.brand{font-size:14px;letter-spacing:.16em;color:#254838}
+.brand span{color:#b76e28}
+.place{color:#627567}
+.hero{position:relative;overflow:hidden;border-radius:24px;padding:32px 20px 25px;margin:14px -20px 18px;background:linear-gradient(120deg,#fff8e6 0%,#f1f7e9 65%,#e4f2f5 100%);border:1px solid #e0e4d6}
+.hero h1{color:#1e4537}
+.hero h1 em{color:#c7772f}
+.eyebrow{color:#b86c27}
+.sub{color:#607367}
+.status{color:#607367}
+.status strong{color:#234535}
+button{border:1px solid #c5d4c3;background:#fffdf5;color:#264a39;box-shadow:0 3px 0 #dfe6d9;transition:transform .2s,box-shadow .2s}
+button:hover{border-color:#c7772f;transform:translateY(-2px);box-shadow:0 5px 0 #dfe6d9}
+.current{
+ background:linear-gradient(120deg,#fff0c7 0%,#e8f5e9 58%,#dceff2 100%);
+ border:2px solid #d8e0ce;border-radius:28px;color:#20382f;
+ box-shadow:0 12px 0 #e6e7d8,0 20px 45px #4b63431a;
+}
+.current:after{content:"";position:absolute;right:-35px;top:-35px;width:235px;height:235px;border-radius:50%;background:radial-gradient(circle,#ffd15c 0 22%,#ffd15c44 23% 35%,#ffd15c19 36% 54%,transparent 55%);border:0;box-shadow:none;animation:ocarina-sun 7s ease-in-out infinite}
+.current:before{content:"🧍🏻‍♀️  ☂️  🧍🏽‍♂️";position:absolute;right:20px;top:100px;z-index:0;font-size:38px;letter-spacing:-9px;filter:drop-shadow(0 5px 2px #344a291c);animation:ocarina-characters 5s ease-in-out infinite;pointer-events:none}
+.current-top,.now,.metrics{position:relative;z-index:1}
+.current-top{color:#617367}
+.live{color:#327650}
+.icon{filter:drop-shadow(0 5px 2px #344a2922);animation:ocarina-weather 4s ease-in-out infinite}
+.temp{color:#203d31}
+.desc{color:#355a46;font-weight:750}
+.feels{color:#68786b}
+.metric{border-top:1px solid #c9d8c7}
+.metric span{color:#68786b}
+.metric b{color:#244a39}
+.section-head h2{color:#234535}
+.section-head span{color:#6e7d70}
+.hour{background:linear-gradient(180deg,#fffdf7,#edf6ed);border:1px solid #d8e3d5;border-radius:18px;box-shadow:0 4px 0 #e4e8dc;transition:transform .22s,box-shadow .22s}
+.hour:hover,.day:hover{transform:translateY(-4px);box-shadow:0 8px 0 #dfe6d9}
+.hour time{color:#697b6d}
+.hour .small-icon,.day .small-icon{display:block;filter:drop-shadow(0 3px 1px #344a2915);animation:ocarina-weather 4.5s ease-in-out infinite}
+.hour b{color:#254838}
+.hour small{color:#62786c}
+.days{gap:10px}
+.day{position:relative;overflow:hidden;background:linear-gradient(155deg,#fffdf7,#eef6e9);border:1px solid #d8e3d5;border-radius:18px;padding:14px 8px;box-shadow:0 4px 0 #e4e8dc;transition:transform .22s,box-shadow .22s}
+.day:after{content:"";position:absolute;width:65px;height:65px;border-radius:50%;right:-37px;top:-38px;background:#ffd76c55;pointer-events:none}
+.day strong{color:#526e5d}
+.range{color:#284b39}
+.range span{color:#7c8a7e}
+.rain{color:#3389b5}
+.regional{background:linear-gradient(110deg,#fffdf6,#e9f4f1);border:1px solid #d5e2d6;border-radius:20px;box-shadow:0 5px 0 #e5e8dc}
+.regional h2{color:#264b39}
+.regional p{color:#68786b}
+.regional .regional-temp{color:#2b6d83}
+.regional .regional-state{color:#337c57}
+.foot{border-top:2px solid #d8dfd0;color:#68786b}
+.foot a{color:#b66d2b}
+.error{background:#fff0df;border-color:#e6b77e;color:#81471c}
+.loading{opacity:.7}
+@keyframes ocarina-weather{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-5px) rotate(2deg)}}
+@keyframes ocarina-sun{0%,100%{transform:scale(1);opacity:.85}50%{transform:scale(1.06);opacity:1}}
+@keyframes ocarina-characters{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@media(max-width:700px){
+ .hero{margin:8px 0 16px;padding:24px 18px;border-radius:20px}
+ .current:before{right:10px;top:110px;font-size:28px;opacity:.35}
+ .current:after{right:-95px;top:-60px;opacity:.65}
+ .hour:hover,.day:hover{transform:none}
+}
+@media(max-width:430px){
+ .current:before{display:none}
+ .current:after{right:-130px;opacity:.45}
+ .hero h1{font-size:clamp(38px,12vw,58px)}
+}
+@media(prefers-reduced-motion:reduce){
+ .current:after,.current:before,.icon,.hour .small-icon,.day .small-icon{animation:none!important}
+ .hour,.day,button{transition:none}
+}
+
 </style>
 </head>
 <body><div class="wrap">
