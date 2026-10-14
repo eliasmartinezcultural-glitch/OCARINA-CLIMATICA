@@ -395,6 +395,52 @@ body{background:radial-gradient(ellipse at 85% 0%,#285344 0,transparent 38%),rad
 @media(max-width:540px){.wrap{padding:12px 13px 24px}.top{align-items:flex-start}.brand{font-size:11px}.place{font-size:9px;line-height:1.6}.hero{padding:22px 0 16px}.hero h1{font-size:clamp(42px,13vw,61px)}.current{border-radius:21px;padding:18px}.current-top{align-items:flex-start;font-size:9px}.now{gap:13px}.icon{font-size:54px}.temp{font-size:68px}.metrics{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.metric{padding-top:10px}.metric b{font-size:17px}.regional{padding:14px;grid-template-columns:1fr auto}.regional .regional-temp{font-size:25px}.door-grid{gap:9px;margin-top:18px}.door-card{min-height:208px;padding:11px;border-radius:18px}.door-art{height:65px;font-size:23px}.door-card strong{font-size:14px}.door-number{font-size:8px}.door-card>span:not(.door-art):not(.door-number){font-size:10px}.door-cta{font-size:9px}.discover{padding:18px;border-radius:23px}.climate-door>summary{gap:10px;padding:12px;min-height:75px}.door-summary-icon{width:42px;height:42px;flex-basis:42px;font-size:22px}.climate-door>summary strong{font-size:14px}.climate-door>summary em{font-size:10px}.door-inside{padding:0 9px 10px}.door-inside .kid-panel{padding:15px}.foot{font-size:9px}}
 @media(prefers-reduced-motion:reduce){.door-card,.climate-door *{transition:none!important;scroll-behavior:auto!important}}
 
+
+/* ETAPA VISUAL APROBADA · ilustración territorial, créditos y uso multidispositivo */
+.hero{isolation:isolate;overflow:hidden}
+.hero:before{
+ content:"";position:absolute;z-index:0;right:4%;bottom:0;width:min(36%,300px);height:150px;pointer-events:none;opacity:.82;
+ background:
+  radial-gradient(circle at 72% 25%,#f4c45d 0 19px,transparent 20px),
+  repeating-linear-gradient(165deg,transparent 0 15px,#92b89a 16px 18px,transparent 19px 28px),
+  linear-gradient(165deg,transparent 0 39%,#c5dfbd 40% 57%,transparent 58%),
+  linear-gradient(15deg,transparent 0 44%,#8eb5a0 45% 66%,transparent 67%);
+ clip-path:polygon(0 100%,0 69%,15% 56%,30% 68%,48% 36%,63% 56%,77% 45%,100% 65%,100% 100%);
+}
+.hero:after{z-index:0;opacity:.4}
+.hero>div{z-index:1}
+.credit-brand{display:flex;align-items:flex-start;gap:10px}
+.credit-brand strong{letter-spacing:.1em;color:#284b39}
+.credit-brand b{color:#284b39}
+.credit-mark{display:grid;place-items:center;flex:0 0 32px;width:32px;height:32px;border-radius:11px 11px 11px 3px;background:linear-gradient(145deg,#f5c65b,#df8d42 52%,#4e9e93);color:#fffdf6;font-size:20px;box-shadow:0 3px 0 #d8dfd0}
+.credit-sources,.credit-notes{line-height:1.8}
+.credit-sources>strong,.credit-notes>strong{color:#284b39;font-size:11px;letter-spacing:.04em}
+.foot{display:grid;grid-template-columns:1fr 1.05fr 1.15fr;gap:20px;align-items:start}
+.foot a{text-underline-offset:3px}
+.foot a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #c7772f;outline-offset:4px}
+button,summary,.door-card{touch-action:manipulation}
+.door-card{min-height:210px}
+.door-card:focus-visible{outline:3px solid #c7772f;outline-offset:4px}
+.climate-door summary{min-height:70px}
+@media(max-width:760px){
+ .hero:before{right:-3%;width:42%;opacity:.35}
+ .foot{grid-template-columns:1fr 1fr;gap:16px}
+ .credit-brand{grid-column:1/-1}
+}
+@media(max-width:480px){
+ .hero:before{right:-24%;width:70%;height:110px;opacity:.22}
+ .hero:after{opacity:.2}
+ .foot{grid-template-columns:1fr;gap:14px}
+ .credit-brand{grid-column:auto}
+ .foot>div{max-width:100%}
+ .door-card{min-height:190px}
+ .climate-door summary{min-height:76px}
+ button{min-height:42px}
+}
+@media(prefers-reduced-motion:reduce){
+ .hero:before{animation:none!important}
+}
+
 </style>
 </head>
 <body><div class="wrap">
@@ -483,7 +529,11 @@ body{background:radial-gradient(ellipse at 85% 0%,#285344 0,transparent 38%),rad
 </section></div></details>
 </div>
 </main>
-<footer class="foot"><div>OCARINA CLIMÁTICA · Un proyecto de Ocarina Producciones<br>San Patricio del Chañar, Neuquén.</div><div>Pronóstico: <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo</a> · modelo, no estación local.<br><a href="https://ws2.smn.gob.ar/alertas" target="_blank" rel="noopener noreferrer">Consultar avisos y alertas oficiales del SMN</a>.</div></footer>
+<footer class="foot" aria-label="Créditos, fuentes y accesibilidad">
+ <div class="credit-brand"><span class="credit-mark" aria-hidden="true">✳</span><div><strong>OCARINA CLIMÁTICA</strong><br>Un proyecto de <b>Ocarina Producciones</b> · Elías Martínez.<br><span>San Patricio del Chañar, Neuquén, Argentina.</span></div></div>
+ <div class="credit-sources"><strong>Datos y fuentes</strong><br>Pronóstico modelado: <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo</a> · no es una estación local.<br><a href="https://ws2.smn.gob.ar/alertas" target="_blank" rel="noopener noreferrer">Avisos y alertas oficiales del SMN</a> · para situaciones de riesgo.</div>
+ <div class="credit-notes"><strong>Hecho para aprender y cuidarnos</strong><br>Ilustraciones meteorológicas originales integradas en la página mediante SVG y CSS.<br><span>Diseño adaptable · controles accesibles · animaciones suaves con opción de movimiento reducido.</span></div>
+</footer>
 </div>
 <script>
 (()=>{'use strict';
