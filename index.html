@@ -161,6 +161,48 @@ button:hover{border-color:#c7772f;transform:translateY(-2px);box-shadow:0 5px 0 
 }
 @media(prefers-reduced-motion:reduce){.weather-art .vineyard{animation:none!important}}
 
+
+
+/* CAPA EDITORIAL EXTRA · ilustración, atmósfera y microanimación; sin cambios de estructura */
+:root{--paper:#fbf7eb;--ink:#244536;--accent-sun:#e7a52f;--accent-river:#58a9c2}
+body{background-image:radial-gradient(ellipse at 6% 16%,#fff0c9 0,transparent 26%),radial-gradient(ellipse at 95% 48%,#dcefe6 0,transparent 29%),linear-gradient(180deg,#f8f4e8,#f2f5e9 65%,#f7f1e3)}
+.wrap{position:relative}
+.top{position:relative}
+.top:after{content:"";height:4px;width:72px;position:absolute;bottom:-3px;left:0;border-radius:8px;background:linear-gradient(90deg,#d68a35,#6ba8a2,#7fa879)}
+.brand{display:flex;align-items:center;gap:10px}
+.brand:before{content:"";width:28px;height:28px;display:block;border-radius:9px 9px 9px 3px;background:linear-gradient(145deg,#f5c65b,#df8d42 52%,#4e9e93);box-shadow:inset 0 0 0 3px #fff8e9,0 3px 0 #d8dfd0;transform:rotate(-5deg)}
+.hero{box-shadow:0 8px 0 #e9e8d9,0 18px 40px #476a4310}
+.hero:after{content:"";position:absolute;right:2%;bottom:-30px;width:180px;height:95px;pointer-events:none;opacity:.55;background:repeating-linear-gradient(165deg,transparent 0 13px,#9ab89a 14px 16px,transparent 17px 25px);mask-image:linear-gradient(90deg,transparent,#000 25%,#000 80%,transparent)}
+.hero>div{position:relative;z-index:1}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:7px 10px;border-radius:999px;background:#fff6df;border:1px solid #f0d7a6}
+.eyebrow:before{content:"✳";font-size:13px;color:#d68a35}
+.current{box-shadow:0 12px 0 #e7e7d8,0 24px 48px #42674c17}
+.current .icon{position:relative;z-index:2;overflow:visible}
+.current .icon:after{content:"";position:absolute;inset:9% 7%;z-index:-1;border-radius:46% 54% 52% 48%;background:radial-gradient(ellipse,#fffdf6c9 0%,#fffdf650 56%,transparent 72%);animation:ocarina-orbit 8s ease-in-out infinite}
+.weather-art{overflow:visible;transform-origin:50% 70%;animation:ocarina-scene-breathe 7s ease-in-out infinite}
+.weather-art .atmosphere-birds{transform-origin:center;animation:ocarina-birds 9s ease-in-out infinite}
+.weather-art .atmosphere-seeds{animation:ocarina-seeds 4s ease-in-out infinite}
+.weather-art .atmosphere-ripples{animation:ocarina-ripples 2.4s ease-in-out infinite}
+.weather-art .atmosphere-sparkles{animation:ocarina-sparkle 3.5s ease-in-out infinite}
+.weather-art .atmosphere-mist{animation:ocarina-mist 5s ease-in-out infinite}
+.weather-art .atmosphere-dust{animation:ocarina-seeds 5s ease-in-out infinite}
+.hour,.day{backdrop-filter:saturate(1.05)}
+.hour:nth-child(odd),.day:nth-child(odd){background:linear-gradient(155deg,#fffdf8,#f0f6e9)}
+.hour:nth-child(even),.day:nth-child(even){background:linear-gradient(155deg,#fffdf6,#eaf4f2)}
+.hour .small-icon .weather-art,.day .small-icon .weather-art{animation-duration:5.5s}
+.regional{position:relative;overflow:hidden}
+.regional:after{content:"";position:absolute;right:-18px;bottom:-38px;width:140px;height:90px;opacity:.45;pointer-events:none;background:repeating-linear-gradient(165deg,transparent 0 10px,#93b7a0 11px 13px,transparent 14px 21px)}
+.regional>div{position:relative;z-index:1}
+@keyframes ocarina-scene-breathe{0%,100%{translate:0 0}50%{translate:0 -1.5px}}
+@keyframes ocarina-orbit{0%,100%{transform:scale(.96);opacity:.55}50%{transform:scale(1.04);opacity:.9}}
+@keyframes ocarina-birds{0%,100%{translate:0 0}50%{translate:3px -2px}}
+@keyframes ocarina-seeds{0%,100%{opacity:.5;translate:0 0}50%{opacity:1;translate:0 -3px}}
+@keyframes ocarina-ripples{0%,100%{opacity:.45;translate:0 0}50%{opacity:1;translate:2px 0}}
+@keyframes ocarina-sparkle{0%,100%{opacity:.5}50%{opacity:1}}
+@keyframes ocarina-mist{0%,100%{translate:-2px 0;opacity:.55}50%{translate:3px 0;opacity:.95}}
+@media(max-width:700px){.brand:before{width:24px;height:24px}.hero:after{right:-15px;opacity:.25}.current .icon:after{inset:15% 5%}.weather-art{animation-duration:8s}}
+@media(prefers-reduced-motion:reduce){.weather-art,.weather-art .atmosphere-birds,.weather-art .atmosphere-seeds,.weather-art .atmosphere-ripples,.weather-art .atmosphere-sparkles,.weather-art .atmosphere-mist,.weather-art .atmosphere-dust,.current .icon:after{animation:none!important}}
+
 </style>
 </head>
 <body><div class="wrap">
@@ -204,6 +246,15 @@ const cloud='<g class="cloud"><path d="M39 54c-9 0-15-6-15-14 0-8 7-14 15-14 4-1
 const person='<g class="person" stroke="#284B43" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="112" cy="63" r="8" fill="#D99B70"/><path d="M103 60q9-13 18 0" fill="#E7A52F" stroke="#284B43"/><path d="M104 74q8-5 16 0l4 22h-24Z" fill="#D76D4D"/><path d="M105 96l-4 15M119 96l5 15M102 79l-12 11M119 79l9 6" fill="none"/></g>';
 const ground='<path d="M7 103Q36 91 62 101T113 99T153 101V120H7Z" fill="#A8C9A1"/><path d="M8 108Q40 99 67 109T151 106" fill="none" stroke="#7EA884" stroke-width="2"/>';
 const backdrop='<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="'+(kind==='rain'||kind==='storm'||kind==='fog'?'#C9DFE2':kind==='snow'||kind==='cold'?'#EAF5F5':'#FFF0C7')+'"/><stop offset="1" stop-color="'+(kind==='rain'||kind==='storm'?'#E9F2ED':kind==='snow'||kind==='cold'?'#F8FCF7':'#F9F7E9')+'"/></linearGradient><linearGradient id="river" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#80C5D9"/><stop offset="1" stop-color="#4E9FBF"/></linearGradient></defs><rect x="1" y="1" width="158" height="118" rx="18" fill="url(#sky)"/><circle cx="137" cy="18" r="20" fill="#FFFFFF" opacity=".25"/><path d="M0 81L24 58 39 69 65 44 88 68 111 52 137 71 160 56V120H0Z" fill="'+(kind==='snow'||kind==='cold'?'#C5DCDD':'#C8D9BC')+'"/><path d="M0 91Q22 74 45 87T90 83T130 88T160 80V120H0Z" fill="'+(kind==='rain'||kind==='storm'?'#8FB8A6':'#9FBE94')+'"/><g class="vineyard" fill="none" stroke="'+(kind==='rain'||kind==='storm'?'#5F927F':'#709B6D')+'" stroke-width="2" opacity=".72"><path d="M-6 120L45 92M14 120L63 92M34 120L81 94M54 120L99 95M74 120L118 95M94 120L137 96M114 120L156 98"/><path d="M-2 111Q50 96 93 108T162 105" stroke-width="1.5"/></g><path d="M0 114Q32 106 59 114T110 111T160 112V120H0Z" fill="'+(kind==='flood'?'#69B5D0':'#7FAE7A')+'"/>';
+const atmosphere=(kind==='sun'||kind==='partly'||kind==='hot')
+ ? '<g class="atmosphere-birds" fill="none" stroke="#668C7A" stroke-width="1.8" stroke-linecap="round"><path d="M119 31q4-5 8 0q4-5 8 0M105 40q3-4 6 0"/></g><g class="atmosphere-seeds" fill="#E7A52F"><circle cx="18" cy="87" r="1.5"/><circle cx="27" cy="91" r="1"/><circle cx="145" cy="87" r="1.5"/></g>'
+ : kind==='rain'||kind==='storm'
+ ? '<g class="atmosphere-ripples" fill="none" stroke="#7CB9CA" stroke-width="1.5" opacity=".85"><path d="M14 96q5-3 10 0M30 101q5-3 10 0M133 99q5-3 10 0"/></g>'
+ : kind==='snow'||kind==='cold'
+ ? '<g class="atmosphere-sparkles" fill="#FFFFFF" stroke="#83B8D0" stroke-width="1.2"><path d="M19 52v7m-3.5-3.5h7M137 44v7m-3.5-3.5h7M82 25v5m-2.5-2.5h5"/></g>'
+ : kind==='fog'
+ ? '<g class="atmosphere-mist" fill="none" stroke="#FFFFFF" stroke-width="2" opacity=".75"><path d="M8 48q12-4 24 0M116 49q13-4 26 0"/></g>'
+ : '<g class="atmosphere-dust" fill="#D8A45A" opacity=".75"><circle cx="17" cy="75" r="1.5"/><circle cx="34" cy="84" r="1"/><circle cx="146" cy="75" r="1.5"/></g>';
 let scene='';
 if(kind==='sun')scene=sun+ground+'<g class="sun-person" stroke="#284B43" stroke-width="3" stroke-linecap="round"><circle cx="107" cy="72" r="7" fill="#D99B70"/><path d="M99 70q8-12 16 0" fill="#E7A52F"/><path d="M100 82l14 0 5 15H96Z" fill="#4D8F86"/><path d="M99 96l-7 8M113 96l7 8M99 84l-10-4M113 84l9-7" fill="none"/><path d="M88 106h37" stroke-width="4"/></g><path d="M133 88q8-9 14 0M140 80v17" fill="none" stroke="#477F54" stroke-width="3" stroke-linecap="round"/>';
 else if(kind==='partly')scene=sun+cloud+ground+person;
@@ -216,7 +267,7 @@ else if(kind==='flood')scene='<path d="M0 77Q16 68 32 77T64 77T96 77T128 77T160 
 else if(kind==='hot')scene='<g class="heat"><path d="M20 57q-8-9 0-18t0-18M40 57q-8-9 0-18t0-18M60 57q-8-9 0-18t0-18" fill="none" stroke="#E7A52F" stroke-width="3" stroke-linecap="round"/></g>'+sun+ground+'<g class="person" stroke="#284B43" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M90 73q22-16 44 0Z" fill="#E7A52F"/><path d="M98 73q12-6 27 0" fill="#D99B70"/><circle cx="112" cy="80" r="8" fill="#D99B70"/><path d="M103 79q9-12 18 0" fill="#6B5038"/><path d="M103 89l18 0 4 15H99Z" fill="#D96E50"/><path d="M103 103l-4 8M120 103l4 8M103 92l-9 5M120 92l7 5" fill="none"/><path d="M132 87v13q0 4 4 4t4-4V87Z" fill="#8CC5D5" stroke-width="2"/><path d="M131 87h10" stroke-width="3"/></g>';
 else if(kind==='fog')scene='<path d="M14 63Q32 49 51 61T91 60T148 61" fill="none" stroke="#C2D6D0" stroke-width="13" stroke-linecap="round"/><path d="M10 79Q32 65 52 77T99 76T150 77" fill="none" stroke="#AFC9C5" stroke-width="10" stroke-linecap="round"/>'+ground+'<g class="person" stroke="#284B43" stroke-width="3" stroke-linecap="round"><circle cx="112" cy="72" r="8" fill="#D99B70"/><path d="M103 70q9-13 18 0" fill="#477C73"/><path d="M103 82h18l3 20H100Z" fill="#A3BDB6"/><path d="M104 101l-3 10M118 101l5 10" fill="none"/></g>';
 else scene=cloud+ground+person;
-return commonStart+backdrop+scene+end;
+return commonStart+backdrop+atmosphere+scene+end;
 }
 const desc=(c,temp=null,wind=null)=>{const base=codes[c]||['Condición variable',''];let label=base[0];if(String(c)==='flood')label='Advertencia de inundación';else if(wind!==null&&wind!==undefined&&wind!==''&&Number.isFinite(Number(wind))&&Number(wind)>=40&&!([95,96,99].includes(Number(c))))label='Viento fuerte';else if(temp!==null&&temp!==undefined&&temp!==''&&Number.isFinite(Number(temp))&&Number(temp)>=33&&[0,1,2,3].includes(Number(c)))label='Mucho calor';return [label,weatherArt(c,temp,wind)];};
 function dayName(s){return new Date(s+'T12:00:00').toLocaleDateString('es-AR',{weekday:'short',day:'numeric'}).replace('.','')}
