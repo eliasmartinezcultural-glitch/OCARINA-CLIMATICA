@@ -203,6 +203,118 @@ body{background-image:radial-gradient(ellipse at 6% 16%,#fff0c9 0,transparent 26
 @media(max-width:700px){.brand:before{width:24px;height:24px}.hero:after{right:-15px;opacity:.25}.current .icon:after{inset:15% 5%}.weather-art{animation-duration:8s}}
 @media(prefers-reduced-motion:reduce){.weather-art,.weather-art .atmosphere-birds,.weather-art .atmosphere-seeds,.weather-art .atmosphere-ripples,.weather-art .atmosphere-sparkles,.weather-art .atmosphere-mist,.weather-art .atmosphere-dust,.current .icon:after{animation:none!important}}
 
+
+/* MUNDO DEL CLIMA · capa visual familiar, infantil y territorial */
+:root{--paper:#fff8e9;--ink:#214936;--accent-sun:#f4b83f;--accent-river:#54abc8}
+body{background:#f8f4e7;color:#244536;background-image:radial-gradient(ellipse at 10% 0%,#ffe9a8 0,transparent 30%),radial-gradient(ellipse at 95% 30%,#d9f0ed 0,transparent 31%),linear-gradient(180deg,#f8f4e7,#f2f6e8 62%,#fff4df)}
+.wrap{max-width:1120px;padding-top:18px}
+.top{padding:8px 0 18px;border-bottom:2px solid #dbe3d1}
+.brand{font-size:14px;letter-spacing:.12em}
+.brand:before{width:34px;height:34px;border-radius:12px 12px 12px 4px;box-shadow:inset 0 0 0 3px #fff8e9,0 4px 0 #d7e2d1}
+.brand span{font-size:10px;letter-spacing:.17em}
+.place{background:#fffdf5b8;border:1px solid #dce5d4;border-radius:999px;padding:9px 13px;line-height:1.6}
+.hero{isolation:isolate;min-height:310px;display:flex;align-items:center;margin:18px 0 22px;padding:clamp(24px,5vw,50px);border:2px solid #e4dfca;border-radius:30px;overflow:hidden;background:linear-gradient(180deg,#ccecf2 0%,#e6f4e9 58%,#fff0c5 100%);box-shadow:0 8px 0 #e6e4d5,0 18px 42px #4d715014}
+.hero:before{content:"";position:absolute;z-index:0;inset:0;pointer-events:none;background:
+ radial-gradient(circle at 82% 23%,#fff9cf 0 5%,#ffe9a6 5.5% 7%,transparent 7.5%),
+ radial-gradient(ellipse at 85% 25%,#fff8d566 0 14%,transparent 14.5%),
+ linear-gradient(155deg,transparent 0 53%,#9fc9a2 53.2% 65%,transparent 65.2%),
+ linear-gradient(25deg,transparent 0 48%,#b6d4a6 48.2% 64%,transparent 64.2%),
+ linear-gradient(165deg,transparent 0 59%,#76ad9b 59.2% 73%,transparent 73.2%),
+ linear-gradient(180deg,transparent 0 68%,#83b8a0 68.2% 100%)}
+.hero:after{content:"";position:absolute;z-index:0;right:0;bottom:0;width:54%;height:38%;opacity:.8;pointer-events:none;background:repeating-linear-gradient(165deg,transparent 0 13px,#f5f0d0 14px 16px,transparent 17px 25px);mask-image:linear-gradient(90deg,transparent,#000 15%,#000 95%);border-radius:0 0 28px 0}
+.hero>div{z-index:1;max-width:680px}
+.eyebrow{background:#fffaf0e8;border:1px solid #f2d79e;color:#985d26;font-size:11px;letter-spacing:.1em;box-shadow:0 3px 0 #f1dfb9}
+.hero h1{font-size:clamp(44px,7.5vw,82px);line-height:.92;letter-spacing:-.065em;margin:19px 0 17px;text-wrap:balance}
+.hero h1 em{color:#c66d32;text-shadow:0 2px 0 #fff7de}
+.sub{font-size:clamp(14px,1.7vw,17px);line-height:1.7;max-width:520px;color:#365b4a}
+.status{align-self:flex-end;background:#fffdf1c9;border:1px solid #e3e4cf;border-radius:16px;padding:12px 15px;backdrop-filter:blur(5px)}
+.current{border:2px solid #d5e3ce;border-radius:30px;background:linear-gradient(125deg,#fff0bf 0%,#f5f6df 38%,#dff1e9 72%,#d8eef3 100%);box-shadow:0 9px 0 #e6e5d5,0 22px 45px #496c4b17;padding:clamp(21px,4vw,39px)}
+.current:after{content:"";display:block!important;position:absolute;z-index:0;right:-50px;bottom:-105px;top:auto;width:300px;height:240px;border-radius:50%;background:radial-gradient(ellipse at center,#c0e4cf 0 27%,#c0e4cf88 28% 45%,transparent 46%);pointer-events:none;opacity:.7}
+.current-top{font-size:12px;font-weight:750}
+.live{background:#e1f3d9;border:1px solid #b8d9a9;border-radius:999px;padding:6px 10px}
+.now{gap:clamp(12px,3vw,28px);margin:20px 0 28px}
+.current .icon{width:clamp(108px,17vw,170px);height:132px;filter:drop-shadow(0 7px 3px #405d3618)}
+.temp{font-size:clamp(70px,12vw,122px);letter-spacing:-.1em}
+.desc{font-size:clamp(17px,2vw,22px);max-width:260px;line-height:1.25}
+.feels{font-size:13px}
+.metric{border-top:2px dashed #c5d9c4;padding-top:14px}
+.metric span{font-size:12px}
+.metric b{font-size:clamp(17px,2.4vw,24px)}
+.section-head{margin:34px 0 15px}
+.section-head h2{font-size:clamp(19px,2.5vw,25px);letter-spacing:-.035em}
+.section-head span{background:#fffdf4;border:1px solid #e0e5d7;padding:6px 10px;border-radius:999px}
+.hourly{gap:10px;padding:3px 3px 12px}
+.hour{background:#fffdf5;border:2px solid #e0e7d8;border-radius:20px;box-shadow:0 5px 0 #e8e8d9;padding:15px 9px 13px;transition:transform .2s,box-shadow .2s}
+.hour:nth-child(3n+1){background:linear-gradient(160deg,#fffdf5,#fff0d4)}
+.hour:nth-child(3n+2){background:linear-gradient(160deg,#fffdf5,#e7f4f2)}
+.hour:nth-child(3n){background:linear-gradient(160deg,#fffdf5,#edf3df)}
+.hour .small-icon{min-height:59px}
+.hour b{font-size:18px}
+.days{gap:11px}
+.day{background:#fffdf5;border:2px solid #e0e7d8;border-radius:20px;box-shadow:0 5px 0 #e8e8d9;padding:15px 8px 13px;transition:transform .2s,box-shadow .2s}
+.day:nth-child(3n+1){background:linear-gradient(160deg,#fffdf5,#fff0d4)}
+.day:nth-child(3n+2){background:linear-gradient(160deg,#fffdf5,#e7f4f2)}
+.day:nth-child(3n){background:linear-gradient(160deg,#fffdf5,#edf3df)}
+.day strong{font-size:12px}
+.day .small-icon{min-height:58px}
+.range{font-size:15px}
+.rain{font-size:11px;font-weight:750}
+.regional{border:2px solid #d8e4d7;border-radius:22px;padding:20px;background:linear-gradient(120deg,#fffdf5,#e6f4ef);box-shadow:0 6px 0 #e7e8da}
+.regional h2{font-size:16px}
+.regional p{font-size:12px}
+.regional .regional-temp{font-size:36px}
+.foot{font-size:11px;gap:18px}
+button{padding:11px 15px;font-weight:750}
+.error{border-radius:16px}
+@media(max-width:700px){
+ .wrap{padding:12px 14px 24px}
+ .top{align-items:flex-start;padding-bottom:14px}
+ .brand{font-size:12px;gap:8px}
+ .brand:before{width:27px;height:27px;flex:0 0 auto}
+ .place{font-size:9px;max-width:150px;padding:7px 9px}
+ .hero{min-height:300px;margin:14px 0 20px;padding:25px 19px 31px;border-radius:24px;align-items:flex-start}
+ .hero:before{background:
+ radial-gradient(circle at 83% 22%,#fff9cf 0 7%,#ffe9a6 7.5% 10%,transparent 10.5%),
+ linear-gradient(155deg,transparent 0 48%,#9fc9a2 48.2% 64%,transparent 64.2%),
+ linear-gradient(25deg,transparent 0 48%,#b6d4a6 48.2% 64%,transparent 64.2%),
+ linear-gradient(165deg,transparent 0 58%,#76ad9b 58.2% 74%,transparent 74.2%),
+ linear-gradient(180deg,transparent 0 70%,#83b8a0 70.2% 100%)}
+ .hero:after{width:75%;height:25%;opacity:.4}
+ .hero h1{font-size:clamp(43px,12vw,65px);max-width:440px}
+ .sub{max-width:94%;font-size:14px;line-height:1.6}
+ .status{align-self:flex-start;margin-top:14px;text-align:left;padding:9px 11px}
+ .current{border-radius:24px;padding:20px 17px 22px}
+ .current:after{right:-125px;bottom:-100px;opacity:.42}
+ .current .icon{width:94px;height:88px}
+ .now{align-items:center;margin:20px 0 24px}
+ .temp{font-size:clamp(68px,18vw,90px)}
+ .desc{font-size:16px}
+ .metrics{gap:16px 10px}
+ .metric b{font-size:18px}
+ .section-head{align-items:flex-start;flex-direction:column;gap:8px;margin-top:31px}
+ .section-head span{font-size:10px}
+ .days{gap:9px}
+ .day{border-radius:17px;padding:13px 7px}
+ .day .small-icon{min-height:49px}
+ .hour{min-width:76px;border-radius:17px}
+ .regional{padding:16px;border-radius:19px}
+}
+@media(max-width:380px){
+ .top{gap:7px}
+ .brand span{font-size:8px;letter-spacing:.1em}
+ .place{max-width:128px;font-size:8px}
+ .hero{min-height:285px}
+ .hero h1{font-size:43px}
+ .current .icon{width:78px;height:78px}
+ .now{gap:9px}
+ .temp{font-size:65px}
+ .desc{font-size:15px}
+ .day .weather-art{width:36px;height:35px}
+}
+@media(prefers-reduced-motion:reduce){
+ .hero:before,.hero:after,.current:after{animation:none!important}
+}
+
 </style>
 </head>
 <body><div class="wrap">
