@@ -3,8 +3,8 @@
   "status": "ready",
   "source": "Open-Meteo",
   "sourceUrl": "https://open-meteo.com/en/docs",
-  "retrievedAt": "2026-10-17T21:07:14.120709+00:00",
-  "validTime": "2026-10-17T18:00",
+  "retrievedAt": "2026-10-17T23:14:09.040422+00:00",
+  "validTime": "2026-10-17T20:00",
   "location": {
     "name": "San Patricio del Chañar",
     "latitude": -38.625,
@@ -17,7 +17,7 @@
   "data": {
     "latitude": -38.629173,
     "longitude": -68.32654,
-    "generationtime_ms": 90.40164947509766,
+    "generationtime_ms": 32.19270706176758,
     "utc_offset_seconds": -10800,
     "timezone": "America/Argentina/Cordoba",
     "timezone_abbreviation": "GMT-3",
@@ -36,17 +36,17 @@
       "wind_gusts_10m": "km/h"
     },
     "current": {
-      "time": "2026-10-17T18:00",
+      "time": "2026-10-17T20:00",
       "interval": 900,
-      "temperature_2m": 16.9,
-      "relative_humidity_2m": 55,
-      "apparent_temperature": 13.1,
-      "is_day": 1,
+      "temperature_2m": 14.7,
+      "relative_humidity_2m": 64,
+      "apparent_temperature": 11.8,
+      "is_day": 0,
       "precipitation": 0.0,
       "weather_code": 1,
-      "wind_speed_10m": 21.8,
+      "wind_speed_10m": 15.4,
       "wind_direction_10m": 52,
-      "wind_gusts_10m": 38.9
+      "wind_gusts_10m": 29.5
     },
     "hourly_units": {
       "time": "iso8601",
