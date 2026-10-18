@@ -3,8 +3,8 @@
   "status": "ready",
   "source": "Open-Meteo",
   "sourceUrl": "https://open-meteo.com/en/docs",
-  "retrievedAt": "2026-10-18T19:49:23.458417+00:00",
-  "validTime": "2026-10-18T16:45",
+  "retrievedAt": "2026-10-18T22:00:52.901067+00:00",
+  "validTime": "2026-10-18T19:00",
   "location": {
     "name": "San Patricio del Chañar",
     "latitude": -38.625,
@@ -17,7 +17,7 @@
   "data": {
     "latitude": -38.629173,
     "longitude": -68.32654,
-    "generationtime_ms": 50.166964530944824,
+    "generationtime_ms": 193.94981861114502,
     "utc_offset_seconds": -10800,
     "timezone": "America/Argentina/Cordoba",
     "timezone_abbreviation": "GMT-3",
@@ -36,17 +36,17 @@
       "wind_gusts_10m": "km/h"
     },
     "current": {
-      "time": "2026-10-18T16:45",
+      "time": "2026-10-18T19:00",
       "interval": 900,
-      "temperature_2m": 19.5,
-      "relative_humidity_2m": 44,
-      "apparent_temperature": 15.3,
+      "temperature_2m": 17.8,
+      "relative_humidity_2m": 51,
+      "apparent_temperature": 14.2,
       "is_day": 1,
       "precipitation": 0.0,
-      "weather_code": 2,
-      "wind_speed_10m": 23.1,
-      "wind_direction_10m": 37,
-      "wind_gusts_10m": 41.8
+      "weather_code": 3,
+      "wind_speed_10m": 20.1,
+      "wind_direction_10m": 40,
+      "wind_gusts_10m": 37.1
     },
     "hourly_units": {
       "time": "iso8601",
@@ -802,7 +802,7 @@
         3,
         51,
         51,
-        95,
+        53,
         51,
         80,
         53,
@@ -818,15 +818,15 @@
         3,
         3,
         3,
-        3,
-        3,
-        3,
+        45,
+        45,
+        45,
         51,
         51,
         51,
         51,
         2,
-        95,
+        51,
         51,
         51,
         51,
@@ -1273,7 +1273,7 @@
         3,
         80,
         95,
-        95,
+        80,
         95,
         53,
         81
@@ -1281,20 +1281,20 @@
       "temperature_2m_max": [
         19.6,
         16.0,
-        19.8,
+        19.9,
         19.6,
-        16.0,
-        15.6,
-        12.3
+        16.7,
+        15.9,
+        13.6
       ],
       "temperature_2m_min": [
         9.7,
         11.3,
         11.4,
-        11.9,
-        11.4,
-        11.0,
-        10.4
+        11.8,
+        11.3,
+        10.9,
+        10.0
       ],
       "precipitation_probability_max": [
         4,
@@ -1307,12 +1307,12 @@
       ],
       "precipitation_sum": [
         0.0,
-        10.7,
-        8.4,
+        11.1,
+        8.0,
         3.7,
-        29.4,
-        4.0,
-        32.0
+        29.5,
+        4.5,
+        31.5
       ],
       "wind_speed_10m_max": [
         26.8,
