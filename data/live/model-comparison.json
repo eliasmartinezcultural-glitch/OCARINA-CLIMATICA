@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "source": "Open-Meteo",
   "sourceUrl": "https://open-meteo.com/en/docs",
-  "retrievedAt": "2026-10-18T17:38:33.415762+00:00",
+  "retrievedAt": "2026-10-18T19:49:23.460295+00:00",
   "status": "ready",
   "target": "San Patricio del Chañar",
   "modelsRequested": [
@@ -602,23 +602,23 @@
       "2026-10-20"
     ],
     "temperature_2m_max_ecmwf_ifs025": [
-      20.7,
-      15.4,
-      21.0
+      20.6,
+      15.1,
+      20.7
     ],
     "temperature_2m_min_ecmwf_ifs025": [
-      10.2,
-      11.5,
-      12.3
+      10.7,
+      11.9,
+      12.4
     ],
     "precipitation_sum_ecmwf_ifs025": [
       0.0,
-      17.3,
-      2.7
+      16.3,
+      2.9
     ],
     "temperature_2m_max_gfs_seamless": [
-      21.3,
-      21.7,
+      21.2,
+      21.5,
       21.1
     ],
     "temperature_2m_min_gfs_seamless": [
@@ -629,7 +629,7 @@
     "precipitation_sum_gfs_seamless": [
       0.0,
       11.3,
-      1.2
+      1.1
     ],
     "temperature_2m_max_icon_seamless": [
       20.4,
@@ -637,14 +637,14 @@
       19.3
     ],
     "temperature_2m_min_icon_seamless": [
-      9.5,
+      9.6,
       11.0,
       11.2
     ],
     "precipitation_sum_icon_seamless": [
       0.0,
-      8.2,
-      3.0
+      8.0,
+      3.2
     ]
   }
 }
