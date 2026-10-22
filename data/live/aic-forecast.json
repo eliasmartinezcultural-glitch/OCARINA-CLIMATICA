@@ -2,12 +2,12 @@
   "status": "ready",
   "provider": "AIC",
   "dataset": "Pronóstico para El Chañar",
-  "retrievedAt": "2026-10-22T06:14:18.488423+00:00",
+  "retrievedAt": "2026-10-22T12:10:44.668785+00:00",
   "sourceUrl": "https://www.aic.gob.ar/sitio/home?a=1015&z=1967225803",
   "place": "El Chañar",
   "forecast": [
     {
-      "day": "miércoles 21",
+      "day": "jueves 22",
       "periods": [
         {
           "label": "día",
@@ -16,16 +16,16 @@
           "gust": null,
           "direction": "E E",
           "pressure": null,
-          "sky": "Posibles Tormentas Lluvias Débiles y Dispersas"
+          "sky": "Posibles Tormentas Inestable"
         },
         {
           "label": "noche",
           "temperature": null,
           "wind": null,
           "gust": null,
-          "direction": "E",
+          "direction": "SE",
           "pressure": null,
-          "sky": "Posibles Tormentas"
+          "sky": "Lluvias Débiles y Dispersas"
         }
       ]
     }
