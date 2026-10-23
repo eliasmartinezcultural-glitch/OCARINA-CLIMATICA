@@ -4,8 +4,8 @@
   "source": "MET Norway Locationforecast 2.0",
   "sourceUrl": "https://api.met.no/weatherapi/locationforecast/2.0/documentation",
   "requestUrl": "https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=-38.625&lon=-68.3&altitude=357",
-  "retrievedAt": "2026-10-23T02:24:16.570055+00:00",
-  "validTime": "2026-10-23T02:00:00Z",
+  "retrievedAt": "2026-10-23T04:48:56.499523+00:00",
+  "validTime": "2026-10-23T04:00:00Z",
   "target": "San Patricio del Chañar",
   "location": {
     "latitude": -38.625,
@@ -25,30 +25,6 @@
   },
   "model": "MET Norway Locationforecast (modelo global; fuente independiente de Open-Meteo)",
   "data": [
-    {
-      "time": "2026-10-23T02:00:00Z",
-      "temperatureC": 10.7,
-      "relativeHumidityPct": 95.4,
-      "windSpeedMs": 1.6,
-      "windDirectionDegrees": 101.2,
-      "windGustMs": null,
-      "airPressureHpa": 1018.3,
-      "cloudCoverPct": 76.6,
-      "precipitationNextHourMm": 0.0,
-      "symbolCode": "partlycloudy_night"
-    },
-    {
-      "time": "2026-10-23T03:00:00Z",
-      "temperatureC": 10.3,
-      "relativeHumidityPct": 97.0,
-      "windSpeedMs": 1.4,
-      "windDirectionDegrees": 94.8,
-      "windGustMs": null,
-      "airPressureHpa": 1017.8,
-      "cloudCoverPct": 72.7,
-      "precipitationNextHourMm": 0.0,
-      "symbolCode": "partlycloudy_night"
-    },
     {
       "time": "2026-10-23T04:00:00Z",
       "temperatureC": 10.3,
