@@ -2,7 +2,7 @@
   "status": "ready",
   "provider": "AIC",
   "dataset": "Pronóstico para El Chañar",
-  "retrievedAt": "2026-10-24T12:09:07.084016+00:00",
+  "retrievedAt": "2026-10-24T16:08:09.374404+00:00",
   "sourceUrl": "https://www.aic.gob.ar/sitio/home?a=1015&z=1967225803",
   "place": "El Chañar",
   "forecast": [
@@ -14,16 +14,16 @@
           "temperature": null,
           "wind": null,
           "gust": null,
-          "direction": "SE SO",
+          "direction": "SE NE",
           "pressure": null,
-          "sky": "Lluvias Débiles y Dispersas Parcialmente Nublado"
+          "sky": "Mayormente Cubierto Mayormente Despejado"
         },
         {
           "label": "noche",
           "temperature": null,
           "wind": null,
           "gust": null,
-          "direction": "E",
+          "direction": "NE",
           "pressure": null,
           "sky": "Despejado"
         }
