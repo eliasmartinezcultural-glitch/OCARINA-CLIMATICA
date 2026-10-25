@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "source": "Open-Meteo",
   "sourceUrl": "https://open-meteo.com/en/docs",
-  "retrievedAt": "2026-10-24T23:27:43.060642+00:00",
+  "retrievedAt": "2026-10-25T01:23:49.277823+00:00",
   "status": "ready",
   "target": "San Patricio del Chañar",
   "modelsRequested": [
