@@ -4,7 +4,7 @@
   "sourceUrl": "https://w2b.smn.gov.ar/oapi/collections",
   "dataset": "Observaciones sinópticas y automáticas de superficie",
   "target": "Entorno regional de San Patricio del Chañar",
-  "retrievedAt": "2026-10-26T06:33:03.246790+00:00",
+  "retrievedAt": "2026-10-26T13:42:55.859997+00:00",
   "status": "ready",
   "measurementType": "station-observation",
   "referencePoint": {
@@ -14,70 +14,76 @@
   },
   "selected": {
     "stationId": "0-20000-0-87715",
-    "reportId": "0-20000-0-87715-202610260600",
-    "observedAt": "2026-10-26T06:00:00Z",
+    "reportId": "0-20000-0-87715-202610261300",
+    "observedAt": "2026-10-26T13:00:00Z",
     "distanceKm": 39.0,
     "latitude": -38.95194,
     "longitude": -68.13667,
     "variables": {
       "non_coordinate_pressure": {
-        "value": 985.8,
+        "value": 984.8,
         "units": "hPa",
-        "phenomenonTime": "2026-10-26T06:00:00Z",
+        "phenomenonTime": "2026-10-26T13:00:00Z",
         "description": null
       },
       "pressure_reduced_to_mean_sea_level": {
-        "value": 1017.9,
+        "value": 1016.7,
         "units": "hPa",
-        "phenomenonTime": "2026-10-26T06:00:00Z",
+        "phenomenonTime": "2026-10-26T13:00:00Z",
         "description": null
       },
       "3hour_pressure_change": {
-        "value": -1.7,
+        "value": -0.3,
         "units": "hPa",
-        "phenomenonTime": "2026-10-26T06:00:00Z",
+        "phenomenonTime": "2026-10-26T13:00:00Z",
         "description": null
       },
       "air_temperature": {
-        "value": 11.8,
+        "value": 16.0,
         "units": "Celsius",
-        "phenomenonTime": "2026-10-26T06:00:00Z",
+        "phenomenonTime": "2026-10-26T13:00:00Z",
         "description": null
       },
       "dewpoint_temperature": {
-        "value": 4.9,
+        "value": 7.5,
         "units": "Celsius",
-        "phenomenonTime": "2026-10-26T06:00:00Z",
+        "phenomenonTime": "2026-10-26T13:00:00Z",
         "description": null
       },
       "horizontal_visibility": {
         "value": 15000.0,
         "units": "m",
-        "phenomenonTime": "2026-10-26T06:00:00Z",
+        "phenomenonTime": "2026-10-26T13:00:00Z",
         "description": null
       },
       "cloud_cover_total": {
-        "value": 0.0,
+        "value": 50.0,
         "units": "%",
-        "phenomenonTime": "2026-10-26T06:00:00Z",
+        "phenomenonTime": "2026-10-26T13:00:00Z",
         "description": null
       },
-      "total_precipitation_or_total_water_equivalent": {
-        "value": 0.0,
-        "units": "kg m-2",
-        "phenomenonTime": "2026-10-26T00:00:00Z/2026-10-26T06:00:00Z",
+      "height_of_base_of_cloud": {
+        "value": 6000.0,
+        "units": "m",
+        "phenomenonTime": "2026-10-26T13:00:00Z",
+        "description": null
+      },
+      "true_direction_from_which_aphenomenon_or_clouds_are_moving_or_in_which_they_are_observed": {
+        "value": 501.0,
+        "units": "deg",
+        "phenomenonTime": "2026-10-26T13:00:00Z",
         "description": null
       },
       "wind_direction": {
-        "value": 140.0,
+        "value": 50.0,
         "units": "deg",
-        "phenomenonTime": "2026-10-26T05:50:00Z/2026-10-26T06:00:00Z",
+        "phenomenonTime": "2026-10-26T12:50:00Z/2026-10-26T13:00:00Z",
         "description": null
       },
       "wind_speed": {
-        "value": 1.5,
+        "value": 3.6,
         "units": "m/s",
-        "phenomenonTime": "2026-10-26T05:50:00Z/2026-10-26T06:00:00Z",
+        "phenomenonTime": "2026-10-26T12:50:00Z/2026-10-26T13:00:00Z",
         "description": null
       }
     },
@@ -86,9 +92,587 @@
     ],
     "stationName": "NEUQUEN AERO"
   },
-  "temperature": 11.8,
-  "ageMinutes": 33,
+  "temperature": 16.0,
+  "ageMinutes": 43,
   "nearbyReports": [
+    {
+      "stationId": "0-20000-0-87715",
+      "reportId": "0-20000-0-87715-202610261300",
+      "observedAt": "2026-10-26T13:00:00Z",
+      "distanceKm": 39.0,
+      "latitude": -38.95194,
+      "longitude": -68.13667,
+      "variables": {
+        "non_coordinate_pressure": {
+          "value": 984.8,
+          "units": "hPa",
+          "phenomenonTime": "2026-10-26T13:00:00Z",
+          "description": null
+        },
+        "pressure_reduced_to_mean_sea_level": {
+          "value": 1016.7,
+          "units": "hPa",
+          "phenomenonTime": "2026-10-26T13:00:00Z",
+          "description": null
+        },
+        "3hour_pressure_change": {
+          "value": -0.3,
+          "units": "hPa",
+          "phenomenonTime": "2026-10-26T13:00:00Z",
+          "description": null
+        },
+        "air_temperature": {
+          "value": 16.0,
+          "units": "Celsius",
+          "phenomenonTime": "2026-10-26T13:00:00Z",
+          "description": null
+        },
+        "dewpoint_temperature": {
+          "value": 7.5,
+          "units": "Celsius",
+          "phenomenonTime": "2026-10-26T13:00:00Z",
+          "description": null
+        },
+        "horizontal_visibility": {
+          "value": 15000.0,
+          "units": "m",
+          "phenomenonTime": "2026-10-26T13:00:00Z",
+          "description": null
+        },
+        "cloud_cover_total": {
+          "value": 50.0,
+          "units": "%",
+          "phenomenonTime": "2026-10-26T13:00:00Z",
+          "description": null
+        },
+        "height_of_base_of_cloud": {
+          "value": 6000.0,
+          "units": "m",
+          "phenomenonTime": "2026-10-26T13:00:00Z",
+          "description": null
+        },
+        "true_direction_from_which_aphenomenon_or_clouds_are_moving_or_in_which_they_are_observed": {
+          "value": 501.0,
+          "units": "deg",
+          "phenomenonTime": "2026-10-26T13:00:00Z",
+          "description": null
+        },
+        "wind_direction": {
+          "value": 50.0,
+          "units": "deg",
+          "phenomenonTime": "2026-10-26T12:50:00Z/2026-10-26T13:00:00Z",
+          "description": null
+        },
+        "wind_speed": {
+          "value": 3.6,
+          "units": "m/s",
+          "phenomenonTime": "2026-10-26T12:50:00Z/2026-10-26T13:00:00Z",
+          "description": null
+        }
+      },
+      "sourceCollections": [
+        "https://w2b.smn.gov.ar/oapi/collections/urn%3Awmo%3Amd%3Aar-smn%3Aslt0ci/items"
+      ],
+      "stationName": "NEUQUEN AERO"
+    },
+    {
+      "stationId": "0-20000-0-87715",
+      "reportId": "0-20000-0-87715-202610261200",
+      "observedAt": "2026-10-26T12:00:00Z",
+      "distanceKm": 39.0,
+      "latitude": -38.95194,
+      "longitude": -68.13667,
+      "variables": {
+        "non_coordinate_pressure": {
+          "value": 985.0,
+          "units": "hPa",
+          "phenomenonTime": "2026-10-26T12:00:00Z",
+          "description": null
+        },
+        "pressure_reduced_to_mean_sea_level": {
+          "value": 1017.1,
+          "units": "hPa",
+          "phenomenonTime": "2026-10-26T12:00:00Z",
+          "description": null
+        },
+        "3hour_pressure_change": {
+          "value": 0.0,
+          "units": "hPa",
+          "phenomenonTime": "2026-10-26T12:00:00Z",
+          "description": null
+        },
+        "air_temperature": {
+          "value": 13.4,
+          "units": "Celsius",
+          "phenomenonTime": "2026-10-26T12:00:00Z",
+          "description": null
+        },
+        "dewpoint_temperature": {
+          "value": 6.8,
+          "units": "Celsius",
+          "phenomenonTime": "2026-10-26T12:00:00Z",
+          "description": null
+        },
+        "horizontal_visibility": {
+          "value": 15000.0,
+          "units": "m",
+          "phenomenonTime": "2026-10-26T12:00:00Z",
+          "description": null
+        },
+        "cloud_cover_total": {
+          "value": 25.0,
+          "units": "%",
+          "phenomenonTime": "2026-10-26T12:00:00Z",
+          "description": null
+        },
+        "height_of_base_of_cloud": {
+          "value": 6000.0,
+          "units": "m",
+          "phenomenonTime": "2026-10-26T12:00:00Z",
+          "description": null
+        },
+        "true_direction_from_which_aphenomenon_or_clouds_are_moving_or_in_which_they_are_observed": {
+          "value": 501.0,
+          "units": "deg",
+          "phenomenonTime": "2026-10-26T12:00:00Z",
+          "description": null
+        },
+        "total_snow_depth": {
+          "value": 0.0,
+          "units": "m",
+          "phenomenonTime": "2026-10-26T12:00:00Z",
+          "description": null
+        },
+        "ground_minimum_temperature_past12hours": {
+          "value": 6.0,
+          "units": "Celsius",
+          "phenomenonTime": "2026-10-26T12:00:00Z",
+          "description": null
+        },
+        "total_precipitation_or_total_water_equivalent": {
+          "value": 0.0,
+          "units": "kg m-2",
+          "phenomenonTime": "2026-10-26T11:00:00Z/2026-10-26T12:00:00Z",
+          "description": null
+        },
+        "maximum_temperature_at_height_and_over_period_specified": {
+          "value": 17.7,
+          "units": "Celsius",
+          "phenomenonTime": "2026-10-26T00:00:00Z/2026-10-26T12:00:00Z",
+          "description": null
+        },
+        "minimum_temperature_at_height_and_over_period_specified": {
+          "value": 10.7,
+          "units": "Celsius",
+          "phenomenonTime": "2026-10-26T00:00:00Z/2026-10-26T12:00:00Z",
+          "description": null
+        },
+        "wind_direction": {
+          "value": 90.0,
+          "units": "deg",
+          "phenomenonTime": "2026-10-26T11:50:00Z/2026-10-26T12:00:00Z",
+          "description": null
+        },
+        "wind_speed": {
+          "value": 3.6,
+          "units": "m/s",
+          "phenomenonTime": "2026-10-26T11:50:00Z/2026-10-26T12:00:00Z",
+          "description": null
+        }
+      },
+      "sourceCollections": [
+        "https://w2b.smn.gov.ar/oapi/collections/urn%3Awmo%3Amd%3Aar-smn%3Aslt0ci/items"
+      ],
+      "stationName": "NEUQUEN AERO"
+    },
+    {
+      "stationId": "0-20000-0-87715",
+      "reportId": "0-20000-0-87715-202610261100",
+      "observedAt": "2026-10-26T11:00:00Z",
+      "distanceKm": 39.0,
+      "latitude": -38.95194,
+      "longitude": -68.13667,
+      "variables": {
+        "height_of_base_of_cloud": {
+          "value": 6000.0,
+          "units": "m",
+          "phenomenonTime": "2026-10-26T11:00:00Z",
+          "description": null
+        },
+        "true_direction_from_which_aphenomenon_or_clouds_are_moving_or_in_which_they_are_observed": {
+          "value": 501.0,
+          "units": "deg",
+          "phenomenonTime": "2026-10-26T11:00:00Z",
+          "description": null
+        },
+        "wind_direction": {
+          "value": 110.0,
+          "units": "deg",
+          "phenomenonTime": "2026-10-26T10:50:00Z/2026-10-26T11:00:00Z",
+          "description": null
+        },
+        "wind_speed": {
+          "value": 3.1,
+          "units": "m/s",
+          "phenomenonTime": "2026-10-26T10:50:00Z/2026-10-26T11:00:00Z",
+          "description": null
+        },
+        "non_coordinate_pressure": {
+          "value": 985.0,
+          "units": "hPa",
+          "phenomenonTime": "2026-10-26T11:00:00Z",
+          "description": null
+        },
+        "pressure_reduced_to_mean_sea_level": {
+          "value": 1017.0,
+          "units": "hPa",
+          "phenomenonTime": "2026-10-26T11:00:00Z",
+          "description": null
+        },
+        "3hour_pressure_change": {
+          "value": -0.1,
+          "units": "hPa",
+          "phenomenonTime": "2026-10-26T11:00:00Z",
+          "description": null
+        },
+        "air_temperature": {
+          "value": 12.4,
+          "units": "Celsius",
+          "phenomenonTime": "2026-10-26T11:00:00Z",
+          "description": null
+        },
+        "dewpoint_temperature": {
+          "value": 6.1,
+          "units": "Celsius",
+          "phenomenonTime": "2026-10-26T11:00:00Z",
+          "description": null
+        },
+        "horizontal_visibility": {
+          "value": 15000.0,
+          "units": "m",
+          "phenomenonTime": "2026-10-26T11:00:00Z",
+          "description": null
+        },
+        "cloud_cover_total": {
+          "value": 25.0,
+          "units": "%",
+          "phenomenonTime": "2026-10-26T11:00:00Z",
+          "description": null
+        }
+      },
+      "sourceCollections": [
+        "https://w2b.smn.gov.ar/oapi/collections/urn%3Awmo%3Amd%3Aar-smn%3Aslt0ci/items"
+      ],
+      "stationName": "NEUQUEN AERO"
+    },
+    {
+      "stationId": "0-20000-0-87715",
+      "reportId": "0-20000-0-87715-202610261000",
+      "observedAt": "2026-10-26T10:00:00Z",
+      "distanceKm": 39.0,
+      "latitude": -38.95194,
+      "longitude": -68.13667,
+      "variables": {
+        "non_coordinate_pressure": {
+          "value": 985.0,
+          "units": "hPa",
+          "phenomenonTime": "2026-10-26T10:00:00Z",
+          "description": null
+        },
+        "pressure_reduced_to_mean_sea_level": {
+          "value": 1017.1,
+          "units": "hPa",
+          "phenomenonTime": "2026-10-26T10:00:00Z",
+          "description": null
+        },
+        "3hour_pressure_change": {
+          "value": -0.3,
+          "units": "hPa",
+          "phenomenonTime": "2026-10-26T10:00:00Z",
+          "description": null
+        },
+        "air_temperature": {
+          "value": 11.2,
+          "units": "Celsius",
+          "phenomenonTime": "2026-10-26T10:00:00Z",
+          "description": null
+        },
+        "dewpoint_temperature": {
+          "value": 6.1,
+          "units": "Celsius",
+          "phenomenonTime": "2026-10-26T10:00:00Z",
+          "description": null
+        },
+        "horizontal_visibility": {
+          "value": 15000.0,
+          "units": "m",
+          "phenomenonTime": "2026-10-26T10:00:00Z",
+          "description": null
+        },
+        "cloud_cover_total": {
+          "value": 25.0,
+          "units": "%",
+          "phenomenonTime": "2026-10-26T10:00:00Z",
+          "description": null
+        },
+        "height_of_base_of_cloud": {
+          "value": 3000.0,
+          "units": "m",
+          "phenomenonTime": "2026-10-26T10:00:00Z",
+          "description": null
+        },
+        "true_direction_from_which_aphenomenon_or_clouds_are_moving_or_in_which_they_are_observed": {
+          "value": 0.0,
+          "units": "deg",
+          "phenomenonTime": "2026-10-26T10:00:00Z",
+          "description": null
+        },
+        "wind_direction": {
+          "value": 110.0,
+          "units": "deg",
+          "phenomenonTime": "2026-10-26T09:50:00Z/2026-10-26T10:00:00Z",
+          "description": null
+        },
+        "wind_speed": {
+          "value": 2.1,
+          "units": "m/s",
+          "phenomenonTime": "2026-10-26T09:50:00Z/2026-10-26T10:00:00Z",
+          "description": null
+        }
+      },
+      "sourceCollections": [
+        "https://w2b.smn.gov.ar/oapi/collections/urn%3Awmo%3Amd%3Aar-smn%3Aslt0ci/items"
+      ],
+      "stationName": "NEUQUEN AERO"
+    },
+    {
+      "stationId": "0-20000-0-87715",
+      "reportId": "0-20000-0-87715-202610260900",
+      "observedAt": "2026-10-26T09:00:00Z",
+      "distanceKm": 39.0,
+      "latitude": -38.95194,
+      "longitude": -68.13667,
+      "variables": {
+        "non_coordinate_pressure": {
+          "value": 985.0,
+          "units": "hPa",
+          "phenomenonTime": "2026-10-26T09:00:00Z",
+          "description": null
+        },
+        "pressure_reduced_to_mean_sea_level": {
+          "value": 1017.0,
+          "units": "hPa",
+          "phenomenonTime": "2026-10-26T09:00:00Z",
+          "description": null
+        },
+        "3hour_pressure_change": {
+          "value": -0.8,
+          "units": "hPa",
+          "phenomenonTime": "2026-10-26T09:00:00Z",
+          "description": null
+        },
+        "air_temperature": {
+          "value": 11.2,
+          "units": "Celsius",
+          "phenomenonTime": "2026-10-26T09:00:00Z",
+          "description": null
+        },
+        "dewpoint_temperature": {
+          "value": 5.6,
+          "units": "Celsius",
+          "phenomenonTime": "2026-10-26T09:00:00Z",
+          "description": null
+        },
+        "horizontal_visibility": {
+          "value": 15000.0,
+          "units": "m",
+          "phenomenonTime": "2026-10-26T09:00:00Z",
+          "description": null
+        },
+        "cloud_cover_total": {
+          "value": 38.0,
+          "units": "%",
+          "phenomenonTime": "2026-10-26T09:00:00Z",
+          "description": null
+        },
+        "height_of_base_of_cloud": {
+          "value": 3000.0,
+          "units": "m",
+          "phenomenonTime": "2026-10-26T09:00:00Z",
+          "description": null
+        },
+        "true_direction_from_which_aphenomenon_or_clouds_are_moving_or_in_which_they_are_observed": {
+          "value": 0.0,
+          "units": "deg",
+          "phenomenonTime": "2026-10-26T09:00:00Z",
+          "description": null
+        },
+        "wind_direction": {
+          "value": 110.0,
+          "units": "deg",
+          "phenomenonTime": "2026-10-26T08:50:00Z/2026-10-26T09:00:00Z",
+          "description": null
+        },
+        "wind_speed": {
+          "value": 2.1,
+          "units": "m/s",
+          "phenomenonTime": "2026-10-26T08:50:00Z/2026-10-26T09:00:00Z",
+          "description": null
+        }
+      },
+      "sourceCollections": [
+        "https://w2b.smn.gov.ar/oapi/collections/urn%3Awmo%3Amd%3Aar-smn%3Aslt0ci/items"
+      ],
+      "stationName": "NEUQUEN AERO"
+    },
+    {
+      "stationId": "0-20000-0-87715",
+      "reportId": "0-20000-0-87715-202610260800",
+      "observedAt": "2026-10-26T08:00:00Z",
+      "distanceKm": 39.0,
+      "latitude": -38.95194,
+      "longitude": -68.13667,
+      "variables": {
+        "non_coordinate_pressure": {
+          "value": 985.2,
+          "units": "hPa",
+          "phenomenonTime": "2026-10-26T08:00:00Z",
+          "description": null
+        },
+        "pressure_reduced_to_mean_sea_level": {
+          "value": 1017.1,
+          "units": "hPa",
+          "phenomenonTime": "2026-10-26T08:00:00Z",
+          "description": null
+        },
+        "3hour_pressure_change": {
+          "value": -1.6,
+          "units": "hPa",
+          "phenomenonTime": "2026-10-26T08:00:00Z",
+          "description": null
+        },
+        "air_temperature": {
+          "value": 11.2,
+          "units": "Celsius",
+          "phenomenonTime": "2026-10-26T08:00:00Z",
+          "description": null
+        },
+        "dewpoint_temperature": {
+          "value": 4.6,
+          "units": "Celsius",
+          "phenomenonTime": "2026-10-26T08:00:00Z",
+          "description": null
+        },
+        "horizontal_visibility": {
+          "value": 15000.0,
+          "units": "m",
+          "phenomenonTime": "2026-10-26T08:00:00Z",
+          "description": null
+        },
+        "cloud_cover_total": {
+          "value": 25.0,
+          "units": "%",
+          "phenomenonTime": "2026-10-26T08:00:00Z",
+          "description": null
+        },
+        "height_of_base_of_cloud": {
+          "value": 3000.0,
+          "units": "m",
+          "phenomenonTime": "2026-10-26T08:00:00Z",
+          "description": null
+        },
+        "true_direction_from_which_aphenomenon_or_clouds_are_moving_or_in_which_they_are_observed": {
+          "value": 0.0,
+          "units": "deg",
+          "phenomenonTime": "2026-10-26T08:00:00Z",
+          "description": null
+        },
+        "wind_direction": {
+          "value": 110.0,
+          "units": "deg",
+          "phenomenonTime": "2026-10-26T07:50:00Z/2026-10-26T08:00:00Z",
+          "description": null
+        },
+        "wind_speed": {
+          "value": 1.5,
+          "units": "m/s",
+          "phenomenonTime": "2026-10-26T07:50:00Z/2026-10-26T08:00:00Z",
+          "description": null
+        }
+      },
+      "sourceCollections": [
+        "https://w2b.smn.gov.ar/oapi/collections/urn%3Awmo%3Amd%3Aar-smn%3Aslt0ci/items"
+      ],
+      "stationName": "NEUQUEN AERO"
+    },
+    {
+      "stationId": "0-20000-0-87715",
+      "reportId": "0-20000-0-87715-202610260700",
+      "observedAt": "2026-10-26T07:00:00Z",
+      "distanceKm": 39.0,
+      "latitude": -38.95194,
+      "longitude": -68.13667,
+      "variables": {
+        "non_coordinate_pressure": {
+          "value": 985.3,
+          "units": "hPa",
+          "phenomenonTime": "2026-10-26T07:00:00Z",
+          "description": null
+        },
+        "pressure_reduced_to_mean_sea_level": {
+          "value": 1017.2,
+          "units": "hPa",
+          "phenomenonTime": "2026-10-26T07:00:00Z",
+          "description": null
+        },
+        "3hour_pressure_change": {
+          "value": -2.0,
+          "units": "hPa",
+          "phenomenonTime": "2026-10-26T07:00:00Z",
+          "description": null
+        },
+        "air_temperature": {
+          "value": 11.8,
+          "units": "Celsius",
+          "phenomenonTime": "2026-10-26T07:00:00Z",
+          "description": null
+        },
+        "dewpoint_temperature": {
+          "value": 4.4,
+          "units": "Celsius",
+          "phenomenonTime": "2026-10-26T07:00:00Z",
+          "description": null
+        },
+        "horizontal_visibility": {
+          "value": 15000.0,
+          "units": "m",
+          "phenomenonTime": "2026-10-26T07:00:00Z",
+          "description": null
+        },
+        "cloud_cover_total": {
+          "value": 0.0,
+          "units": "%",
+          "phenomenonTime": "2026-10-26T07:00:00Z",
+          "description": null
+        },
+        "wind_direction": {
+          "value": 110.0,
+          "units": "deg",
+          "phenomenonTime": "2026-10-26T06:50:00Z/2026-10-26T07:00:00Z",
+          "description": null
+        },
+        "wind_speed": {
+          "value": 1.5,
+          "units": "m/s",
+          "phenomenonTime": "2026-10-26T06:50:00Z/2026-10-26T07:00:00Z",
+          "description": null
+        }
+      },
+      "sourceCollections": [
+        "https://w2b.smn.gov.ar/oapi/collections/urn%3Awmo%3Amd%3Aar-smn%3Aslt0ci/items"
+      ],
+      "stationName": "NEUQUEN AERO"
+    },
     {
       "stationId": "0-20000-0-87715",
       "reportId": "0-20000-0-87715-202610260600",
@@ -1819,590 +2403,6 @@
           "value": 1.0,
           "units": "m/s",
           "phenomenonTime": "2026-10-25T06:50:00Z/2026-10-25T07:00:00Z",
-          "description": null
-        }
-      },
-      "sourceCollections": [
-        "https://w2b.smn.gov.ar/oapi/collections/urn%3Awmo%3Amd%3Aar-smn%3Aslt0ci/items"
-      ],
-      "stationName": "NEUQUEN AERO"
-    },
-    {
-      "stationId": "0-20000-0-87715",
-      "reportId": "0-20000-0-87715-202610250600",
-      "observedAt": "2026-10-25T06:00:00Z",
-      "distanceKm": 39.0,
-      "latitude": -38.95194,
-      "longitude": -68.13667,
-      "variables": {
-        "non_coordinate_pressure": {
-          "value": 994.2,
-          "units": "hPa",
-          "phenomenonTime": "2026-10-25T06:00:00Z",
-          "description": null
-        },
-        "pressure_reduced_to_mean_sea_level": {
-          "value": 1027.0,
-          "units": "hPa",
-          "phenomenonTime": "2026-10-25T06:00:00Z",
-          "description": null
-        },
-        "3hour_pressure_change": {
-          "value": 0.0,
-          "units": "hPa",
-          "phenomenonTime": "2026-10-25T06:00:00Z",
-          "description": null
-        },
-        "air_temperature": {
-          "value": 10.2,
-          "units": "Celsius",
-          "phenomenonTime": "2026-10-25T06:00:00Z",
-          "description": null
-        },
-        "dewpoint_temperature": {
-          "value": 7.3,
-          "units": "Celsius",
-          "phenomenonTime": "2026-10-25T06:00:00Z",
-          "description": null
-        },
-        "horizontal_visibility": {
-          "value": 15000.0,
-          "units": "m",
-          "phenomenonTime": "2026-10-25T06:00:00Z",
-          "description": null
-        },
-        "cloud_cover_total": {
-          "value": 38.0,
-          "units": "%",
-          "phenomenonTime": "2026-10-25T06:00:00Z",
-          "description": null
-        },
-        "height_of_base_of_cloud": {
-          "value": 3000.0,
-          "units": "m",
-          "phenomenonTime": "2026-10-25T06:00:00Z",
-          "description": null
-        },
-        "true_direction_from_which_aphenomenon_or_clouds_are_moving_or_in_which_they_are_observed": {
-          "value": 0.0,
-          "units": "deg",
-          "phenomenonTime": "2026-10-25T06:00:00Z",
-          "description": null
-        },
-        "total_precipitation_or_total_water_equivalent": {
-          "value": 0.0,
-          "units": "kg m-2",
-          "phenomenonTime": "2026-10-25T00:00:00Z/2026-10-25T06:00:00Z",
-          "description": null
-        },
-        "wind_direction": {
-          "value": 110.0,
-          "units": "deg",
-          "phenomenonTime": "2026-10-25T05:50:00Z/2026-10-25T06:00:00Z",
-          "description": null
-        },
-        "wind_speed": {
-          "value": 1.5,
-          "units": "m/s",
-          "phenomenonTime": "2026-10-25T05:50:00Z/2026-10-25T06:00:00Z",
-          "description": null
-        }
-      },
-      "sourceCollections": [
-        "https://w2b.smn.gov.ar/oapi/collections/urn%3Awmo%3Amd%3Aar-smn%3Aslt0ci/items"
-      ],
-      "stationName": "NEUQUEN AERO"
-    },
-    {
-      "stationId": "0-20000-0-87715",
-      "reportId": "0-20000-0-87715-202610250500",
-      "observedAt": "2026-10-25T05:00:00Z",
-      "distanceKm": 39.0,
-      "latitude": -38.95194,
-      "longitude": -68.13667,
-      "variables": {
-        "non_coordinate_pressure": {
-          "value": 994.6,
-          "units": "hPa",
-          "phenomenonTime": "2026-10-25T05:00:00Z",
-          "description": null
-        },
-        "pressure_reduced_to_mean_sea_level": {
-          "value": 1027.3,
-          "units": "hPa",
-          "phenomenonTime": "2026-10-25T05:00:00Z",
-          "description": null
-        },
-        "3hour_pressure_change": {
-          "value": 0.5,
-          "units": "hPa",
-          "phenomenonTime": "2026-10-25T05:00:00Z",
-          "description": null
-        },
-        "air_temperature": {
-          "value": 11.1,
-          "units": "Celsius",
-          "phenomenonTime": "2026-10-25T05:00:00Z",
-          "description": null
-        },
-        "dewpoint_temperature": {
-          "value": 7.4,
-          "units": "Celsius",
-          "phenomenonTime": "2026-10-25T05:00:00Z",
-          "description": null
-        },
-        "horizontal_visibility": {
-          "value": 15000.0,
-          "units": "m",
-          "phenomenonTime": "2026-10-25T05:00:00Z",
-          "description": null
-        },
-        "cloud_cover_total": {
-          "value": 50.0,
-          "units": "%",
-          "phenomenonTime": "2026-10-25T05:00:00Z",
-          "description": null
-        },
-        "height_of_base_of_cloud": {
-          "value": 3000.0,
-          "units": "m",
-          "phenomenonTime": "2026-10-25T05:00:00Z",
-          "description": null
-        },
-        "true_direction_from_which_aphenomenon_or_clouds_are_moving_or_in_which_they_are_observed": {
-          "value": 0.0,
-          "units": "deg",
-          "phenomenonTime": "2026-10-25T05:00:00Z",
-          "description": null
-        },
-        "wind_direction": {
-          "value": 90.0,
-          "units": "deg",
-          "phenomenonTime": "2026-10-25T04:50:00Z/2026-10-25T05:00:00Z",
-          "description": null
-        },
-        "wind_speed": {
-          "value": 1.5,
-          "units": "m/s",
-          "phenomenonTime": "2026-10-25T04:50:00Z/2026-10-25T05:00:00Z",
-          "description": null
-        }
-      },
-      "sourceCollections": [
-        "https://w2b.smn.gov.ar/oapi/collections/urn%3Awmo%3Amd%3Aar-smn%3Aslt0ci/items"
-      ],
-      "stationName": "NEUQUEN AERO"
-    },
-    {
-      "stationId": "0-20000-0-87715",
-      "reportId": "0-20000-0-87715-202610250400",
-      "observedAt": "2026-10-25T04:00:00Z",
-      "distanceKm": 39.0,
-      "latitude": -38.95194,
-      "longitude": -68.13667,
-      "variables": {
-        "non_coordinate_pressure": {
-          "value": 994.6,
-          "units": "hPa",
-          "phenomenonTime": "2026-10-25T04:00:00Z",
-          "description": null
-        },
-        "pressure_reduced_to_mean_sea_level": {
-          "value": 1027.2,
-          "units": "hPa",
-          "phenomenonTime": "2026-10-25T04:00:00Z",
-          "description": null
-        },
-        "3hour_pressure_change": {
-          "value": 0.9,
-          "units": "hPa",
-          "phenomenonTime": "2026-10-25T04:00:00Z",
-          "description": null
-        },
-        "air_temperature": {
-          "value": 12.0,
-          "units": "Celsius",
-          "phenomenonTime": "2026-10-25T04:00:00Z",
-          "description": null
-        },
-        "dewpoint_temperature": {
-          "value": 7.7,
-          "units": "Celsius",
-          "phenomenonTime": "2026-10-25T04:00:00Z",
-          "description": null
-        },
-        "horizontal_visibility": {
-          "value": 15000.0,
-          "units": "m",
-          "phenomenonTime": "2026-10-25T04:00:00Z",
-          "description": null
-        },
-        "cloud_cover_total": {
-          "value": 38.0,
-          "units": "%",
-          "phenomenonTime": "2026-10-25T04:00:00Z",
-          "description": null
-        },
-        "height_of_base_of_cloud": {
-          "value": 3000.0,
-          "units": "m",
-          "phenomenonTime": "2026-10-25T04:00:00Z",
-          "description": null
-        },
-        "true_direction_from_which_aphenomenon_or_clouds_are_moving_or_in_which_they_are_observed": {
-          "value": 0.0,
-          "units": "deg",
-          "phenomenonTime": "2026-10-25T04:00:00Z",
-          "description": null
-        },
-        "wind_direction": {
-          "value": 90.0,
-          "units": "deg",
-          "phenomenonTime": "2026-10-25T03:50:00Z/2026-10-25T04:00:00Z",
-          "description": null
-        },
-        "wind_speed": {
-          "value": 2.6,
-          "units": "m/s",
-          "phenomenonTime": "2026-10-25T03:50:00Z/2026-10-25T04:00:00Z",
-          "description": null
-        }
-      },
-      "sourceCollections": [
-        "https://w2b.smn.gov.ar/oapi/collections/urn%3Awmo%3Amd%3Aar-smn%3Aslt0ci/items"
-      ],
-      "stationName": "NEUQUEN AERO"
-    },
-    {
-      "stationId": "0-20000-0-87715",
-      "reportId": "0-20000-0-87715-202610250300",
-      "observedAt": "2026-10-25T03:00:00Z",
-      "distanceKm": 39.0,
-      "latitude": -38.95194,
-      "longitude": -68.13667,
-      "variables": {
-        "height_of_base_of_cloud": {
-          "value": 3000.0,
-          "units": "m",
-          "phenomenonTime": "2026-10-25T03:00:00Z",
-          "description": null
-        },
-        "true_direction_from_which_aphenomenon_or_clouds_are_moving_or_in_which_they_are_observed": {
-          "value": 0.0,
-          "units": "deg",
-          "phenomenonTime": "2026-10-25T03:00:00Z",
-          "description": null
-        },
-        "wind_direction": {
-          "value": 0.0,
-          "units": "deg",
-          "phenomenonTime": "2026-10-25T02:50:00Z/2026-10-25T03:00:00Z",
-          "description": null
-        },
-        "wind_speed": {
-          "value": 0.0,
-          "units": "m/s",
-          "phenomenonTime": "2026-10-25T02:50:00Z/2026-10-25T03:00:00Z",
-          "description": null
-        },
-        "non_coordinate_pressure": {
-          "value": 994.2,
-          "units": "hPa",
-          "phenomenonTime": "2026-10-25T03:00:00Z",
-          "description": null
-        },
-        "pressure_reduced_to_mean_sea_level": {
-          "value": 1027.0,
-          "units": "hPa",
-          "phenomenonTime": "2026-10-25T03:00:00Z",
-          "description": null
-        },
-        "3hour_pressure_change": {
-          "value": 1.2,
-          "units": "hPa",
-          "phenomenonTime": "2026-10-25T03:00:00Z",
-          "description": null
-        },
-        "air_temperature": {
-          "value": 10.8,
-          "units": "Celsius",
-          "phenomenonTime": "2026-10-25T03:00:00Z",
-          "description": null
-        },
-        "dewpoint_temperature": {
-          "value": 9.2,
-          "units": "Celsius",
-          "phenomenonTime": "2026-10-25T03:00:00Z",
-          "description": null
-        },
-        "horizontal_visibility": {
-          "value": 7000.0,
-          "units": "m",
-          "phenomenonTime": "2026-10-25T03:00:00Z",
-          "description": null
-        },
-        "cloud_cover_total": {
-          "value": 25.0,
-          "units": "%",
-          "phenomenonTime": "2026-10-25T03:00:00Z",
-          "description": null
-        }
-      },
-      "sourceCollections": [
-        "https://w2b.smn.gov.ar/oapi/collections/urn%3Awmo%3Amd%3Aar-smn%3Aslt0ci/items"
-      ],
-      "stationName": "NEUQUEN AERO"
-    },
-    {
-      "stationId": "0-20000-0-87715",
-      "reportId": "0-20000-0-87715-202610250200",
-      "observedAt": "2026-10-25T02:00:00Z",
-      "distanceKm": 39.0,
-      "latitude": -38.95194,
-      "longitude": -68.13667,
-      "variables": {
-        "non_coordinate_pressure": {
-          "value": 994.1,
-          "units": "hPa",
-          "phenomenonTime": "2026-10-25T02:00:00Z",
-          "description": null
-        },
-        "pressure_reduced_to_mean_sea_level": {
-          "value": 1026.8,
-          "units": "hPa",
-          "phenomenonTime": "2026-10-25T02:00:00Z",
-          "description": null
-        },
-        "3hour_pressure_change": {
-          "value": 1.5,
-          "units": "hPa",
-          "phenomenonTime": "2026-10-25T02:00:00Z",
-          "description": null
-        },
-        "air_temperature": {
-          "value": 11.8,
-          "units": "Celsius",
-          "phenomenonTime": "2026-10-25T02:00:00Z",
-          "description": null
-        },
-        "dewpoint_temperature": {
-          "value": 9.4,
-          "units": "Celsius",
-          "phenomenonTime": "2026-10-25T02:00:00Z",
-          "description": null
-        },
-        "horizontal_visibility": {
-          "value": 15000.0,
-          "units": "m",
-          "phenomenonTime": "2026-10-25T02:00:00Z",
-          "description": null
-        },
-        "cloud_cover_total": {
-          "value": 25.0,
-          "units": "%",
-          "phenomenonTime": "2026-10-25T02:00:00Z",
-          "description": null
-        },
-        "height_of_base_of_cloud": {
-          "value": 3000.0,
-          "units": "m",
-          "phenomenonTime": "2026-10-25T02:00:00Z",
-          "description": null
-        },
-        "true_direction_from_which_aphenomenon_or_clouds_are_moving_or_in_which_they_are_observed": {
-          "value": 0.0,
-          "units": "deg",
-          "phenomenonTime": "2026-10-25T02:00:00Z",
-          "description": null
-        },
-        "wind_direction": {
-          "value": 0.0,
-          "units": "deg",
-          "phenomenonTime": "2026-10-25T01:50:00Z/2026-10-25T02:00:00Z",
-          "description": null
-        },
-        "wind_speed": {
-          "value": 0.0,
-          "units": "m/s",
-          "phenomenonTime": "2026-10-25T01:50:00Z/2026-10-25T02:00:00Z",
-          "description": null
-        }
-      },
-      "sourceCollections": [
-        "https://w2b.smn.gov.ar/oapi/collections/urn%3Awmo%3Amd%3Aar-smn%3Aslt0ci/items"
-      ],
-      "stationName": "NEUQUEN AERO"
-    },
-    {
-      "stationId": "0-20000-0-87715",
-      "reportId": "0-20000-0-87715-202610250100",
-      "observedAt": "2026-10-25T01:00:00Z",
-      "distanceKm": 39.0,
-      "latitude": -38.95194,
-      "longitude": -68.13667,
-      "variables": {
-        "non_coordinate_pressure": {
-          "value": 993.7,
-          "units": "hPa",
-          "phenomenonTime": "2026-10-25T01:00:00Z",
-          "description": null
-        },
-        "pressure_reduced_to_mean_sea_level": {
-          "value": 1026.3,
-          "units": "hPa",
-          "phenomenonTime": "2026-10-25T01:00:00Z",
-          "description": null
-        },
-        "3hour_pressure_change": {
-          "value": 1.3,
-          "units": "hPa",
-          "phenomenonTime": "2026-10-25T01:00:00Z",
-          "description": null
-        },
-        "air_temperature": {
-          "value": 13.4,
-          "units": "Celsius",
-          "phenomenonTime": "2026-10-25T01:00:00Z",
-          "description": null
-        },
-        "dewpoint_temperature": {
-          "value": 9.7,
-          "units": "Celsius",
-          "phenomenonTime": "2026-10-25T01:00:00Z",
-          "description": null
-        },
-        "horizontal_visibility": {
-          "value": 15000.0,
-          "units": "m",
-          "phenomenonTime": "2026-10-25T01:00:00Z",
-          "description": null
-        },
-        "cloud_cover_total": {
-          "value": 38.0,
-          "units": "%",
-          "phenomenonTime": "2026-10-25T01:00:00Z",
-          "description": null
-        },
-        "height_of_base_of_cloud": {
-          "value": 3000.0,
-          "units": "m",
-          "phenomenonTime": "2026-10-25T01:00:00Z",
-          "description": null
-        },
-        "true_direction_from_which_aphenomenon_or_clouds_are_moving_or_in_which_they_are_observed": {
-          "value": 0.0,
-          "units": "deg",
-          "phenomenonTime": "2026-10-25T01:00:00Z",
-          "description": null
-        },
-        "wind_direction": {
-          "value": 110.0,
-          "units": "deg",
-          "phenomenonTime": "2026-10-25T00:50:00Z/2026-10-25T01:00:00Z",
-          "description": null
-        },
-        "wind_speed": {
-          "value": 0.5,
-          "units": "m/s",
-          "phenomenonTime": "2026-10-25T00:50:00Z/2026-10-25T01:00:00Z",
-          "description": null
-        }
-      },
-      "sourceCollections": [
-        "https://w2b.smn.gov.ar/oapi/collections/urn%3Awmo%3Amd%3Aar-smn%3Aslt0ci/items"
-      ],
-      "stationName": "NEUQUEN AERO"
-    },
-    {
-      "stationId": "0-20000-0-87715",
-      "reportId": "0-20000-0-87715-202610250000",
-      "observedAt": "2026-10-25T00:00:00Z",
-      "distanceKm": 39.0,
-      "latitude": -38.95194,
-      "longitude": -68.13667,
-      "variables": {
-        "non_coordinate_pressure": {
-          "value": 993.0,
-          "units": "hPa",
-          "phenomenonTime": "2026-10-25T00:00:00Z",
-          "description": null
-        },
-        "pressure_reduced_to_mean_sea_level": {
-          "value": 1025.7,
-          "units": "hPa",
-          "phenomenonTime": "2026-10-25T00:00:00Z",
-          "description": null
-        },
-        "3hour_pressure_change": {
-          "value": 0.9,
-          "units": "hPa",
-          "phenomenonTime": "2026-10-25T00:00:00Z",
-          "description": null
-        },
-        "air_temperature": {
-          "value": 14.7,
-          "units": "Celsius",
-          "phenomenonTime": "2026-10-25T00:00:00Z",
-          "description": null
-        },
-        "dewpoint_temperature": {
-          "value": 8.6,
-          "units": "Celsius",
-          "phenomenonTime": "2026-10-25T00:00:00Z",
-          "description": null
-        },
-        "horizontal_visibility": {
-          "value": 15000.0,
-          "units": "m",
-          "phenomenonTime": "2026-10-25T00:00:00Z",
-          "description": null
-        },
-        "cloud_cover_total": {
-          "value": 38.0,
-          "units": "%",
-          "phenomenonTime": "2026-10-25T00:00:00Z",
-          "description": null
-        },
-        "height_of_base_of_cloud": {
-          "value": 1500.0,
-          "units": "m",
-          "phenomenonTime": "2026-10-25T00:00:00Z",
-          "description": null
-        },
-        "true_direction_from_which_aphenomenon_or_clouds_are_moving_or_in_which_they_are_observed": {
-          "value": 0.0,
-          "units": "deg",
-          "phenomenonTime": "2026-10-25T00:00:00Z",
-          "description": null
-        },
-        "total_precipitation_or_total_water_equivalent": {
-          "value": 0.0,
-          "units": "kg m-2",
-          "phenomenonTime": "2026-10-24T18:00:00Z/2026-10-25T00:00:00Z",
-          "description": null
-        },
-        "maximum_temperature_at_height_and_over_period_specified": {
-          "value": 17.5,
-          "units": "Celsius",
-          "phenomenonTime": "2026-10-24T12:00:00Z/2026-10-25T00:00:00Z",
-          "description": null
-        },
-        "minimum_temperature_at_height_and_over_period_specified": {
-          "value": 10.0,
-          "units": "Celsius",
-          "phenomenonTime": "2026-10-24T12:00:00Z/2026-10-25T00:00:00Z",
-          "description": null
-        },
-        "wind_direction": {
-          "value": 90.0,
-          "units": "deg",
-          "phenomenonTime": "2026-10-24T23:50:00Z/2026-10-25T00:00:00Z",
-          "description": null
-        },
-        "wind_speed": {
-          "value": 1.0,
-          "units": "m/s",
-          "phenomenonTime": "2026-10-24T23:50:00Z/2026-10-25T00:00:00Z",
           "description": null
         }
       },
