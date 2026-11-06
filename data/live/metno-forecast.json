@@ -4,7 +4,7 @@
   "source": "MET Norway Locationforecast 2.0",
   "sourceUrl": "https://api.met.no/weatherapi/locationforecast/2.0/documentation",
   "requestUrl": "https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=-38.625&lon=-68.3&altitude=357",
-  "retrievedAt": "2026-11-06T09:54:29.529985+00:00",
+  "retrievedAt": "2026-11-06T10:04:04.199915+00:00",
   "validTime": "2026-11-06T09:00:00Z",
   "target": "San Patricio del Chañar",
   "location": {
