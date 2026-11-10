@@ -3,7 +3,7 @@
   "source": "AIC",
   "dataset": "Estaciones · Compensador El Chañar",
   "target": "San Patricio del Chañar",
-  "retrievedAt": "2026-11-10T00:45:50.649037+00:00",
+  "retrievedAt": "2026-11-10T07:52:07.221259+00:00",
   "station": {
     "name": "COMPENSADOR EL CHANAR",
     "latitude": -38.599587,
@@ -13,7 +13,7 @@
     "riverLevel": "",
     "dailyMeanFlow": ""
   },
-  "updatedAt": "09/11/2026",
+  "updatedAt": "10/11/2026",
   "quality": {
     "riverLevel": "observed",
     "dailyMeanFlow": "observed"
