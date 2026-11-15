@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "source": "Open-Meteo",
   "sourceUrl": "https://open-meteo.com/en/docs",
-  "retrievedAt": "2026-11-14T20:49:49.400279+00:00",
+  "retrievedAt": "2026-11-15T00:29:40.738852+00:00",
   "status": "ready",
   "target": "San Patricio del Chañar",
   "modelsRequested": [
@@ -147,90 +147,90 @@
     {
       "time": "2026-11-14T16:00",
       "modelCount": 3,
-      "temperatureMin": 28.2,
+      "temperatureMin": 28.0,
       "temperatureMax": 29.2,
       "temperatureMean": 28.5,
-      "temperatureSpread": 1.0
+      "temperatureSpread": 1.2
     },
     {
       "time": "2026-11-14T17:00",
       "modelCount": 3,
-      "temperatureMin": 28.5,
+      "temperatureMin": 28.3,
       "temperatureMax": 29.1,
-      "temperatureMean": 28.7,
-      "temperatureSpread": 0.6
+      "temperatureMean": 28.6,
+      "temperatureSpread": 0.8
     },
     {
       "time": "2026-11-14T18:00",
       "modelCount": 3,
-      "temperatureMin": 28.0,
+      "temperatureMin": 27.8,
       "temperatureMax": 28.5,
-      "temperatureMean": 28.3,
-      "temperatureSpread": 0.5
+      "temperatureMean": 28.1,
+      "temperatureSpread": 0.7
     },
     {
       "time": "2026-11-14T19:00",
       "modelCount": 3,
-      "temperatureMin": 27.0,
-      "temperatureMax": 27.5,
-      "temperatureMean": 27.3,
+      "temperatureMin": 26.9,
+      "temperatureMax": 27.4,
+      "temperatureMean": 27.2,
       "temperatureSpread": 0.5
     },
     {
       "time": "2026-11-14T20:00",
       "modelCount": 3,
-      "temperatureMin": 25.2,
-      "temperatureMax": 26.1,
-      "temperatureMean": 25.7,
-      "temperatureSpread": 0.9
+      "temperatureMin": 25.1,
+      "temperatureMax": 25.9,
+      "temperatureMean": 25.6,
+      "temperatureSpread": 0.8
     },
     {
       "time": "2026-11-14T21:00",
       "modelCount": 3,
       "temperatureMin": 22.8,
       "temperatureMax": 24.3,
-      "temperatureMean": 23.8,
+      "temperatureMean": 23.7,
       "temperatureSpread": 1.5
     },
     {
       "time": "2026-11-14T22:00",
       "modelCount": 3,
       "temperatureMin": 21.3,
-      "temperatureMax": 23.6,
-      "temperatureMean": 22.6,
-      "temperatureSpread": 2.3
+      "temperatureMax": 23.4,
+      "temperatureMean": 22.5,
+      "temperatureSpread": 2.1
     },
     {
       "time": "2026-11-14T23:00",
       "modelCount": 3,
-      "temperatureMin": 20.1,
-      "temperatureMax": 22.4,
-      "temperatureMean": 21.3,
-      "temperatureSpread": 2.3
+      "temperatureMin": 20.0,
+      "temperatureMax": 22.1,
+      "temperatureMean": 21.2,
+      "temperatureSpread": 2.1
     },
     {
       "time": "2026-11-15T00:00",
       "modelCount": 3,
       "temperatureMin": 19.0,
-      "temperatureMax": 21.6,
-      "temperatureMean": 20.2,
-      "temperatureSpread": 2.6
+      "temperatureMax": 21.3,
+      "temperatureMean": 20.1,
+      "temperatureSpread": 2.3
     },
     {
       "time": "2026-11-15T01:00",
       "modelCount": 3,
-      "temperatureMin": 18.1,
-      "temperatureMax": 20.8,
-      "temperatureMean": 19.3,
-      "temperatureSpread": 2.7
+      "temperatureMin": 18.2,
+      "temperatureMax": 20.4,
+      "temperatureMean": 19.2,
+      "temperatureSpread": 2.2
     },
     {
       "time": "2026-11-15T02:00",
       "modelCount": 3,
-      "temperatureMin": 17.4,
-      "temperatureMax": 20.5,
-      "temperatureMean": 18.7,
-      "temperatureSpread": 3.1
+      "temperatureMin": 17.5,
+      "temperatureMax": 20.0,
+      "temperatureMean": 18.5,
+      "temperatureSpread": 2.5
     },
     {
       "time": "2026-11-15T03:00",
@@ -243,354 +243,354 @@
     {
       "time": "2026-11-15T04:00",
       "modelCount": 3,
-      "temperatureMin": 16.3,
-      "temperatureMax": 19.1,
-      "temperatureMean": 17.2,
-      "temperatureSpread": 2.8
+      "temperatureMin": 16.2,
+      "temperatureMax": 18.9,
+      "temperatureMean": 17.1,
+      "temperatureSpread": 2.7
     },
     {
       "time": "2026-11-15T05:00",
       "modelCount": 3,
       "temperatureMin": 15.4,
-      "temperatureMax": 18.3,
-      "temperatureMean": 16.5,
-      "temperatureSpread": 2.9
+      "temperatureMax": 18.2,
+      "temperatureMean": 16.4,
+      "temperatureSpread": 2.8
     },
     {
       "time": "2026-11-15T06:00",
       "modelCount": 3,
-      "temperatureMin": 15.2,
-      "temperatureMax": 17.9,
-      "temperatureMean": 16.1,
-      "temperatureSpread": 2.7
+      "temperatureMin": 15.1,
+      "temperatureMax": 17.7,
+      "temperatureMean": 16.0,
+      "temperatureSpread": 2.6
     },
     {
       "time": "2026-11-15T07:00",
       "modelCount": 3,
-      "temperatureMin": 15.2,
-      "temperatureMax": 18.1,
+      "temperatureMin": 15.3,
+      "temperatureMax": 18.0,
       "temperatureMean": 16.5,
-      "temperatureSpread": 2.9
+      "temperatureSpread": 2.7
     },
     {
       "time": "2026-11-15T08:00",
       "modelCount": 3,
-      "temperatureMin": 16.7,
-      "temperatureMax": 19.5,
+      "temperatureMin": 16.9,
+      "temperatureMax": 19.3,
       "temperatureMean": 18.0,
-      "temperatureSpread": 2.8
+      "temperatureSpread": 2.4
     },
     {
       "time": "2026-11-15T09:00",
       "modelCount": 3,
-      "temperatureMin": 18.6,
-      "temperatureMax": 21.3,
-      "temperatureMean": 19.8,
-      "temperatureSpread": 2.7
+      "temperatureMin": 19.0,
+      "temperatureMax": 21.2,
+      "temperatureMean": 19.9,
+      "temperatureSpread": 2.2
     },
     {
       "time": "2026-11-15T10:00",
       "modelCount": 3,
-      "temperatureMin": 20.4,
-      "temperatureMax": 22.9,
-      "temperatureMean": 21.4,
-      "temperatureSpread": 2.5
+      "temperatureMin": 21.0,
+      "temperatureMax": 22.8,
+      "temperatureMean": 21.6,
+      "temperatureSpread": 1.8
     },
     {
       "time": "2026-11-15T11:00",
       "modelCount": 3,
-      "temperatureMin": 21.8,
-      "temperatureMax": 22.5,
-      "temperatureMean": 22.3,
-      "temperatureSpread": 0.7
+      "temperatureMin": 22.5,
+      "temperatureMax": 23.4,
+      "temperatureMean": 22.9,
+      "temperatureSpread": 0.9
     },
     {
       "time": "2026-11-15T12:00",
       "modelCount": 3,
-      "temperatureMin": 22.0,
-      "temperatureMax": 24.5,
-      "temperatureMean": 23.4,
-      "temperatureSpread": 2.5
+      "temperatureMin": 19.2,
+      "temperatureMax": 23.7,
+      "temperatureMean": 21.8,
+      "temperatureSpread": 4.5
     },
     {
       "time": "2026-11-15T13:00",
       "modelCount": 3,
-      "temperatureMin": 18.4,
+      "temperatureMin": 16.6,
       "temperatureMax": 24.8,
-      "temperatureMean": 21.6,
-      "temperatureSpread": 6.4
+      "temperatureMean": 21.4,
+      "temperatureSpread": 8.2
     },
     {
       "time": "2026-11-15T14:00",
       "modelCount": 3,
-      "temperatureMin": 17.9,
+      "temperatureMin": 16.9,
       "temperatureMax": 25.8,
-      "temperatureMean": 22.7,
-      "temperatureSpread": 7.9
+      "temperatureMean": 22.3,
+      "temperatureSpread": 8.9
     },
     {
       "time": "2026-11-15T15:00",
       "modelCount": 3,
-      "temperatureMin": 19.0,
+      "temperatureMin": 19.3,
       "temperatureMax": 26.5,
-      "temperatureMean": 23.9,
-      "temperatureSpread": 7.5
+      "temperatureMean": 24.0,
+      "temperatureSpread": 7.2
     },
     {
       "time": "2026-11-15T16:00",
       "modelCount": 3,
-      "temperatureMin": 20.7,
+      "temperatureMin": 21.6,
       "temperatureMax": 27.2,
-      "temperatureMean": 24.7,
-      "temperatureSpread": 6.5
+      "temperatureMean": 25.3,
+      "temperatureSpread": 5.6
     },
     {
       "time": "2026-11-15T17:00",
       "modelCount": 3,
-      "temperatureMin": 21.6,
+      "temperatureMin": 22.8,
       "temperatureMax": 27.7,
-      "temperatureMean": 25.2,
-      "temperatureSpread": 6.1
+      "temperatureMean": 25.9,
+      "temperatureSpread": 4.9
     },
     {
       "time": "2026-11-15T18:00",
       "modelCount": 3,
-      "temperatureMin": 22.4,
+      "temperatureMin": 23.6,
       "temperatureMax": 27.1,
-      "temperatureMean": 25.2,
-      "temperatureSpread": 4.7
+      "temperatureMean": 25.8,
+      "temperatureSpread": 3.5
     },
     {
       "time": "2026-11-15T19:00",
       "modelCount": 3,
-      "temperatureMin": 23.5,
-      "temperatureMax": 25.3,
-      "temperatureMean": 24.4,
-      "temperatureSpread": 1.8
+      "temperatureMin": 22.8,
+      "temperatureMax": 25.5,
+      "temperatureMean": 24.2,
+      "temperatureSpread": 2.7
     },
     {
       "time": "2026-11-15T20:00",
       "modelCount": 3,
       "temperatureMin": 20.5,
-      "temperatureMax": 23.7,
-      "temperatureMean": 22.3,
-      "temperatureSpread": 3.2
+      "temperatureMax": 24.0,
+      "temperatureMean": 22.2,
+      "temperatureSpread": 3.5
     },
     {
       "time": "2026-11-15T21:00",
       "modelCount": 3,
       "temperatureMin": 17.7,
-      "temperatureMax": 21.9,
-      "temperatureMean": 20.3,
-      "temperatureSpread": 4.2
+      "temperatureMax": 22.1,
+      "temperatureMean": 20.2,
+      "temperatureSpread": 4.4
     },
     {
       "time": "2026-11-15T22:00",
       "modelCount": 3,
       "temperatureMin": 17.1,
-      "temperatureMax": 20.7,
-      "temperatureMean": 19.4,
-      "temperatureSpread": 3.6
+      "temperatureMax": 20.9,
+      "temperatureMean": 19.6,
+      "temperatureSpread": 3.8
     },
     {
       "time": "2026-11-15T23:00",
       "modelCount": 3,
       "temperatureMin": 17.7,
-      "temperatureMax": 20.4,
-      "temperatureMean": 19.2,
-      "temperatureSpread": 2.7
+      "temperatureMax": 19.9,
+      "temperatureMean": 18.9,
+      "temperatureSpread": 2.2
     },
     {
       "time": "2026-11-16T00:00",
       "modelCount": 3,
       "temperatureMin": 18.0,
-      "temperatureMax": 20.3,
-      "temperatureMean": 19.0,
-      "temperatureSpread": 2.3
+      "temperatureMax": 19.8,
+      "temperatureMean": 18.8,
+      "temperatureSpread": 1.8
     },
     {
       "time": "2026-11-16T01:00",
       "modelCount": 3,
       "temperatureMin": 17.7,
-      "temperatureMax": 20.1,
+      "temperatureMax": 19.8,
       "temperatureMean": 18.5,
-      "temperatureSpread": 2.4
+      "temperatureSpread": 2.1
     },
     {
       "time": "2026-11-16T02:00",
       "modelCount": 3,
       "temperatureMin": 17.1,
-      "temperatureMax": 19.5,
+      "temperatureMax": 19.1,
       "temperatureMean": 17.9,
-      "temperatureSpread": 2.4
+      "temperatureSpread": 2.0
     },
     {
       "time": "2026-11-16T03:00",
       "modelCount": 3,
       "temperatureMin": 16.7,
-      "temperatureMax": 18.9,
+      "temperatureMax": 18.4,
       "temperatureMean": 17.5,
-      "temperatureSpread": 2.2
+      "temperatureSpread": 1.7
     },
     {
       "time": "2026-11-16T04:00",
       "modelCount": 3,
       "temperatureMin": 16.6,
-      "temperatureMax": 18.9,
-      "temperatureMean": 17.4,
-      "temperatureSpread": 2.3
+      "temperatureMax": 17.8,
+      "temperatureMean": 17.0,
+      "temperatureSpread": 1.2
     },
     {
       "time": "2026-11-16T05:00",
       "modelCount": 3,
       "temperatureMin": 16.6,
-      "temperatureMax": 18.1,
+      "temperatureMax": 17.8,
       "temperatureMean": 17.1,
-      "temperatureSpread": 1.5
+      "temperatureSpread": 1.2
     },
     {
       "time": "2026-11-16T06:00",
       "modelCount": 3,
       "temperatureMin": 16.4,
-      "temperatureMax": 17.9,
+      "temperatureMax": 17.7,
       "temperatureMean": 17.0,
-      "temperatureSpread": 1.5
+      "temperatureSpread": 1.3
     },
     {
       "time": "2026-11-16T07:00",
       "modelCount": 3,
-      "temperatureMin": 16.3,
-      "temperatureMax": 18.6,
-      "temperatureMean": 17.2,
-      "temperatureSpread": 2.3
+      "temperatureMin": 16.1,
+      "temperatureMax": 18.5,
+      "temperatureMean": 17.1,
+      "temperatureSpread": 2.4
     },
     {
       "time": "2026-11-16T08:00",
       "modelCount": 3,
       "temperatureMin": 17.0,
-      "temperatureMax": 20.0,
-      "temperatureMean": 18.3,
-      "temperatureSpread": 3.0
+      "temperatureMax": 19.6,
+      "temperatureMean": 18.2,
+      "temperatureSpread": 2.6
     },
     {
       "time": "2026-11-16T09:00",
       "modelCount": 3,
       "temperatureMin": 17.7,
-      "temperatureMax": 22.8,
-      "temperatureMean": 19.9,
-      "temperatureSpread": 5.1
+      "temperatureMax": 22.4,
+      "temperatureMean": 20.1,
+      "temperatureSpread": 4.7
     },
     {
       "time": "2026-11-16T10:00",
       "modelCount": 3,
       "temperatureMin": 19.3,
-      "temperatureMax": 23.5,
-      "temperatureMean": 21.2,
-      "temperatureSpread": 4.2
+      "temperatureMax": 23.7,
+      "temperatureMean": 21.8,
+      "temperatureSpread": 4.4
     },
     {
       "time": "2026-11-16T11:00",
       "modelCount": 3,
       "temperatureMin": 21.4,
-      "temperatureMax": 24.8,
-      "temperatureMean": 22.8,
-      "temperatureSpread": 3.4
+      "temperatureMax": 24.6,
+      "temperatureMean": 23.4,
+      "temperatureSpread": 3.2
     },
     {
       "time": "2026-11-16T12:00",
       "modelCount": 3,
       "temperatureMin": 23.2,
       "temperatureMax": 25.3,
-      "temperatureMean": 24.0,
+      "temperatureMean": 24.6,
       "temperatureSpread": 2.1
     },
     {
       "time": "2026-11-16T13:00",
       "modelCount": 3,
       "temperatureMin": 24.4,
-      "temperatureMax": 25.1,
-      "temperatureMean": 24.8,
-      "temperatureSpread": 0.7
+      "temperatureMax": 26.0,
+      "temperatureMean": 25.3,
+      "temperatureSpread": 1.6
     },
     {
       "time": "2026-11-16T14:00",
       "modelCount": 3,
-      "temperatureMin": 24.7,
-      "temperatureMax": 25.5,
-      "temperatureMean": 25.2,
-      "temperatureSpread": 0.8
+      "temperatureMin": 25.3,
+      "temperatureMax": 26.7,
+      "temperatureMean": 25.9,
+      "temperatureSpread": 1.4
     },
     {
       "time": "2026-11-16T15:00",
       "modelCount": 3,
-      "temperatureMin": 24.5,
-      "temperatureMax": 27.3,
-      "temperatureMean": 25.9,
-      "temperatureSpread": 2.8
+      "temperatureMin": 24.6,
+      "temperatureMax": 28.7,
+      "temperatureMean": 26.4,
+      "temperatureSpread": 4.1
     },
     {
       "time": "2026-11-16T16:00",
       "modelCount": 3,
-      "temperatureMin": 25.1,
-      "temperatureMax": 27.2,
-      "temperatureMean": 26.3,
-      "temperatureSpread": 2.1
+      "temperatureMin": 25.7,
+      "temperatureMax": 27.6,
+      "temperatureMean": 26.6,
+      "temperatureSpread": 1.9
     },
     {
       "time": "2026-11-16T17:00",
       "modelCount": 3,
-      "temperatureMin": 25.8,
-      "temperatureMax": 26.9,
-      "temperatureMean": 26.2,
-      "temperatureSpread": 1.1
+      "temperatureMin": 25.6,
+      "temperatureMax": 27.0,
+      "temperatureMean": 26.5,
+      "temperatureSpread": 1.4
     },
     {
       "time": "2026-11-16T18:00",
       "modelCount": 3,
-      "temperatureMin": 23.9,
+      "temperatureMin": 24.1,
       "temperatureMax": 26.4,
-      "temperatureMean": 25.2,
-      "temperatureSpread": 2.5
+      "temperatureMean": 25.3,
+      "temperatureSpread": 2.3
     },
     {
       "time": "2026-11-16T19:00",
       "modelCount": 3,
-      "temperatureMin": 23.5,
-      "temperatureMax": 24.7,
+      "temperatureMin": 23.2,
+      "temperatureMax": 24.9,
       "temperatureMean": 24.2,
-      "temperatureSpread": 1.2
+      "temperatureSpread": 1.7
     },
     {
       "time": "2026-11-16T20:00",
       "modelCount": 3,
       "temperatureMin": 21.7,
       "temperatureMax": 23.0,
-      "temperatureMean": 22.4,
+      "temperatureMean": 22.3,
       "temperatureSpread": 1.3
     },
     {
       "time": "2026-11-16T21:00",
       "modelCount": 3,
       "temperatureMin": 19.6,
-      "temperatureMax": 22.2,
+      "temperatureMax": 21.9,
       "temperatureMean": 20.9,
-      "temperatureSpread": 2.6
+      "temperatureSpread": 2.3
     },
     {
       "time": "2026-11-16T22:00",
       "modelCount": 3,
       "temperatureMin": 19.0,
-      "temperatureMax": 20.3,
-      "temperatureMean": 19.8,
-      "temperatureSpread": 1.3
+      "temperatureMax": 21.0,
+      "temperatureMean": 20.1,
+      "temperatureSpread": 2.0
     },
     {
       "time": "2026-11-16T23:00",
       "modelCount": 3,
       "temperatureMin": 19.1,
-      "temperatureMax": 19.5,
-      "temperatureMean": 19.3,
-      "temperatureSpread": 0.4
+      "temperatureMax": 19.4,
+      "temperatureMean": 19.2,
+      "temperatureSpread": 0.3
     }
   ],
   "note": "La dispersión entre modelos orienta la incertidumbre; no es una probabilidad calibrada ni una garantía.",
@@ -617,34 +617,34 @@
       2.2
     ],
     "temperature_2m_max_gfs_seamless": [
-      28.6,
-      24.6,
-      27.4
+      28.3,
+      23.6,
+      28.7
     ],
     "temperature_2m_min_gfs_seamless": [
       14.6,
-      17.7,
-      17.9
+      16.4,
+      17.6
     ],
     "precipitation_sum_gfs_seamless": [
       0.0,
-      3.8,
-      0.1
+      9.1,
+      0.2
     ],
     "temperature_2m_max_icon_seamless": [
-      28.5,
-      26.3,
-      25.8
+      28.4,
+      27.3,
+      26.0
     ],
     "temperature_2m_min_icon_seamless": [
       12.6,
       15.1,
-      16.2
+      16.0
     ],
     "precipitation_sum_icon_seamless": [
       0.0,
       0.1,
-      0.0
+      0.2
     ]
   }
 }
