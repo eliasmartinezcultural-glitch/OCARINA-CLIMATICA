@@ -2,7 +2,7 @@
   "status": "ready",
   "provider": "AIC",
   "dataset": "Pronóstico para El Chañar",
-  "retrievedAt": "2026-11-27T21:43:49.844174+00:00",
+  "retrievedAt": "2026-11-28T03:38:02.553289+00:00",
   "sourceUrl": "https://www.aic.gob.ar/sitio/home?a=1015&z=1967225803",
   "place": "El Chañar",
   "forecast": [
